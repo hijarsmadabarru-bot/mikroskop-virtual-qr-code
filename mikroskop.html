@@ -1,756 +1,447 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mikroskop Virtual - UPTD SMPN 3 Barru</title>
 
 <style>
-
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-font-family:Arial,sans-serif;
-background:#f4f8f7;
-color:#455a64;
+    font-family:Arial,sans-serif;
+    background:#f4f8f7;
+    color:#455a64;
 }
 
-/* =========================
-HEADER
-========================= */
-
 header{
-background:#5f9f9a;
-color:white;
-padding:18px 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
+    background:#5f9f9a;
+    color:#fff;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 header h2{
-font-size:22px;
+    font-size:22px;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-font-weight:bold;
+    color:#fff;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
 }
 
 nav a:hover{
-text-decoration:underline;
+    text-decoration:underline;
 }
 
-/* =========================
-HERO
-========================= */
-
 .hero{
-background:white;
-text-align:center;
-padding:45px 20px 30px;
+    background:#fff;
+    text-align:center;
+    padding:45px 20px 30px;
 }
 
 .hero h1{
-font-size:30px;
-color:#5d7478;
-margin-bottom:12px;
+    font-size:30px;
+    color:#5d7478;
+    margin-bottom:12px;
 }
 
 .hero p{
-font-size:16px;
-line-height:1.6;
+    font-size:16px;
+    line-height:1.6;
 }
-
-/* =========================
-CONTAINER
-========================= */
 
 .container{
-max-width:1100px;
-margin:35px auto;
-padding:0 20px;
+    max-width:1100px;
+    margin:35px auto;
+    padding:0 20px;
 }
 
-/* =========================
-PILIHAN UTAMA
-========================= */
-
-.main-choice{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px;
-margin-top:20px;
+.section{
+    display:none;
 }
 
-.choice-card{
-background:white;
-border-radius:22px;
-padding:35px 30px;
-text-align:center;
-box-shadow:0 6px 22px rgba(0,0,0,0.09);
-border:2px solid transparent;
-cursor:pointer;
-transition:0.25s;
+.section.active{
+    display:block;
 }
 
-.choice-card:hover{
-transform:translateY(-5px);
-border-color:#8fc5bf;
-box-shadow:0 10px 28px rgba(0,0,0,0.12);
+.menu-box,
+.info,
+.structure-box{
+    background:#fff;
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    margin-bottom:25px;
 }
 
-.choice-icon{
-font-size:65px;
-margin-bottom:18px;
+.menu-box h2,
+.structure-box h2{
+    color:#5d7478;
+    text-align:center;
+    margin-bottom:20px;
 }
 
-.choice-card h2{
-color:#527d79;
-margin-bottom:12px;
-font-size:24px;
+/* MENU UTAMA */
+
+.choice-grid,
+.type-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
 }
 
-.choice-card p{
-line-height:1.7;
-color:#607d7b;
-margin-bottom:20px;
+.choice-card,
+.type-card{
+    border:2px solid #d7e9e6;
+    background:#f7fbfa;
+    border-radius:18px;
+    padding:30px 20px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.choice-button{
-display:inline-block;
-background:#5f9f9a;
-color:white;
-padding:12px 25px;
-border-radius:25px;
-font-weight:bold;
+.choice-card:hover,
+.type-card:hover{
+    transform:translateY(-3px);
+    background:#eaf5f3;
+    border-color:#5f9f9a;
 }
 
-.choice-card:hover .choice-button{
-background:#4f8f8a;
+.icon{
+    font-size:55px;
+    margin-bottom:12px;
 }
 
-/* =========================
-SECTION
-========================= */
-
-.page-section{
-display:none;
+.choice-card h3,
+.type-card h3{
+    color:#4f7471;
+    margin-bottom:8px;
 }
 
-.page-section.active{
-display:block;
+.choice-card p,
+.type-card p{
+    line-height:1.6;
+    color:#607d80;
 }
 
-/* =========================
-BACK BUTTON
-========================= */
+/* TOMBOL KEMBALI */
 
-.back-button{
-display:inline-block;
-border:none;
-background:#e4f0ee;
-color:#456568;
-padding:11px 20px;
-border-radius:25px;
-font-weight:bold;
-cursor:pointer;
-margin-bottom:20px;
+.back-btn{
+    border:0;
+    background:#78909c;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:20px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-bottom:18px;
 }
 
-.back-button:hover{
-background:#cde3df;
+.back-btn:hover{
+    background:#607d86;
 }
 
-/* =========================
-BAGIAN MIKROSKOP
-========================= */
+/* PILIH PREPARAT */
 
-.microscope-parts{
-background:white;
-border-radius:20px;
-padding:30px;
-box-shadow:0 6px 22px rgba(0,0,0,0.08);
-}
-
-.parts-title{
-text-align:center;
-margin-bottom:25px;
-}
-
-.parts-title h2{
-color:#5d7478;
-margin-bottom:10px;
-}
-
-.parts-title p{
-line-height:1.6;
-color:#607d7b;
-}
-
-/* ILUSTRASI MIKROSKOP */
-
-.microscope-diagram{
-background:#eef7f5;
-border-radius:18px;
-padding:30px;
-margin-bottom:25px;
-text-align:center;
-}
-
-.microscope-diagram .scope{
-position:relative;
-width:280px;
-height:420px;
-margin:auto;
-}
-
-/* OKULER */
-
-.eyepiece{
-position:absolute;
-top:10px;
-left:105px;
-width:70px;
-height:75px;
-background:#455a64;
-border-radius:12px 12px 5px 5px;
-}
-
-.eyepiece::after{
-content:"";
-position:absolute;
-bottom:-25px;
-left:15px;
-width:40px;
-height:35px;
-background:#607d8b;
-}
-
-/* TUBUS */
-
-.tube{
-position:absolute;
-top:75px;
-left:125px;
-width:30px;
-height:105px;
-background:#78909c;
-transform:rotate(18deg);
-border-radius:8px;
-}
-
-/* REVOLVER */
-
-.revolver{
-position:absolute;
-top:150px;
-left:108px;
-width:85px;
-height:55px;
-background:#546e7a;
-border-radius:50%;
-}
-
-/* OBJECTIVES */
-
-.objective{
-position:absolute;
-width:18px;
-height:75px;
-background:#90a4ae;
-border-radius:5px;
-}
-
-.objective.one{
-top:190px;
-left:108px;
-transform:rotate(-15deg);
-}
-
-.objective.two{
-top:195px;
-left:135px;
-transform:rotate(0deg);
-}
-
-.objective.three{
-top:190px;
-left:162px;
-transform:rotate(15deg);
-}
-
-/* STAGE */
-
-.stage{
-position:absolute;
-top:255px;
-left:50px;
-width:180px;
-height:25px;
-background:#37474f;
-border-radius:8px;
-}
-
-.stage::after{
-content:"";
-position:absolute;
-top:8px;
-left:70px;
-width:40px;
-height:9px;
-background:#90a4ae;
-}
-
-/* ARM */
-
-.arm{
-position:absolute;
-top:165px;
-left:195px;
-width:45px;
-height:170px;
-border:18px solid #607d8b;
-border-left:none;
-border-radius:0 60px 60px 0;
-}
-
-/* BASE */
-
-.base{
-position:absolute;
-bottom:20px;
-left:30px;
-width:220px;
-height:65px;
-background:#455a64;
-border-radius:50% 50% 18px 18px;
-}
-
-/* FOCUS */
-
-.focus{
-position:absolute;
-top:235px;
-left:205px;
-width:30px;
-height:30px;
-border-radius:50%;
-background:#f5c400;
-border:5px solid #607d8b;
-}
-
-.parts-list{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:14px;
-}
-
-.part-item{
-background:#f7fbfa;
-padding:18px;
-border-radius:14px;
-border-left:5px solid #6da9a4;
-}
-
-.part-item h3{
-color:#527d79;
-margin-bottom:7px;
-}
-
-.part-item p{
-font-size:14px;
-line-height:1.6;
-}
-
-/* =========================
-PREPARAT
-========================= */
-
-.preparat-menu{
-background:white;
-padding:25px;
-border-radius:18px;
-box-shadow:0 5px 18px rgba(0,0,0,0.08);
-margin-bottom:25px;
-}
-
-.preparat-menu h2{
-text-align:center;
-color:#5d7478;
-margin-bottom:20px;
-}
-
-.preparat-buttons{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:12px;
+.preparat-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
 }
 
 .preparat-btn{
-border:none;
-padding:13px 20px;
-border-radius:25px;
-background:#e4f0ee;
-color:#456568;
-font-weight:bold;
-cursor:pointer;
+    border:2px solid #d7e9e6;
+    padding:18px 12px;
+    border-radius:16px;
+    background:#f7fbfa;
+    color:#456568;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.preparat-btn:hover{
-background:#cde3df;
-}
-
+.preparat-btn:hover,
 .preparat-btn.active{
-background:#5f9f9a;
-color:white;
+    background:#5f9f9a;
+    color:#fff;
+    border-color:#5f9f9a;
 }
 
-/* =========================
-MIKROSKOP
-========================= */
+/* MIKROSKOP */
 
 .microscope{
-background:#263238;
-border-radius:20px;
-padding:25px;
-box-shadow:0 8px 25px rgba(0,0,0,0.18);
+    background:#263238;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
 }
 
 .microscope-title{
-color:white;
-text-align:center;
-margin-bottom:20px;
-font-size:20px;
+    color:#fff;
+    text-align:center;
+    margin-bottom:20px;
+    font-size:20px;
 }
 
 .viewer{
-height:520px;
-background:#111;
-border:5px solid #455a64;
-border-radius:15px;
-overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
+    height:520px;
+    background:#111;
+    border:5px solid #455a64;
+    border-radius:15px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .viewer img{
-max-width:none;
-width:80%;
-height:auto;
-transition:transform 0.3s ease;
-transform-origin:center center;
-user-select:none;
+    max-width:none;
+    width:80%;
+    height:auto;
+    transition:transform .3s ease;
+    transform-origin:center center;
+    user-select:none;
 }
 
-/* =========================
-KONTROL
-========================= */
-
 .controls{
-background:#37474f;
-padding:20px;
-margin-top:15px;
-border-radius:12px;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
+    background:#37474f;
+    padding:20px;
+    margin-top:15px;
+    border-radius:12px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
 }
 
 .control-btn{
-border:none;
-padding:11px 18px;
-border-radius:22px;
-background:#f5c400;
-color:#4f4f4f;
-font-weight:bold;
-cursor:pointer;
+    border:0;
+    padding:11px 18px;
+    border-radius:22px;
+    background:#f5c400;
+    color:#4f4f4f;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .control-btn:hover{
-opacity:0.85;
+    opacity:.85;
 }
 
 .zoom-level{
-color:white;
-font-weight:bold;
-display:flex;
-align-items:center;
-padding:0 10px;
+    color:#fff;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    padding:0 10px;
 }
 
-/* =========================
-STRUCTURE
-========================= */
-
-.structure-control{
-text-align:center;
-margin-top:15px;
-}
-
-.structure-btn{
-border:none;
-padding:12px 24px;
-border-radius:25px;
-background:#6da9a4;
-color:white;
-font-weight:bold;
-cursor:pointer;
-}
-
-.structure-btn:hover{
-background:#4f8f8a;
-}
-
-.structure-panel{
-display:none;
-background:#f4faf8;
-margin-top:15px;
-padding:20px;
-border-radius:15px;
-border-left:5px solid #6da9a4;
-}
-
-.structure-panel.show{
-display:block;
-}
-
-.structure-panel h3{
-color:#507a78;
-margin-bottom:15px;
-}
-
-.structure-panel p{
-font-size:14px;
-line-height:1.6;
-margin-bottom:15px;
-}
-
-.structure-list{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-list-style:none;
-}
-
-.structure-list li{
-background:white;
-padding:12px 14px;
-border-radius:10px;
-box-shadow:0 2px 8px rgba(0,0,0,0.06);
-border-left:4px solid #9bc8c2;
-}
-
-.structure-list strong{
-color:#527d79;
-}
-
-/* =========================
-INFORMASI
-========================= */
-
-.info{
-background:white;
-border-radius:18px;
-padding:28px;
-margin-top:25px;
-box-shadow:0 5px 18px rgba(0,0,0,0.08);
-}
+/* INFO */
 
 .info h2{
-color:#5d7478;
-margin-bottom:12px;
+    color:#5d7478;
+    margin-bottom:12px;
 }
 
 .info p{
-line-height:1.7;
-margin-bottom:10px;
+    line-height:1.7;
+    margin-bottom:10px;
 }
 
 .info ul{
-margin-left:20px;
-line-height:1.8;
+    margin-left:20px;
+    line-height:1.8;
 }
 
-/* =========================
-AKTIVITAS
-========================= */
+/* TABEL */
+
+.structure-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.structure-table th,
+.structure-table td{
+    border:1px solid #d5e3e1;
+    padding:12px;
+    text-align:left;
+    vertical-align:top;
+}
+
+.structure-table th{
+    background:#5f9f9a;
+    color:#fff;
+}
+
+.structure-table tr:nth-child(even){
+    background:#f5faf9;
+}
+
+.number{
+    display:inline-flex;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:#f5c400;
+    color:#333;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+/* DIAGRAM MIKROSKOP */
+
+.diagram{
+    background:#f8fbfa;
+    border-radius:16px;
+    padding:12px;
+    margin-bottom:12px;
+}
+
+.diagram svg{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+.image-note{
+    font-size:13px;
+    color:#78909c;
+    text-align:center;
+    line-height:1.5;
+}
+
+/* AKTIVITAS */
 
 .activity{
-text-align:center;
-margin-top:25px;
+    text-align:center;
+    margin-top:25px;
 }
 
 .activity a{
-display:inline-block;
-background:#5f9f9a;
-color:white;
-text-decoration:none;
-padding:14px 28px;
-border-radius:28px;
-font-weight:bold;
+    display:inline-block;
+    background:#5f9f9a;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:28px;
+    font-weight:bold;
 }
 
 .activity a:hover{
-background:#4f8f8a;
+    background:#4f8f8a;
 }
-
-/* =========================
-SUMBER
-========================= */
 
 .source{
-font-size:12px;
-color:#78909c;
-margin-top:20px;
-line-height:1.6;
+    font-size:12px;
+    color:#78909c;
+    margin-top:20px;
+    line-height:1.6;
 }
 
-/* =========================
-FOOTER
-========================= */
-
 footer{
-background:#5f9f9a;
-color:white;
-text-align:center;
-padding:25px;
-margin-top:40px;
+    background:#5f9f9a;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
 }
 
 footer p{
-margin:5px;
+    margin:5px;
 }
 
-/* =========================
-MOBILE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:700px){
 
-header{
-flex-direction:column;
-gap:15px;
-}
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
 
-nav{
-text-align:center;
-}
+    nav{
+        text-align:center;
+    }
 
-nav a{
-margin:0 6px;
-font-size:13px;
-}
+    nav a{
+        margin:0 6px;
+        font-size:13px;
+    }
 
-.hero h1{
-font-size:24px;
-}
+    .hero h1{
+        font-size:24px;
+    }
 
-.main-choice{
-grid-template-columns:1fr;
-}
+    .choice-grid,
+    .type-grid{
+        grid-template-columns:1fr;
+    }
 
-.choice-icon{
-font-size:55px;
-}
+    .preparat-list{
+        grid-template-columns:1fr;
+    }
 
-.viewer{
-height:380px;
-}
+    .viewer{
+        height:380px;
+    }
 
-.viewer img{
-width:95%;
-}
+    .viewer img{
+        width:95%;
+    }
 
-.preparat-buttons{
-flex-direction:column;
-}
+    .structure-table{
+        font-size:13px;
+    }
 
-.preparat-btn{
-width:100%;
-}
+    .controls{
+        gap:8px;
+    }
 
-.controls{
-gap:8px;
+    .control-btn{
+        padding:10px 14px;
+        font-size:13px;
+    }
 }
-
-.control-btn{
-padding:10px 14px;
-font-size:13px;
-}
-
-.parts-list{
-grid-template-columns:1fr;
-}
-
-.structure-list{
-grid-template-columns:1fr;
-}
-
-.microscope-diagram{
-padding:15px;
-}
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
 <h2>🔬 Mikroskop Virtual</h2>
 
 <nav>
-
 <a href="index.html">Beranda</a>
-
 <a href="panduan.html">Panduan</a>
-
 <a href="materi.html">Materi</a>
-
 <a href="aktivitas.html">Aktivitas</a>
-
 <a href="mikroskop.html">Mikroskop</a>
-
 </nav>
 
 </header>
 
 
-<!-- =========================
-HERO
-========================= -->
+<!-- JUDUL -->
 
 <section class="hero">
 
 <h1>🔬 Mikroskop Virtual</h1>
 
 <p>
-Pelajari bagian-bagian mikroskop dan lakukan
-pengamatan menggunakan preparat digital.
+Kenali bagian-bagian mikroskop dan amati preparat sel secara digital.
 </p>
 
 </section>
@@ -759,247 +450,868 @@ pengamatan menggunakan preparat digital.
 <div class="container">
 
 
-<!-- =========================
-HALAMAN UTAMA
-========================= -->
+<!-- ================================================= -->
+<!-- HALAMAN UTAMA -->
+<!-- ================================================= -->
 
-<section
-id="homeSection"
-class="page-section active">
+<section id="home" class="section active">
 
-<div class="main-choice">
+<div class="menu-box">
+
+<h2>🔬 Pilih Menu</h2>
+
+<div class="choice-grid">
 
 
-<!-- PILIHAN 1 -->
+<!-- BAGIAN MIKROSKOP -->
 
-<div
-class="choice-card"
-onclick="showSection('partsSection')">
+<div class="choice-card" onclick="show('parts')">
 
-<div class="choice-icon">
-🔬
-</div>
+<div class="icon">🔬</div>
 
-<h2>
+<h3>
 Bagian-bagian Mikroskop
-</h2>
+</h3>
 
 <p>
-Kenali bagian-bagian mikroskop
-beserta fungsi masing-masing
-bagian sebelum melakukan pengamatan.
+Kenali bagian mikroskop, nomor,
+nama bagian, dan fungsinya.
 </p>
 
-<div class="choice-button">
-Pelajari →
-</div>
-
 </div>
 
 
-<!-- PILIHAN 2 -->
+<!-- PREPARAT DIGITAL -->
 
-<div
-class="choice-card"
-onclick="showSection('preparatSection')">
+<div class="choice-card" onclick="show('types')">
 
-<div class="choice-icon">
-🧫
-</div>
+<div class="icon">🧫</div>
 
-<h2>
+<h3>
 Preparat Digital
-</h2>
+</h3>
 
 <p>
-Amati berbagai preparat sel secara
-digital menggunakan pembesaran
-40×, 100×, dan 400×.
+Pilih preparat sel tumbuhan
+atau sel hewan.
 </p>
 
-<div class="choice-button">
-Mulai Pengamatan →
 </div>
 
 </div>
-
 
 </div>
 
 </section>
 
 
-<!-- =========================
-BAGIAN-BAGIAN MIKROSKOP
-========================= -->
 
-<section
-id="partsSection"
-class="page-section">
+<!-- ================================================= -->
+<!-- BAGIAN-BAGIAN MIKROSKOP -->
+<!-- ================================================= -->
 
-<button
-class="back-button"
-onclick="showSection('homeSection')">
+<section id="parts" class="section">
 
-← Kembali ke Pilihan Utama
-
+<button class="back-btn" onclick="show('home')">
+← Kembali
 </button>
 
 
-<div class="microscope-parts">
-
-<div class="parts-title">
+<div class="menu-box">
 
 <h2>
 🔬 Bagian-bagian Mikroskop
 </h2>
 
-<p>
-Kenali bagian utama mikroskop dan
-fungsi masing-masing bagian.
+
+<div class="diagram">
+
+<svg
+viewBox="0 0 900 650"
+role="img"
+aria-label="Diagram mikroskop bernomor"
+>
+
+<defs>
+
+<linearGradient
+id="m"
+x1="0"
+y1="0"
+x2="1"
+y2="1"
+>
+
+<stop
+offset="0"
+stop-color="#dce7e8"
+/>
+
+<stop
+offset=".5"
+stop-color="#8fa5a8"
+/>
+
+<stop
+offset="1"
+stop-color="#52676b"
+/>
+
+</linearGradient>
+
+</defs>
+
+
+<!-- KAKI -->
+
+<path
+d="M240 555Q270 505 365 510H625Q690 515 735 555V585H210Q215 565 240 555Z"
+fill="#52676b"
+/>
+
+
+<!-- LENGAN -->
+
+<path
+d="M330 500Q300 390 330 280Q350 185 430 135Q505 90 575 135Q625 165 635 230L590 250Q570 195 520 185Q460 170 425 220Q385 280 405 390L445 500Z"
+fill="url(#m)"
+stroke="#465a5e"
+stroke-width="5"
+/>
+
+
+<!-- TUBUS -->
+
+<path
+d="M470 125L520 65L565 85L520 160Z"
+fill="#5b7074"
+stroke="#3f5054"
+stroke-width="5"
+/>
+
+
+<!-- OKULER -->
+
+<path
+d="M485 65L530 25L575 48L555 85L510 78Z"
+fill="#39494d"
+/>
+
+
+<!-- REVOLVER -->
+
+<circle
+cx="520"
+cy="165"
+r="42"
+fill="#63797d"
+stroke="#3f5054"
+stroke-width="5"
+/>
+
+
+<!-- LENSA OBJEKTIF -->
+
+<path
+d="M490 190L475 250L500 258L520 198Z
+M520 195V258H548V195Z
+M548 195L565 245L590 235L570 185Z"
+fill="#39494d"
+/>
+
+
+<!-- MEJA -->
+
+<rect
+x="365"
+y="265"
+width="270"
+height="38"
+rx="8"
+fill="#6f8588"
+stroke="#405256"
+stroke-width="5"
+/>
+
+
+<!-- PREPARAT -->
+
+<rect
+x="410"
+y="275"
+width="180"
+height="18"
+rx="5"
+fill="#263238"
+/>
+
+
+<!-- PENJEPIT -->
+
+<path
+d="M430 265Q450 250 470 265
+M530 265Q550 250 570 265"
+fill="none"
+stroke="#e0e8e9"
+stroke-width="7"
+/>
+
+
+<!-- DIAFRAGMA -->
+
+<ellipse
+cx="500"
+cy="325"
+rx="75"
+ry="22"
+fill="#455a5f"
+/>
+
+<circle
+cx="500"
+cy="325"
+r="18"
+fill="#111"
+/>
+
+
+<!-- LAMPU -->
+
+<path
+d="M455 345Q500 330 545 345L565 420H435Z"
+fill="#667d80"
+stroke="#405256"
+stroke-width="5"
+/>
+
+
+<!-- PEMUTAR FOKUS -->
+
+<circle
+cx="355"
+cy="265"
+r="32"
+fill="#71878a"
+stroke="#405256"
+stroke-width="5"
+/>
+
+<circle
+cx="645"
+cy="265"
+r="24"
+fill="#71878a"
+stroke="#405256"
+stroke-width="5"
+/>
+
+
+<!-- NOMOR -->
+
+<g
+font-family="Arial"
+font-weight="bold"
+text-anchor="middle"
+font-size="20"
+>
+
+
+<!-- 1 -->
+
+<g>
+
+<line
+x1="535"
+y1="50"
+x2="730"
+y2="35"
+stroke="#5f9f9a"
+stroke-width="3"
+/>
+
+<circle
+cx="755"
+cy="33"
+r="20"
+fill="#f5c400"
+/>
+
+<text
+x="755"
+y="40"
+>
+1
+</text>
+
+</g>
+
+
+<!-- 2 -->
+
+<g>
+
+<line
+x1="485"
+y1="120"
+x2="220"
+y2="95"
+stroke="#5f9f9a"
+stroke-width="3"
+/>
+
+<circle
+cx="195"
+cy="93"
+r="20"
+fill="#f5c400"
+/>
+
+<text
+x="195"
+y="100"
+>
+2
+</text>
+
+</g>
+
+
+<!-- 3 -->
+
+<g>
+
+<line
+x1="520"
+y1="165"
+x2="735"
+y2="145"
+stroke="#5f9f9a"
+stroke-width="3"
+/>
+
+<circle
+cx="760"
+cy="143"
+r="20"
+fill="#f5c400"
+/>
+
+<text
+x="760"
+y="150"
+>
+3
+</text>
+
+</g>
+
+
+<!-- 4 -->
+
+<g>
+
+<line
+x1="555"
+y1="225"
+x2="730"
+y2="220"
+stroke="#5f9f9a"
+stroke-width="3"
+/>
+
+<circle
+cx="755"
+cy="218"
+r="20"
+fill="#f5c400"
+/>
+
+<text
+x="755"
+y="225"
+>
+4
+</text>
+
+</g>
+
+
+<!-- 5 -->
+
+<g>
+
+<line
+x1="600"
+y1="285"
+x2="730"
+y2="290"
+stroke="#5f9f9a"
+stroke-width="3"
+/>
+
+<circle
+cx="755"
+cy="292"
+r="20"
+fill="#f5c400"
+/>
+
+<text
+x="755"
+y="299"
+>
+5
+</text>
+
+</g>
+
+
+<!-- 6 -->
+
+<g>
+
+<line
+x1="430"
+y1="265"
+x2="210"
+y2="245"
+stroke="#5f9f9a"
+stroke-width="3"
+/>
+
+<circle
+cx="185"
+cy="243"
+r="20"
+fill="#f5c400"
+/>
+
+<text
+x="185"
+y="250"
+>
+6
+</text>
+
+</g>
+
+
+<!-- 7 -->
+
+<g>
+
+<line
+x1="355"
+y1="265"
+x2="180"
+y2="325"
+stroke="#5f9f9a"
+stroke-width="3"
+/>
+
+<circle
+cx="155"
+cy="333"
+r="20"
+fill="#f5c400"
+/>
+
+<text
+x="155"
+y="340"
+>
+7
+</text>
+
+</g>
+
+
+<!-- 8 -->
+
+<g>
+
+<line
+x1="390"
+y1="350"
+x2="185"
+y2="405"
+stroke="#5f9f9a"
+stroke-width="3"
+/>
+
+<circle
+cx="160"
+cy="412"
+r="20"
+fill="#f5c400"
+/>
+
+<text
+x="160"
+y="419"
+>
+8
+</text>
+
+</g>
+
+
+<!-- 9 -->
+
+<g>
+
+<line
+x1="540"
+y1="380"
+x2="720"
+y2="385"
+stroke="#5f9f9a"
+stroke-width="3"
+/>
+
+<circle
+cx="745"
+cy="387"
+r="20"
+fill="#f5c400"
+/>
+
+<text
+x="745"
+y="394"
+>
+9
+</text>
+
+</g>
+
+
+<!-- 10 -->
+
+<g>
+
+<line
+x1="650"
+y1="550"
+x2="755"
+y2="535"
+stroke="#5f9f9a"
+stroke-width="3"
+/>
+
+<circle
+cx="780"
+cy="532"
+r="20"
+fill="#f5c400"
+/>
+
+<text
+x="780"
+y="539"
+>
+10
+</text>
+
+</g>
+
+</g>
+
+</svg>
+
+</div>
+
+
+<p class="image-note">
+
+Perhatikan nomor pada gambar,
+kemudian cocokkan dengan nama bagian
+dan fungsinya.
+
 </p>
 
 </div>
 
 
-<!-- ILUSTRASI -->
+<!-- TABEL BAGIAN -->
 
-<div class="microscope-diagram">
+<div class="structure-box">
 
-<div class="scope">
+<h2>
+📋 Keterangan Bagian dan Fungsi
+</h2>
 
-<div class="eyepiece"></div>
 
-<div class="tube"></div>
+<table class="structure-table">
 
-<div class="revolver"></div>
+<thead>
 
-<div class="objective one"></div>
+<tr>
 
-<div class="objective two"></div>
+<th>No.</th>
 
-<div class="objective three"></div>
+<th>Nama Bagian</th>
 
-<div class="stage"></div>
+<th>Fungsi</th>
 
-<div class="arm"></div>
+</tr>
 
-<div class="focus"></div>
+</thead>
 
-<div class="base"></div>
+
+<tbody>
+
+
+<tr>
+
+<td>
+<span class="number">1</span>
+</td>
+
+<td>
+Lensa Okuler
+</td>
+
+<td>
+Tempat mata melihat bayangan objek
+dan membantu memperbesar bayangan.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="number">2</span>
+</td>
+
+<td>
+Tubus
+</td>
+
+<td>
+Menghubungkan lensa okuler
+dengan sistem lensa objektif.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="number">3</span>
+</td>
+
+<td>
+Revolver
+</td>
+
+<td>
+Tempat lensa objektif dan digunakan
+untuk memilih lensa objektif.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="number">4</span>
+</td>
+
+<td>
+Lensa Objektif
+</td>
+
+<td>
+Memperbesar objek yang diamati
+dan membentuk bayangan objek.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="number">5</span>
+</td>
+
+<td>
+Meja Preparat
+</td>
+
+<td>
+Tempat meletakkan preparat
+yang akan diamati.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="number">6</span>
+</td>
+
+<td>
+Penjepit Preparat
+</td>
+
+<td>
+Menahan preparat agar tetap
+pada posisi yang tepat.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="number">7</span>
+</td>
+
+<td>
+Pemutar Fokus
+</td>
+
+<td>
+Mengatur fokus sehingga bayangan
+objek tampak jelas.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="number">8</span>
+</td>
+
+<td>
+Lengan Mikroskop
+</td>
+
+<td>
+Menopang bagian utama dan menjadi
+pegangan saat memindahkan mikroskop.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="number">9</span>
+</td>
+
+<td>
+Diafragma/Lampu
+</td>
+
+<td>
+Mengatur atau menyediakan pencahayaan
+untuk objek.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="number">10</span>
+</td>
+
+<td>
+Kaki Mikroskop
+</td>
+
+<td>
+Menopang mikroskop agar berdiri stabil.
+</td>
+
+</tr>
+
+
+</tbody>
+
+</table>
 
 </div>
 
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- PILIH JENIS PREPARAT -->
+<!-- ================================================= -->
+
+<section id="types" class="section">
+
+<button
+class="back-btn"
+onclick="show('home')"
+>
+← Kembali
+</button>
+
+
+<div class="menu-box">
+
+<h2>
+🧫 Pilih Jenis Preparat
+</h2>
+
+
+<div class="type-grid">
+
+
+<div
+class="type-card"
+onclick="show('plant')"
+>
+
+<div class="icon">
+🌱
+</div>
+
+<h3>
+Preparat Sel Tumbuhan
+</h3>
+
 <p>
-<strong>
-Ilustrasi sederhana mikroskop
-</strong>
+Pilih salah satu dari tiga
+preparat sel tumbuhan.
 </p>
 
 </div>
 
 
-<!-- DAFTAR BAGIAN -->
+<div
+class="type-card"
+onclick="show('animal')"
+>
 
-<div class="parts-list">
-
-
-<div class="part-item">
-
-<h3>1. Lensa Okuler</h3>
-
-<p>
-Bagian yang digunakan untuk melihat
-objek melalui mikroskop. Lensa ini
-memperbesar bayangan objek.
-</p>
-
+<div class="icon">
+🧫
 </div>
 
-
-<div class="part-item">
-
-<h3>2. Tubus</h3>
-
-<p>
-Bagian berbentuk tabung yang
-menghubungkan lensa okuler dengan
-bagian lensa objektif.
-</p>
-
-</div>
-
-
-<div class="part-item">
-
-<h3>3. Revolver</h3>
+<h3>
+Preparat Sel Hewan
+</h3>
 
 <p>
-Bagian yang digunakan untuk memilih
-dan mengganti lensa objektif.
-</p>
-
-</div>
-
-
-<div class="part-item">
-
-<h3>4. Lensa Objektif</h3>
-
-<p>
-Lensa yang berada dekat dengan
-preparat dan berfungsi memperbesar
-objek yang diamati.
-</p>
-
-</div>
-
-
-<div class="part-item">
-
-<h3>5. Meja Preparat</h3>
-
-<p>
-Tempat meletakkan preparat atau
-kaca objek yang akan diamati.
-</p>
-
-</div>
-
-
-<div class="part-item">
-
-<h3>6. Pemutar Fokus</h3>
-
-<p>
-Digunakan untuk mengatur ketajaman
-bayangan objek agar terlihat jelas.
-</p>
-
-</div>
-
-
-<div class="part-item">
-
-<h3>7. Lengan Mikroskop</h3>
-
-<p>
-Bagian yang berfungsi sebagai
-pegangan dan penyangga tubuh
-mikroskop.
-</p>
-
-</div>
-
-
-<div class="part-item">
-
-<h3>8. Kaki Mikroskop</h3>
-
-<p>
-Bagian dasar yang menopang
-mikroskop agar tetap stabil
-saat digunakan.
+Pilih salah satu dari tiga
+preparat sel hewan.
 </p>
 
 </div>
@@ -1012,71 +1324,624 @@ saat digunakan.
 </section>
 
 
-<!-- =========================
-PREPARAT DIGITAL
-========================= -->
 
-<section
-id="preparatSection"
-class="page-section">
+<!-- ================================================= -->
+<!-- PREPARAT TUMBUHAN -->
+<!-- ================================================= -->
+
+<section id="plant" class="section">
 
 <button
-class="back-button"
-onclick="showSection('homeSection')">
-
-← Kembali ke Pilihan Utama
-
+class="back-btn"
+onclick="show('types')"
+>
+← Kembali ke Jenis Preparat
 </button>
 
 
-<!-- PILIH PREPARAT -->
-
-<section class="preparat-menu">
+<div class="menu-box">
 
 <h2>
-🧫 Pilih Preparat Digital
+🌱 Preparat Sel Tumbuhan
 </h2>
 
-<div class="preparat-buttons">
+
+<div class="preparat-list">
+
 
 <button
 class="preparat-btn active"
-onclick="pilihPreparat('bawang',this)">
-
+onclick="loadPrep('bawang',this)"
+>
 🌱 Sel Epidermis Bawang Merah
-
 </button>
 
 
 <button
 class="preparat-btn"
-onclick="pilihPreparat('elodea',this)">
-
+onclick="loadPrep('elodea',this)"
+>
 🌿 Sel Daun Elodea
-
 </button>
 
 
 <button
 class="preparat-btn"
-onclick="pilihPreparat('pipi',this)">
-
-🧫 Sel Epitel Pipi
-
+onclick="loadPrep('hydrilla',this)"
+>
+🌿 Sel Daun Hydrilla
 </button>
+
 
 </div>
+
+</div>
+
+
+<div id="plantContent"></div>
 
 </section>
 
 
-<!-- MIKROSKOP -->
 
-<section class="microscope">
+<!-- ================================================= -->
+<!-- PREPARAT HEWAN -->
+<!-- ================================================= -->
+
+<section id="animal" class="section">
+
+<button
+class="back-btn"
+onclick="show('types')"
+>
+← Kembali ke Jenis Preparat
+</button>
+
+
+<div class="menu-box">
+
+<h2>
+🧫 Preparat Sel Hewan
+</h2>
+
+
+<div class="preparat-list">
+
+
+<button
+class="preparat-btn active"
+onclick="loadPrep('pipi',this)"
+>
+🧫 Sel Epitel Pipi
+</button>
+
+
+<button
+class="preparat-btn"
+onclick="loadPrep('otot',this)"
+>
+💪 Sel Otot
+</button>
+
+
+<button
+class="preparat-btn"
+onclick="loadPrep('darah',this)"
+>
+🩸 Sel Darah
+</button>
+
+
+</div>
+
+</div>
+
+
+<div id="animalContent"></div>
+
+</section>
+
+
+
+<!-- AKTIVITAS -->
+
+<section class="activity">
+
+<a href="aktivitas.html">
+📝 MULAI AKTIVITAS PENGAMATAN
+</a>
+
+</section>
+
+
+<section class="source">
+
+<strong>Catatan:</strong>
+
+Gambar preparat dapat diganti dengan
+foto mikroskopis yang telah dipilih
+dan diverifikasi oleh guru sesuai
+kebutuhan pembelajaran.
+
+</section>
+
+
+</div>
+
+
+<footer>
+
+<p>
+Media Pembelajaran IPA –
+Mikroskop Virtual Berbasis QR Code
+</p>
+
+<p>
+Materi Sel Kelas VIII |
+UPTD SMPN 3 Barru
+</p>
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+DATA PREPARAT
+===================================================== */
+
+const prep = {
+
+
+/* ================================
+BAWANG MERAH
+================================ */
+
+bawang:{
+
+cat:"tumbuhan",
+
+name:"🌱 Sel Epidermis Bawang Merah",
+
+img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Onion_Epidermis_Cells_W.M._40x_-_185.jpg",
+
+desc:
+"Amati bentuk dan susunan sel epidermis bawang merah.",
+
+focus:[
+"Bentuk dan susunan sel",
+"Dinding sel",
+"Inti sel",
+"Vakuola"
+],
+
+parts:[
+
+[
+"1",
+"Dinding sel",
+"Memberi bentuk dan melindungi sel tumbuhan."
+],
+
+[
+"2",
+"Membran sel",
+"Mengatur keluar masuknya zat."
+],
+
+[
+"3",
+"Sitoplasma",
+"Tempat berbagai aktivitas metabolisme sel."
+],
+
+[
+"4",
+"Inti sel",
+"Mengatur aktivitas sel dan menyimpan materi genetik."
+],
+
+[
+"5",
+"Vakuola",
+"Menyimpan air dan berbagai zat terlarut."
+]
+
+]
+
+},
+
+
+
+/* ================================
+ELODEA
+================================ */
+
+elodea:{
+
+cat:"tumbuhan",
+
+name:"🌿 Sel Daun Elodea",
+
+img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Elodea_cells_under_microscope.jpg",
+
+desc:
+"Amati susunan sel dan kloroplas pada daun Elodea.",
+
+focus:[
+"Bentuk sel",
+"Susunan sel",
+"Kloroplas",
+"Dinding sel"
+],
+
+parts:[
+
+[
+"1",
+"Dinding sel",
+"Memberi bentuk dan perlindungan."
+],
+
+[
+"2",
+"Membran sel",
+"Mengatur pertukaran zat."
+],
+
+[
+"3",
+"Sitoplasma",
+"Tempat aktivitas metabolisme."
+],
+
+[
+"4",
+"Kloroplas",
+"Tempat berlangsungnya fotosintesis."
+],
+
+[
+"5",
+"Vakuola",
+"Menyimpan air dan zat terlarut."
+]
+
+]
+
+},
+
+
+
+/* ================================
+HYDRILLA
+================================ */
+
+hydrilla:{
+
+cat:"tumbuhan",
+
+name:"🌿 Sel Daun Hydrilla",
+
+img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Hydrilla_leaf_cells.jpg",
+
+desc:
+"Amati susunan sel dan kloroplas pada daun Hydrilla.",
+
+focus:[
+"Bentuk sel",
+"Dinding sel",
+"Kloroplas",
+"Sitoplasma"
+],
+
+parts:[
+
+[
+"1",
+"Dinding sel",
+"Memberi bentuk dan perlindungan."
+],
+
+[
+"2",
+"Membran sel",
+"Mengatur keluar masuknya zat."
+],
+
+[
+"3",
+"Sitoplasma",
+"Tempat berbagai aktivitas metabolisme."
+],
+
+[
+"4",
+"Kloroplas",
+"Mengandung klorofil dan menjadi tempat fotosintesis."
+],
+
+[
+"5",
+"Vakuola",
+"Menyimpan air dan membantu menjaga tekanan turgor."
+]
+
+]
+
+},
+
+
+
+/* ================================
+SEL EPITEL PIPI
+================================ */
+
+pipi:{
+
+cat:"hewan",
+
+name:"🧫 Sel Epitel Pipi",
+
+img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Microscopic_Image_of_Human_Cheek_Cells.jpg",
+
+desc:
+"Amati bentuk sel epitel pipi dan struktur yang tampak.",
+
+focus:[
+"Bentuk sel",
+"Membran sel",
+"Sitoplasma",
+"Inti sel"
+],
+
+parts:[
+
+[
+"1",
+"Membran sel",
+"Membatasi sel dan mengatur keluar masuknya zat."
+],
+
+[
+"2",
+"Sitoplasma",
+"Tempat berbagai aktivitas metabolisme."
+],
+
+[
+"3",
+"Inti sel",
+"Mengatur aktivitas sel dan menyimpan materi genetik."
+]
+
+]
+
+},
+
+
+
+/* ================================
+SEL OTOT
+================================ */
+
+otot:{
+
+cat:"hewan",
+
+name:"💪 Sel Otot",
+
+img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Skeletal_muscle.jpg",
+
+desc:
+"Amati bentuk dan susunan jaringan otot pada preparat.",
+
+focus:[
+"Bentuk serabut",
+"Membran sel",
+"Sitoplasma",
+"Inti sel"
+],
+
+parts:[
+
+[
+"1",
+"Membran sel",
+"Membatasi sel dan membantu mengatur pertukaran zat."
+],
+
+[
+"2",
+"Sitoplasma",
+"Tempat berlangsungnya reaksi metabolisme."
+],
+
+[
+"3",
+"Inti sel",
+"Mengatur aktivitas sel dan menyimpan materi genetik."
+]
+
+]
+
+},
+
+
+
+/* ================================
+SEL DARAH
+================================ */
+
+darah:{
+
+cat:"hewan",
+
+name:"🩸 Sel Darah",
+
+img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Red_White_Blood_cells.jpg",
+
+desc:
+"Amati karakteristik visual sel darah pada preparat.",
+
+focus:[
+"Bentuk sel",
+"Sel darah merah",
+"Sel darah putih",
+"Ciri visual sel"
+],
+
+parts:[
+
+[
+"1",
+"Sel darah merah (eritrosit)",
+"Mengangkut oksigen dan sebagian karbon dioksida."
+],
+
+[
+"2",
+"Sel darah putih (leukosit)",
+"Berperan dalam pertahanan tubuh."
+],
+
+[
+"3",
+"Plasma darah",
+"Bagian cair darah yang membawa berbagai zat."
+]
+
+]
+
+}
+
+};
+
+
+
+/* =====================================================
+VARIABEL
+===================================================== */
+
+let zoom = 1;
+
+let currentTarget = "";
+
+
+
+/* =====================================================
+NAVIGASI
+===================================================== */
+
+function show(id){
+
+document
+.querySelectorAll(".section")
+.forEach(
+x=>x.classList.remove("active")
+);
+
+document
+.getElementById(id)
+.classList.add("active");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+
+/* default preparat */
+
+if(id==="plant"){
+
+loadPrep(
+"bawang",
+document.querySelector(
+"#plant .preparat-btn"
+)
+);
+
+}
+
+
+if(id==="animal"){
+
+loadPrep(
+"pipi",
+document.querySelector(
+"#animal .preparat-btn"
+)
+);
+
+}
+
+}
+
+
+
+/* =====================================================
+MEMILIH PREPARAT
+===================================================== */
+
+function loadPrep(key,btn){
+
+const d = prep[key];
+
+
+/* menentukan target */
+
+currentTarget =
+d.cat==="tumbuhan"
+?
+"plantContent"
+:
+"animalContent";
+
+
+/* tombol aktif */
+
+const parent =
+d.cat==="tumbuhan"
+?
+"plant"
+:
+"animal";
+
+
+document
+.querySelectorAll(
+"#"+parent+" .preparat-btn"
+)
+.forEach(
+x=>x.classList.remove("active")
+);
+
+
+if(btn){
+
+btn.classList.add("active");
+
+}
+
+
+zoom=1;
+
+
+
+/* tampilkan preparat */
+
+document.getElementById(
+currentTarget
+).innerHTML = `
+
+<div class="microscope">
 
 <div class="microscope-title">
 
-🔬 AREA PENGAMATAN MIKROSKOP
+🔬 AREA PENGAMATAN:
+${d.name}
 
 </div>
 
@@ -1085,430 +1950,213 @@ onclick="pilihPreparat('pipi',this)">
 
 <img
 id="preparatImage"
-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Onion_Epidermis_Cells_W.M._40x_-_185.jpg"
-alt="Preparat Sel Epidermis Bawang Merah">
+src="${d.img}"
+alt="${d.name}"
+>
 
 </div>
 
 
-<!-- KONTROL -->
-
 <div class="controls">
+
 
 <button
 class="control-btn"
-onclick="zoomOut()">
-
+onclick="zoomOut()"
+>
 ➖ Zoom Out
-
 </button>
 
 
 <span
 class="zoom-level"
-id="zoomText">
-
+id="zoomText"
+>
 Zoom 1×
-
 </span>
 
 
 <button
 class="control-btn"
-onclick="zoomIn()">
-
+onclick="zoomIn()"
+>
 ➕ Zoom In
-
 </button>
 
 
 <button
 class="control-btn"
-onclick="resetZoom()">
-
+onclick="resetZoom()"
+>
 🔄 Reset
-
 </button>
 
 
 <button
 class="control-btn"
-onclick="setMagnification(1)">
-
+onclick="magnify(1)"
+>
 40×
-
 </button>
 
 
 <button
 class="control-btn"
-onclick="setMagnification(2)">
-
+onclick="magnify(2)"
+>
 100×
-
 </button>
 
 
 <button
 class="control-btn"
-onclick="setMagnification(3)">
-
+onclick="magnify(3)"
+>
 400×
-
 </button>
 
+
 </div>
-
-
-<!-- IDENTIFIKASI STRUKTUR -->
-
-<div class="structure-control">
-
-<button
-class="structure-btn"
-id="structureButton"
-onclick="toggleStructure()">
-
-👁 Tampilkan Struktur
-
-</button>
 
 </div>
 
 
-<div
-id="structurePanel"
-class="structure-panel">
 
-<h3>
-🔎 Struktur yang Dapat Diamati
-</h3>
+<div class="info">
 
-<p>
-Amati preparat terlebih dahulu.
-Setelah itu tampilkan struktur
-yang dapat dikenali.
-</p>
-
-<ul
-id="structureList"
-class="structure-list">
-</ul>
-
-</div>
-
-</section>
-
-
-<!-- INFORMASI -->
-
-<section class="info">
-
-<h2 id="namaPreparat">
-
-🌱 Sel Epidermis Bawang Merah
-
+<h2>
+${d.name}
 </h2>
 
 
-<p id="deskripsiPreparat">
-
-Preparat sel epidermis bawang merah
-menunjukkan susunan sel tumbuhan
-yang relatif teratur. Amati bentuk
-sel dan bagian yang dapat dikenali
-secara visual.
-
+<p>
+${d.desc}
 </p>
 
 
 <p>
-<strong>Fokus pengamatan:</strong>
+<strong>
+Fokus pengamatan:
+</strong>
 </p>
 
 
-<ul id="fokusPreparat">
+<ul>
 
-<li>
-Bentuk dan susunan sel
-</li>
-
-<li>
-Dinding sel
-</li>
-
-<li>
-Inti sel yang tampak
-</li>
-
-<li>
-Ciri khas sel tumbuhan
-</li>
+${d.focus
+.map(
+x=>"<li>"+x+"</li>"
+)
+.join("")
+}
 
 </ul>
-
-</section>
-
-
-<!-- AKTIVITAS -->
-
-<section class="activity">
-
-<a href="aktivitas.html">
-
-📝 MULAI AKTIVITAS PENGAMATAN
-
-</a>
-
-</section>
-
-
-<!-- SUMBER -->
-
-<section class="source">
-
-<strong>
-Sumber preparat digital:
-</strong>
-
-<br>
-
-1. Onion Epidermis Cells – Logan Rickert,
-Creative Commons Attribution 2.0.
-
-<br>
-
-2. Elodea Cells Under Microscope – ~delta,
-Creative Commons Attribution-ShareAlike 4.0.
-
-<br>
-
-3. Microscopic Image of Human Cheek Cells –
-Aholderfield, Creative Commons Attribution 4.0.
-
-</section>
-
-</section>
-
 
 </div>
 
 
-<!-- =========================
-FOOTER
-========================= -->
 
-<footer>
+<div class="structure-box">
 
-<p>
-Media Pembelajaran IPA – Mikroskop Virtual Berbasis QR Code
+<h2>
+📋 Keterangan Nomor,
+Nama Bagian, dan Fungsi
+</h2>
+
+
+<table class="structure-table">
+
+<thead>
+
+<tr>
+
+<th>
+No.
+</th>
+
+<th>
+Nama Bagian
+</th>
+
+<th>
+Fungsi
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+${d.parts.map(
+
+x=>`
+
+<tr>
+
+<td>
+
+<span class="number">
+
+${x[0]}
+
+</span>
+
+</td>
+
+
+<td>
+
+<strong>
+${x[1]}
+</strong>
+
+</td>
+
+
+<td>
+
+${x[2]}
+
+</td>
+
+</tr>
+
+`
+
+).join("")}
+
+</tbody>
+
+</table>
+
+
+<p class="image-note">
+
+Nomor struktur harus disesuaikan
+dengan posisi struktur yang benar-benar
+tampak pada gambar preparat.
+
 </p>
 
-<p>
-Materi Sel Kelas VIII | UPTD SMPN 3 Barru
-</p>
+</div>
 
-</footer>
-
-
-<script>
-
-/* =========================
-NAVIGASI HALAMAN
-========================= */
-
-function showSection(sectionId){
-
-document.querySelectorAll(".page-section")
-.forEach(function(section){
-
-section.classList.remove("active");
-
-});
-
-document.getElementById(sectionId)
-.classList.add("active");
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+`;
 
 }
 
 
-/* =========================
-DATA PREPARAT
-========================= */
 
-const preparat={
-
-bawang:{
-
-nama:"🌱 Sel Epidermis Bawang Merah",
-
-gambar:
-"https://commons.wikimedia.org/wiki/Special:Redirect/file/Onion_Epidermis_Cells_W.M._40x_-_185.jpg",
-
-deskripsi:
-"Preparat sel epidermis bawang merah menunjukkan susunan sel tumbuhan yang relatif teratur. Amati bentuk sel dan bagian yang dapat dikenali secara visual.",
-
-fokus:[
-"Bentuk dan susunan sel",
-"Dinding sel",
-"Inti sel yang tampak",
-"Ciri khas sel tumbuhan"
-],
-
-struktur:[
-"Dinding sel",
-"Membran sel",
-"Sitoplasma",
-"Nukleus (inti sel)",
-"Vakuola"
-]
-
-},
-
-
-elodea:{
-
-nama:"🌿 Sel Daun Elodea",
-
-gambar:
-"https://commons.wikimedia.org/wiki/Special:Redirect/file/Elodea_cells_under_microscope.jpg",
-
-deskripsi:
-"Preparat daun Elodea memperlihatkan sel tumbuhan dengan struktur yang dapat diamati secara visual, termasuk susunan sel dan kloroplas.",
-
-fokus:[
-"Bentuk sel",
-"Susunan sel",
-"Kloroplas",
-"Ciri khas sel tumbuhan"
-],
-
-struktur:[
-"Dinding sel",
-"Membran sel",
-"Sitoplasma",
-"Nukleus (inti sel)",
-"Kloroplas",
-"Vakuola"
-]
-
-},
-
-
-pipi:{
-
-nama:"🧫 Sel Epitel Pipi",
-
-gambar:
-"https://commons.wikimedia.org/wiki/Special:Redirect/file/Microscopic_Image_of_Human_Cheek_Cells.jpg",
-
-deskripsi:
-"Preparat sel epitel pipi merupakan contoh sel hewan. Amati bentuk sel dan bagian yang dapat terlihat pada preparat.",
-
-fokus:[
-"Bentuk sel",
-"Membran sel",
-"Inti sel",
-"Ciri khas sel hewan"
-],
-
-struktur:[
-"Membran sel",
-"Sitoplasma",
-"Nukleus (inti sel)"
-]
-
-}
-
-};
-
-
-let zoom=1;
-
-
-/* =========================
-PILIH PREPARAT
-========================= */
-
-function pilihPreparat(jenis,tombol){
-
-const data=preparat[jenis];
-
-
-document.getElementById("preparatImage")
-.src=data.gambar;
-
-
-document.getElementById("preparatImage")
-.alt=data.nama;
-
-
-document.getElementById("namaPreparat")
-.innerHTML=data.nama;
-
-
-document.getElementById("deskripsiPreparat")
-.innerHTML=data.deskripsi;
-
-
-/* FOKUS */
-
-const fokus=
-document.getElementById("fokusPreparat");
-
-fokus.innerHTML="";
-
-
-data.fokus.forEach(function(item){
-
-const li=document.createElement("li");
-
-li.textContent=item;
-
-fokus.appendChild(li);
-
-});
-
-
-/* TOMBOL AKTIF */
-
-document.querySelectorAll(".preparat-btn")
-.forEach(function(btn){
-
-btn.classList.remove("active");
-
-});
-
-
-tombol.classList.add("active");
-
-
-/* RESET */
-
-resetZoom();
-
-
-/* PERBARUI STRUKTUR */
-
-updateStructure(data);
-
-}
-
-
-/* =========================
-ZOOM IN
-========================= */
+/* =====================================================
+ZOOM
+===================================================== */
 
 function zoomIn(){
 
 if(zoom<4){
 
-zoom+=0.5;
+zoom += .5;
 
 }
 
@@ -1516,16 +2164,12 @@ updateZoom();
 
 }
 
-
-/* =========================
-ZOOM OUT
-========================= */
 
 function zoomOut(){
 
-if(zoom>0.5){
+if(zoom>.5){
 
-zoom-=0.5;
+zoom -= .5;
 
 }
 
@@ -1533,10 +2177,6 @@ updateZoom();
 
 }
 
-
-/* =========================
-RESET
-========================= */
 
 function resetZoom(){
 
@@ -1547,25 +2187,25 @@ updateZoom();
 }
 
 
-/* =========================
+/* =====================================================
 MAGNIFICATION
-========================= */
+===================================================== */
 
-function setMagnification(level){
+function magnify(n){
 
-if(level===1){
+if(n===1){
 
 zoom=1;
 
 }
 
-if(level===2){
+else if(n===2){
 
 zoom=2;
 
 }
 
-if(level===3){
+else if(n===3){
 
 zoom=4;
 
@@ -1576,93 +2216,34 @@ updateZoom();
 }
 
 
-/* =========================
+/* =====================================================
 UPDATE ZOOM
-========================= */
+===================================================== */
 
 function updateZoom(){
 
-const image=
-document.getElementById("preparatImage");
-
-image.style.transform=
-"scale("+zoom+")";
-
-
-document.getElementById("zoomText")
-.textContent="Zoom "+zoom+"×";
-
-}
+const image =
+document.getElementById(
+"preparatImage"
+);
 
 
-/* =========================
-UPDATE STRUCTURE
-========================= */
+if(image){
 
-function updateStructure(data){
-
-const list=
-document.getElementById("structureList");
-
-list.innerHTML="";
+image.style.transform =
+`scale(${zoom})`;
 
 
-data.struktur.forEach(function(item){
-
-const li=
-document.createElement("li");
-
-li.innerHTML=
-"🔹 <strong>"+item+"</strong>";
-
-list.appendChild(li);
-
-});
-
-}
-
-
-/* =========================
-TOGGLE STRUCTURE
-========================= */
-
-function toggleStructure(){
-
-const panel=
-document.getElementById("structurePanel");
-
-const button=
-document.getElementById("structureButton");
-
-
-if(panel.classList.contains("show")){
-
-panel.classList.remove("show");
-
-button.innerHTML=
-"👁 Tampilkan Struktur";
-
-}else{
-
-panel.classList.add("show");
-
-button.innerHTML=
-"🙈 Sembunyikan Struktur";
+document.getElementById(
+"zoomText"
+).textContent =
+`Zoom ${zoom}×`;
 
 }
 
 }
-
-
-/* =========================
-DEFAULT
-========================= */
-
-updateStructure(preparat.bawang);
 
 </script>
 
-
 </body>
-
 </html>
