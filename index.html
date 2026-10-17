@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,183 +9,233 @@
 <style>
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f4f8f7;
-    color:#455a64;
+font-family:Arial,sans-serif;
+background:#f4f8f7;
+color:#455a64;
 }
 
+/* HEADER */
+
 header{
-    background:#5f9f9a;
-    color:white;
-    padding:18px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+background:#5f9f9a;
+color:white;
+padding:18px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 header h2{
-    font-size:22px;
+font-size:22px;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-    font-weight:bold;
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:bold;
 }
 
+nav a:hover{
+text-decoration:underline;
+}
+
+/* HERO */
+
 .hero{
-    text-align:center;
-    padding:70px 20px 50px;
-    background:white;
+text-align:center;
+padding:70px 20px 50px;
+background:white;
 }
 
 .hero h1{
-    font-size:30px;
-    color:#5d7478;
-    margin-bottom:20px;
+font-size:30px;
+color:#5d7478;
+margin-bottom:20px;
 }
 
 .hero h2{
-    font-size:25px;
-    color:#465d61;
-    margin-bottom:20px;
+font-size:25px;
+color:#465d61;
+margin-bottom:20px;
 }
 
 .hero p{
-    font-size:17px;
-    margin-bottom:15px;
+font-size:17px;
+margin-bottom:15px;
 }
 
 .btn{
-    display:inline-block;
-    padding:15px 30px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    margin:5px;
+display:inline-block;
+padding:15px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+margin:5px;
 }
 
 .btn-belajar{
-    background:#f5c400;
-    color:#4f4f4f;
+background:#f5c400;
+color:#4f4f4f;
 }
 
 .btn-panduan{
-    background:#5f9f9a;
-    color:white;
+background:#5f9f9a;
+color:white;
 }
 
+.btn:hover{
+transform:scale(1.03);
+}
+
+/* MENU */
+
 .menu{
-    padding:55px 6%;
+padding:55px 6%;
 }
 
 .menu h2{
-    text-align:center;
-    font-size:28px;
-    color:#5d7478;
-    margin-bottom:35px;
+text-align:center;
+font-size:28px;
+color:#5d7478;
+margin-bottom:35px;
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:22px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:22px;
 }
 
 .card{
-    background:white;
-    border-radius:18px;
-    padding:30px 20px;
-    text-align:center;
-    box-shadow:0 5px 18px rgba(0,0,0,0.08);
-    transition:0.3s;
+background:white;
+border-radius:18px;
+padding:30px 20px;
+text-align:center;
+box-shadow:0 5px 18px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+transform:translateY(-5px);
 }
 
 .icon{
-    font-size:45px;
-    margin-bottom:15px;
+font-size:45px;
+margin-bottom:15px;
 }
 
 .card h3{
-    color:#587477;
-    margin-bottom:12px;
+color:#587477;
+margin-bottom:12px;
 }
 
 .card p{
-    font-size:14px;
-    line-height:1.6;
-    margin-bottom:18px;
+font-size:14px;
+line-height:1.6;
+margin-bottom:18px;
 }
 
 .card a{
-    display:inline-block;
-    padding:10px 20px;
-    background:#6da9a4;
-    color:white;
-    border-radius:20px;
-    text-decoration:none;
-    font-size:14px;
+display:inline-block;
+padding:10px 20px;
+background:#6da9a4;
+color:white;
+border-radius:20px;
+text-decoration:none;
+font-size:14px;
 }
 
-footer{
-    background:#5f9f9a;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:30px;
+.card a:hover{
+background:#4f8f8a;
 }
+
+/* FOOTER */
+
+footer{
+background:#5f9f9a;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:30px;
+}
+
+footer p{
+margin:5px;
+}
+
+/* RESPONSIVE */
 
 @media(max-width:600px){
 
-    header{
-        flex-direction:column;
-        gap:15px;
-    }
+header{
+flex-direction:column;
+gap:15px;
+}
 
-    nav a{
-        margin:0 8px;
-        font-size:14px;
-    }
+nav{
+text-align:center;
+}
 
-    .hero h1{
-        font-size:25px;
-    }
+nav a{
+margin:0 7px;
+font-size:14px;
+}
 
-    .hero h2{
-        font-size:21px;
-    }
+.hero h1{
+font-size:25px;
+}
+
+.hero h2{
+font-size:21px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
 
 }
 
 </style>
+
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <header>
 
 <h2>🔬 Mikroskop Virtual</h2>
 
 <nav>
+
 <a href="index.html">Beranda</a>
+
 <a href="panduan.html">Panduan</a>
+
 <a href="materi.html">Materi</a>
+
+<a href="aktivitas.html">Aktivitas</a>
+
 <a href="mikroskop.html">Mikroskop</a>
+
 </nav>
 
 </header>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -197,8 +246,11 @@ footer{
 <p>UPTD SMPN 3 Barru</p>
 
 <p>
-Ayo belajar mengenal struktur dan fungsi sel melalui pengalaman mengamati secara digital.
+Ayo belajar mengenal struktur dan fungsi sel
+melalui pengalaman mengamati secara digital.
 </p>
+
+<br>
 
 <a href="mikroskop.html" class="btn btn-belajar">
 🚀 MULAI BELAJAR
@@ -210,6 +262,8 @@ Ayo belajar mengenal struktur dan fungsi sel melalui pengalaman mengamati secara
 
 </section>
 
+
+<!-- MENU PEMBELAJARAN -->
 
 <section class="menu">
 
@@ -227,7 +281,8 @@ Ayo belajar mengenal struktur dan fungsi sel melalui pengalaman mengamati secara
 <h3>Mikroskop Virtual</h3>
 
 <p>
-Mengamati preparat sel secara digital menggunakan mikroskop virtual.
+Mengamati preparat sel secara digital
+menggunakan mikroskop virtual.
 </p>
 
 <a href="mikroskop.html">
@@ -246,7 +301,8 @@ Buka
 <h3>Sel Tumbuhan</h3>
 
 <p>
-Mengenal struktur dan bagian sel tumbuhan.
+Mengenal struktur dan bagian
+sel tumbuhan.
 </p>
 
 <a href="materi.html">
@@ -265,7 +321,8 @@ Pelajari
 <h3>Sel Hewan</h3>
 
 <p>
-Mengenal struktur dan bagian sel hewan.
+Mengenal struktur dan bagian
+sel hewan.
 </p>
 
 <a href="materi.html">
@@ -284,7 +341,8 @@ Pelajari
 <h3>Materi Sel</h3>
 
 <p>
-Mempelajari konsep dasar struktur dan fungsi sel.
+Mempelajari konsep dasar
+struktur dan fungsi sel.
 </p>
 
 <a href="materi.html">
@@ -303,10 +361,12 @@ Pelajari
 <h3>Aktivitas</h3>
 
 <p>
-Melakukan kegiatan pengamatan, identifikasi, pencatatan, dan analisis.
+Melakukan kegiatan pengamatan,
+identifikasi, pencatatan,
+dan analisis.
 </p>
 
-<a href="materi.html">
+<a href="aktivitas.html">
 Mulai
 </a>
 
@@ -322,7 +382,8 @@ Mulai
 <h3>QR Code</h3>
 
 <p>
-Akses media pembelajaran menggunakan QR Code.
+Akses media pembelajaran
+menggunakan QR Code.
 </p>
 
 <a href="panduan.html">
@@ -337,6 +398,8 @@ Panduan
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
 <p>
@@ -348,6 +411,7 @@ Materi Sel Kelas VIII | UPTD SMPN 3 Barru
 </p>
 
 </footer>
+
 
 </body>
 </html>
