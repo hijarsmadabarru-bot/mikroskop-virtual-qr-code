@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Mikroskop Virtual - UPTD SMPN 3 Barru</title>
@@ -50,7 +53,7 @@ text-decoration:underline;
 
 .hero{
 text-align:center;
-padding:70px 20px 50px;
+padding:70px 20px 55px;
 background:white;
 }
 
@@ -69,6 +72,7 @@ margin-bottom:20px;
 .hero p{
 font-size:17px;
 margin-bottom:15px;
+line-height:1.6;
 }
 
 .btn{
@@ -90,10 +94,6 @@ background:#5f9f9a;
 color:white;
 }
 
-.btn:hover{
-transform:scale(1.03);
-}
-
 /* MENU */
 
 .menu{
@@ -109,14 +109,16 @@ margin-bottom:35px;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:22px;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+max-width:900px;
+margin:auto;
 }
 
 .card{
 background:white;
 border-radius:18px;
-padding:30px 20px;
+padding:35px 25px;
 text-align:center;
 box-shadow:0 5px 18px rgba(0,0,0,0.08);
 transition:0.3s;
@@ -127,29 +129,31 @@ transform:translateY(-5px);
 }
 
 .icon{
-font-size:45px;
+font-size:48px;
 margin-bottom:15px;
 }
 
 .card h3{
 color:#587477;
+font-size:21px;
 margin-bottom:12px;
 }
 
 .card p{
 font-size:14px;
 line-height:1.6;
-margin-bottom:18px;
+margin-bottom:20px;
 }
 
 .card a{
 display:inline-block;
-padding:10px 20px;
+padding:11px 25px;
 background:#6da9a4;
 color:white;
-border-radius:20px;
+border-radius:25px;
 text-decoration:none;
 font-size:14px;
+font-weight:bold;
 }
 
 .card a:hover{
@@ -170,7 +174,7 @@ footer p{
 margin:5px;
 }
 
-/* RESPONSIVE */
+/* HP */
 
 @media(max-width:600px){
 
@@ -184,16 +188,20 @@ text-align:center;
 }
 
 nav a{
-margin:0 7px;
-font-size:14px;
+margin:0 6px;
+font-size:13px;
+}
+
+.hero{
+padding:50px 20px 40px;
 }
 
 .hero h1{
-font-size:25px;
+font-size:24px;
 }
 
 .hero h2{
-font-size:21px;
+font-size:20px;
 }
 
 .hero p{
@@ -210,7 +218,9 @@ grid-template-columns:1fr;
 
 </head>
 
+
 <body>
+
 
 <!-- HEADER -->
 
@@ -250,8 +260,6 @@ Ayo belajar mengenal struktur dan fungsi sel
 melalui pengalaman mengamati secara digital.
 </p>
 
-<br>
-
 <a href="mikroskop.html" class="btn btn-belajar">
 🚀 MULAI BELAJAR
 </a>
@@ -263,7 +271,7 @@ melalui pengalaman mengamati secara digital.
 </section>
 
 
-<!-- MENU PEMBELAJARAN -->
+<!-- 4 MENU UTAMA -->
 
 <section class="menu">
 
@@ -272,61 +280,21 @@ melalui pengalaman mengamati secara digital.
 <div class="grid">
 
 
-<!-- MIKROSKOP -->
+<!-- PANDUAN -->
 
 <div class="card">
 
-<div class="icon">🔬</div>
+<div class="icon">📖</div>
 
-<h3>Mikroskop Virtual</h3>
-
-<p>
-Mengamati preparat sel secara digital
-menggunakan mikroskop virtual.
-</p>
-
-<a href="mikroskop.html">
-Buka
-</a>
-
-</div>
-
-
-<!-- SEL TUMBUHAN -->
-
-<div class="card">
-
-<div class="icon">🌱</div>
-
-<h3>Sel Tumbuhan</h3>
+<h3>Panduan</h3>
 
 <p>
-Mengenal struktur dan bagian
-sel tumbuhan.
+Panduan penggunaan media pembelajaran
+Mikroskop Virtual Berbasis QR Code.
 </p>
 
-<a href="materi.html">
-Pelajari
-</a>
-
-</div>
-
-
-<!-- SEL HEWAN -->
-
-<div class="card">
-
-<div class="icon">🧫</div>
-
-<h3>Sel Hewan</h3>
-
-<p>
-Mengenal struktur dan bagian
-sel hewan.
-</p>
-
-<a href="materi.html">
-Pelajari
+<a href="panduan.html">
+Buka Panduan
 </a>
 
 </div>
@@ -341,12 +309,32 @@ Pelajari
 <h3>Materi Sel</h3>
 
 <p>
-Mempelajari konsep dasar
-struktur dan fungsi sel.
+Mempelajari pengertian, struktur,
+fungsi, jenis, dan organisasi kehidupan.
 </p>
 
 <a href="materi.html">
-Pelajari
+Pelajari Materi
+</a>
+
+</div>
+
+
+<!-- MIKROSKOP VIRTUAL -->
+
+<div class="card">
+
+<div class="icon">🔬</div>
+
+<h3>Mikroskop Virtual</h3>
+
+<p>
+Mengamati struktur sel secara digital
+menggunakan mikroskop virtual.
+</p>
+
+<a href="mikroskop.html">
+Buka Mikroskop
 </a>
 
 </div>
@@ -362,32 +350,11 @@ Pelajari
 
 <p>
 Melakukan kegiatan pengamatan,
-identifikasi, pencatatan,
-dan analisis.
+identifikasi, pencatatan, dan analisis.
 </p>
 
 <a href="aktivitas.html">
-Mulai
-</a>
-
-</div>
-
-
-<!-- QR CODE -->
-
-<div class="card">
-
-<div class="icon">📱</div>
-
-<h3>QR Code</h3>
-
-<p>
-Akses media pembelajaran
-menggunakan QR Code.
-</p>
-
-<a href="panduan.html">
-Panduan
+Mulai Aktivitas
 </a>
 
 </div>
@@ -414,4 +381,5 @@ Materi Sel Kelas VIII | UPTD SMPN 3 Barru
 
 
 </body>
+
 </html>
