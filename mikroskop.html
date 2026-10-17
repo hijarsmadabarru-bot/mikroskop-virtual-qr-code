@@ -23,7 +23,6 @@ background:#f4f8f7;
 color:#455a64;
 }
 
-
 /* HEADER */
 
 header{
@@ -50,7 +49,6 @@ nav a:hover{
 text-decoration:underline;
 }
 
-
 /* JUDUL */
 
 .hero{
@@ -70,7 +68,6 @@ font-size:16px;
 line-height:1.6;
 }
 
-
 /* CONTAINER */
 
 .container{
@@ -78,7 +75,6 @@ max-width:1100px;
 margin:35px auto;
 padding:0 20px;
 }
-
 
 /* PILIH PREPARAT */
 
@@ -122,7 +118,6 @@ background:#5f9f9a;
 color:white;
 }
 
-
 /* AREA MIKROSKOP */
 
 .microscope{
@@ -138,7 +133,6 @@ text-align:center;
 margin-bottom:20px;
 font-size:20px;
 }
-
 
 /* AREA GAMBAR */
 
@@ -162,7 +156,6 @@ transition:transform 0.3s ease;
 transform-origin:center center;
 user-select:none;
 }
-
 
 /* KONTROL */
 
@@ -199,6 +192,73 @@ align-items:center;
 padding:0 10px;
 }
 
+/* IDENTIFIKASI STRUKTUR */
+
+.structure-control{
+text-align:center;
+margin-top:15px;
+}
+
+.structure-btn{
+border:none;
+padding:12px 24px;
+border-radius:25px;
+background:#6da9a4;
+color:white;
+font-weight:bold;
+cursor:pointer;
+font-size:14px;
+transition:0.2s;
+}
+
+.structure-btn:hover{
+background:#4f8f8a;
+transform:translateY(-1px);
+}
+
+.structure-panel{
+display:none;
+background:#f4faf8;
+margin-top:15px;
+padding:20px;
+border-radius:15px;
+border-left:5px solid #6da9a4;
+}
+
+.structure-panel.show{
+display:block;
+}
+
+.structure-panel h3{
+color:#507a78;
+margin-bottom:15px;
+}
+
+.structure-panel p{
+font-size:14px;
+line-height:1.6;
+margin-bottom:15px;
+color:#607d7b;
+}
+
+.structure-list{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+list-style:none;
+}
+
+.structure-list li{
+background:white;
+padding:12px 14px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.06);
+border-left:4px solid #9bc8c2;
+}
+
+.structure-list strong{
+color:#527d79;
+}
 
 /* INFORMASI */
 
@@ -225,7 +285,6 @@ margin-left:20px;
 line-height:1.8;
 }
 
-
 /* AKTIVITAS */
 
 .activity{
@@ -247,7 +306,6 @@ font-weight:bold;
 background:#4f8f8a;
 }
 
-
 /* SUMBER */
 
 .source{
@@ -260,7 +318,6 @@ line-height:1.6;
 .source a{
 color:#527d79;
 }
-
 
 /* FOOTER */
 
@@ -275,7 +332,6 @@ margin-top:40px;
 footer p{
 margin:5px;
 }
-
 
 /* MOBILE */
 
@@ -322,6 +378,14 @@ gap:8px;
 .control-btn{
 padding:10px 14px;
 font-size:13px;
+}
+
+.structure-list{
+grid-template-columns:1fr;
+}
+
+.structure-btn{
+width:100%;
 }
 
 }
@@ -384,19 +448,19 @@ struktur yang tampak melalui pengamatan visual.
 
 <button
 class="preparat-btn active"
-onclick="pilihPreparat('bawang')">
+onclick="pilihPreparat('bawang', this)">
 🌱 Sel Epidermis Bawang Merah
 </button>
 
 <button
 class="preparat-btn"
-onclick="pilihPreparat('elodea')">
+onclick="pilihPreparat('elodea', this)">
 🌿 Sel Daun Elodea
 </button>
 
 <button
 class="preparat-btn"
-onclick="pilihPreparat('pipi')">
+onclick="pilihPreparat('pipi', this)">
 🧫 Sel Epitel Pipi
 </button>
 
@@ -474,6 +538,44 @@ onclick="setMagnification(3)">
 
 </div>
 
+
+<!-- IDENTIFIKASI STRUKTUR -->
+
+<div class="structure-control">
+
+<button
+class="structure-btn"
+id="structureButton"
+onclick="toggleStructure()">
+
+👁 Tampilkan Struktur
+
+</button>
+
+</div>
+
+
+<div
+id="structurePanel"
+class="structure-panel">
+
+<h3 id="structureTitle">
+🔎 Struktur yang Dapat Diamati
+</h3>
+
+<p id="structureDescription">
+Amati preparat terlebih dahulu. Setelah itu,
+tampilkan daftar struktur yang dapat dikenali
+untuk membantu proses identifikasi.
+</p>
+
+<ul
+id="structureList"
+class="structure-list">
+</ul>
+
+</div>
+
 </section>
 
 
@@ -487,10 +589,10 @@ onclick="setMagnification(3)">
 
 <p id="deskripsiPreparat">
 
-Preparat menunjukkan sel epidermis bawang merah
-yang diamati menggunakan mikroskop. Perhatikan
-susunan sel yang tampak seperti ruang-ruang
-berbentuk teratur.
+Preparat sel epidermis bawang merah menunjukkan
+susunan sel tumbuhan yang relatif teratur.
+Amati bentuk sel dan bagian yang dapat dikenali
+secara visual.
 
 </p>
 
@@ -504,7 +606,7 @@ berbentuk teratur.
 
 <li>Inti sel yang tampak</li>
 
-<li>Perbedaan struktur dengan sel hewan</li>
+<li>Ciri khas sel tumbuhan</li>
 
 </ul>
 
@@ -582,6 +684,14 @@ fokus:[
 "Dinding sel",
 "Inti sel yang tampak",
 "Ciri khas sel tumbuhan"
+],
+
+struktur:[
+"Dinding sel",
+"Membran sel",
+"Sitoplasma",
+"Nukleus (inti sel)",
+"Vakuola"
 ]
 
 },
@@ -601,6 +711,15 @@ fokus:[
 "Susunan sel",
 "Kloroplas",
 "Ciri khas sel tumbuhan"
+],
+
+struktur:[
+"Dinding sel",
+"Membran sel",
+"Sitoplasma",
+"Nukleus (inti sel)",
+"Kloroplas",
+"Vakuola"
 ]
 
 },
@@ -620,6 +739,12 @@ fokus:[
 "Membran sel",
 "Inti sel",
 "Ciri khas sel hewan"
+],
+
+struktur:[
+"Membran sel",
+"Sitoplasma",
+"Nukleus (inti sel)"
 ]
 
 }
@@ -632,7 +757,7 @@ let zoom=1;
 
 /* PILIH PREPARAT */
 
-function pilihPreparat(jenis){
+function pilihPreparat(jenis, tombol){
 
 const data=preparat[jenis];
 
@@ -644,6 +769,8 @@ document.getElementById("namaPreparat").innerHTML=data.nama;
 
 document.getElementById("deskripsiPreparat").innerHTML=data.deskripsi;
 
+
+/* UPDATE FOKUS */
 
 const fokus=document.getElementById("fokusPreparat");
 
@@ -660,17 +787,37 @@ fokus.appendChild(li);
 });
 
 
+/* UPDATE TOMBOL */
+
 document.querySelectorAll(".preparat-btn").forEach(function(btn){
 
 btn.classList.remove("active");
 
 });
 
+tombol.classList.add("active");
 
-event.currentTarget.classList.add("active");
 
+/* RESET ZOOM */
 
 resetZoom();
+
+
+/* UPDATE STRUKTUR */
+
+updateStructure(data);
+
+
+/* Jika panel sedang terbuka,
+langsung perbarui isinya */
+
+const panel=document.getElementById("structurePanel");
+
+if(panel.classList.contains("show")){
+
+tampilkanStruktur(data);
+
+}
 
 }
 
@@ -743,7 +890,7 @@ updateZoom();
 }
 
 
-/* UPDATE TAMPILAN */
+/* UPDATE TAMPILAN ZOOM */
 
 function updateZoom(){
 
@@ -755,6 +902,117 @@ document.getElementById("zoomText").textContent=
 "Zoom "+zoom+"×";
 
 }
+
+
+/* UPDATE STRUKTUR */
+
+function updateStructure(data){
+
+const list=document.getElementById("structureList");
+
+list.innerHTML="";
+
+data.struktur.forEach(function(item){
+
+const li=document.createElement("li");
+
+li.innerHTML=
+"🔹 <strong>"+item+"</strong>";
+
+list.appendChild(li);
+
+});
+
+}
+
+
+/* TAMPILKAN STRUKTUR */
+
+function tampilkanStruktur(data){
+
+const list=document.getElementById("structureList");
+
+list.innerHTML="";
+
+data.struktur.forEach(function(item){
+
+const li=document.createElement("li");
+
+li.innerHTML=
+"🔹 <strong>"+item+"</strong>";
+
+list.appendChild(li);
+
+});
+
+}
+
+
+/* TOGGLE STRUKTUR */
+
+function toggleStructure(){
+
+const panel=
+document.getElementById("structurePanel");
+
+const button=
+document.getElementById("structureButton");
+
+
+if(panel.classList.contains("show")){
+
+panel.classList.remove("show");
+
+button.innerHTML=
+"👁 Tampilkan Struktur";
+
+}else{
+
+panel.classList.add("show");
+
+button.innerHTML=
+"🙈 Sembunyikan Struktur";
+
+
+/* Cari preparat yang sedang aktif */
+
+const tombolAktif=
+document.querySelector(".preparat-btn.active");
+
+let jenis="bawang";
+
+if(tombolAktif){
+
+const teks=
+tombolAktif.textContent.trim();
+
+if(teks.includes("Elodea")){
+
+jenis="elodea";
+
+}else if(teks.includes("Pipi")){
+
+jenis="pipi";
+
+}else{
+
+jenis="bawang";
+
+}
+
+}
+
+tampilkanStruktur(preparat[jenis]);
+
+}
+
+}
+
+
+/* TAMPILKAN STRUKTUR BAWANG
+SAAT HALAMAN PERTAMA KALI DIBUKA */
+
+updateStructure(preparat.bawang);
 
 </script>
 
