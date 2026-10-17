@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Panduan - Mikroskop Virtual</title>
+<title>Mikroskop Virtual - Materi Sel Kelas VIII</title>
 
 <style>
 *{
@@ -17,17 +17,16 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     background:#f4fbf8;
     color:#173b35;
-    line-height:1.7;
+    line-height:1.6;
 }
 
 header{
-    background:#4f9d92;
+    background:linear-gradient(135deg,#087f6b,#4f9d92);
     color:white;
     padding:18px 7%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    flex-wrap:wrap;
 }
 
 .logo{
@@ -38,107 +37,189 @@ header{
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:20px;
+    margin-left:22px;
     font-weight:bold;
 }
 
-.container{
-    max-width:950px;
-    margin:35px auto;
-    padding:0 20px;
+.hero{
+    min-height:75vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+
+    background:
+    radial-gradient(circle at top right,#ccefe7,transparent 35%),
+    linear-gradient(135deg,#f4fbf8,#e8f7f2);
 }
 
-.hero{
-    background:white;
-    border-radius:18px;
-    padding:35px;
-    text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    margin-bottom:25px;
+.hero-content{
+    max-width:850px;
+}
+
+.icon{
+    font-size:70px;
+    margin-bottom:15px;
 }
 
 .hero h1{
-    color:#347d74;
-    font-size:32px;
-    margin-bottom:10px;
-}
-
-.hero p{
-    color:#5c6f6b;
-}
-
-.card{
-    background:white;
-    border-radius:16px;
-    padding:25px;
-    margin-bottom:20px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.07);
-}
-
-.card h2{
-    color:#347d74;
+    font-size:42px;
+    color:#087f6b;
     margin-bottom:12px;
 }
 
-.card h3{
-    color:#4f9d92;
-    margin-top:15px;
-    margin-bottom:7px;
+.hero h2{
+    font-size:22px;
+    color:#486761;
+    font-weight:normal;
+    margin-bottom:12px;
 }
 
-ol, ul{
-    padding-left:25px;
+.school{
+    font-size:20px;
+    font-weight:bold;
+    color:#087f6b;
+    margin:20px 0;
 }
 
-li{
-    margin-bottom:8px;
+.hero p{
+    font-size:17px;
+    color:#5f716c;
+    margin-bottom:10px;
 }
 
-.highlight{
-    background:#fff4c7;
-    border-left:5px solid #f2c230;
-    padding:15px;
-    border-radius:8px;
-    margin-top:15px;
+.buttons{
+    margin-top:30px;
 }
 
 .btn{
     display:inline-block;
-    margin-top:20px;
-    background:#f2c230;
-    color:#173b35;
-    padding:12px 22px;
-    border-radius:25px;
     text-decoration:none;
+    padding:14px 28px;
+    border-radius:30px;
     font-weight:bold;
+    margin:5px;
+    transition:.3s;
 }
 
-footer{
-    text-align:center;
-    background:#347d74;
+.primary{
+    background:#f2c230;
+    color:#173b35;
+}
+
+.secondary{
+    background:#087f6b;
     color:white;
-    padding:20px;
-    margin-top:40px;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+}
+
+section{
+    padding:60px 7%;
+}
+
+.section-title{
+    text-align:center;
+    color:#087f6b;
+    font-size:30px;
+    margin-bottom:35px;
+}
+
+.cards{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:18px;
+
+    box-shadow:
+    0 5px 18px rgba(0,0,0,.08);
+
+    border-top:5px solid #4f9d92;
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card-icon{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#087f6b;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#60746e;
     font-size:14px;
 }
 
-@media(max-width:600px){
+.about{
+    background:white;
+    text-align:center;
+}
+
+.about-box{
+    max-width:850px;
+    margin:auto;
+    color:#5f716c;
+    font-size:16px;
+}
+
+footer{
+    background:#075b4e;
+    color:white;
+    text-align:center;
+    padding:22px;
+    font-size:13px;
+}
+
+@media(max-width:700px){
+
     header{
-        text-align:center;
-        justify-content:center;
+        flex-direction:column;
         gap:10px;
     }
 
     nav a{
         margin:0 8px;
+        font-size:14px;
     }
 
     .hero h1{
-        font-size:26px;
+        font-size:30px;
     }
 
-    .card{
-        padding:20px;
+    .hero h2{
+        font-size:18px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .btn{
+        width:100%;
+        max-width:300px;
     }
 }
 </style>
@@ -147,179 +228,221 @@ footer{
 <body>
 
 <header>
-    <div class="logo">🔬 Mikroskop Virtual</div>
+
+    <div class="logo">
+        🔬 Mikroskop Virtual
+    </div>
 
     <nav>
         <a href="index.html">Beranda</a>
-        <a href="index.html#fitur">Fitur</a>
+        <a href="panduan.html">Panduan</a>
+        <a href="#fitur">Fitur</a>
     </nav>
+
 </header>
 
-<div class="container">
 
-    <section class="hero">
-        <h1>📘 Panduan Penggunaan</h1>
-        <p>
-            Mikroskop Virtual Berbasis QR Code<br>
-            Media Pembelajaran IPA – Materi Sel Kelas VIII
-        </p>
+<section class="hero">
 
-        <a href="index.html" class="btn">
-            ← Kembali ke Beranda
-        </a>
-    </section>
+    <div class="hero-content">
 
-
-    <section class="card">
-        <h2>1. Tujuan Penggunaan</h2>
-
-        <p>
-            Mikroskop Virtual digunakan untuk membantu peserta didik
-            mengamati struktur sel secara digital melalui perangkat
-            komputer, laptop, tablet, atau smartphone.
-        </p>
-
-        <div class="highlight">
-            💡 Peserta didik dapat melakukan pengamatan secara digital
-            tanpa harus selalu menggunakan mikroskop fisik.
+        <div class="icon">
+            🔬
         </div>
-    </section>
 
+        <h1>
+            Mikroskop Virtual
+        </h1>
 
-    <section class="card">
-        <h2>2. Cara Mengakses Media</h2>
-
-        <ol>
-            <li>Siapkan smartphone, tablet, laptop, atau komputer.</li>
-            <li>Pastikan perangkat terhubung dengan internet.</li>
-            <li>Scan QR Code yang tersedia pada LKPD atau bahan pembelajaran.</li>
-            <li>Browser akan membuka halaman Mikroskop Virtual.</li>
-            <li>Klik tombol <b>“MULAI BELAJAR”</b>.</li>
-        </ol>
-    </section>
-
-
-    <section class="card">
-        <h2>3. Mengenal Halaman Utama</h2>
-
-        <p>
-            Pada halaman utama tersedia beberapa bagian utama:
-        </p>
-
-        <ul>
-            <li><b>Beranda</b> – halaman awal media.</li>
-            <li><b>Mulai Belajar</b> – masuk ke kegiatan pembelajaran.</li>
-            <li><b>Panduan</b> – petunjuk penggunaan media.</li>
-            <li><b>Fitur</b> – informasi mengenai fitur media.</li>
-        </ul>
-    </section>
-
-
-    <section class="card">
-        <h2>4. Cara Menggunakan Mikroskop Virtual</h2>
-
-        <ol>
-            <li>Pilih preparat atau objek sel yang akan diamati.</li>
-            <li>Perhatikan gambar objek pada layar.</li>
-            <li>Gunakan fitur pembesaran untuk melihat struktur sel lebih jelas.</li>
-            <li>Geser tampilan untuk mengamati bagian objek lainnya jika tersedia.</li>
-            <li>Perhatikan bagian-bagian sel yang tampak.</li>
-            <li>Gunakan informasi yang tersedia untuk membantu mengidentifikasi struktur sel.</li>
-        </ol>
-
-        <div class="highlight">
-            🔎 Amati dengan teliti sebelum menjawab pertanyaan pada LKPD.
-        </div>
-    </section>
-
-
-    <section class="card">
-        <h2>5. Kegiatan Pengamatan</h2>
-
-        <h3>A. Amati</h3>
-        <p>
-            Amati objek sel secara teliti menggunakan Mikroskop Virtual.
-        </p>
-
-        <h3>B. Identifikasi</h3>
-        <p>
-            Identifikasi bagian-bagian sel yang dapat terlihat pada objek.
-        </p>
-
-        <h3>C. Catat</h3>
-        <p>
-            Tuliskan hasil pengamatan pada LKPD yang telah disediakan.
-        </p>
-
-        <h3>D. Analisis</h3>
-        <p>
-            Bandingkan hasil pengamatan dan hubungkan struktur sel dengan
-            fungsinya.
-        </p>
-    </section>
-
-
-    <section class="card">
-        <h2>6. Tips Penggunaan</h2>
-
-        <ul>
-            <li>Gunakan koneksi internet yang stabil.</li>
-            <li>Gunakan layar dengan tingkat kecerahan yang nyaman.</li>
-            <li>Perhatikan objek secara teliti sebelum membuat kesimpulan.</li>
-            <li>Gunakan fitur pembesaran sesuai kebutuhan.</li>
-            <li>Ikuti langkah kegiatan sesuai petunjuk guru.</li>
-            <li>Catat hasil pengamatan pada LKPD.</li>
-        </ul>
-    </section>
-
-
-    <section class="card">
-        <h2>7. Jika Media Tidak Berfungsi</h2>
-
-        <ol>
-            <li>Periksa koneksi internet.</li>
-            <li>Muat ulang halaman dengan tombol <b>Refresh</b>.</li>
-            <li>Pastikan alamat media sudah benar.</li>
-            <li>Coba menggunakan browser lain.</li>
-            <li>Jika masih mengalami kendala, laporkan kepada guru.</li>
-        </ol>
-    </section>
-
-
-    <section class="card">
-        <h2>8. Etika dalam Menggunakan Media</h2>
-
-        <ul>
-            <li>Gunakan media sesuai tujuan pembelajaran.</li>
-            <li>Ikuti instruksi guru.</li>
-            <li>Jangan mengubah atau merusak data media.</li>
-            <li>Gunakan perangkat secara bertanggung jawab.</li>
-            <li>Hormati teman saat melakukan kegiatan pengamatan.</li>
-        </ul>
-    </section>
-
-
-    <section class="hero">
-        <h2 style="color:#347d74;">
-            🔬 Selamat Belajar!
+        <h2>
+            Media Pembelajaran IPA Berbasis QR Code
         </h2>
 
+        <div class="school">
+            Materi Sel untuk Siswa Kelas VIII
+        </div>
+
         <p>
-            Mari mengenal struktur dan fungsi sel melalui pengalaman
-            mengamati secara digital.
+            UPTD SMPN 3 Barru
         </p>
 
-        <a href="index.html" class="btn">
-            🚀 Mulai Belajar
-        </a>
-    </section>
+        <p>
+            Ayo belajar mengenal struktur dan fungsi sel
+            melalui pengalaman mengamati secara digital.
+        </p>
 
-</div>
+        <div class="buttons">
+
+            <a href="#fitur" class="btn primary">
+                🚀 MULAI BELAJAR
+            </a>
+
+            <a href="panduan.html" class="btn secondary">
+                📖 PANDUAN
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="fitur">
+
+    <h2 class="section-title">
+        Menu Pembelajaran
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">
+                🔬
+            </div>
+
+            <h3>
+                Mikroskop Virtual
+            </h3>
+
+            <p>
+                Mengamati preparat sel
+                secara digital.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🌱
+            </div>
+
+            <h3>
+                Sel Tumbuhan
+            </h3>
+
+            <p>
+                Mengenal struktur dan
+                bagian sel tumbuhan.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🧫
+            </div>
+
+            <h3>
+                Sel Hewan
+            </h3>
+
+            <p>
+                Mengenal struktur dan
+                bagian sel hewan.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📚
+            </div>
+
+            <h3>
+                Materi Sel
+            </h3>
+
+            <p>
+                Mempelajari konsep dasar
+                struktur dan fungsi sel.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📝
+            </div>
+
+            <h3>
+                Aktivitas
+            </h3>
+
+            <p>
+                Melakukan kegiatan
+                pengamatan dan analisis.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📱
+            </div>
+
+            <h3>
+                QR Code
+            </h3>
+
+            <p>
+                Akses media pembelajaran
+                dengan cepat.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about">
+
+    <h2 class="section-title">
+        Tentang Media
+    </h2>
+
+    <div class="about-box">
+
+        <p>
+            Media Pembelajaran Mikroskop Virtual Berbasis QR Code
+            dikembangkan untuk mendukung pembelajaran IPA materi Sel
+            kelas VIII.
+        </p>
+
+        <br>
+
+        <p>
+            Media ini membantu peserta didik mengamati struktur sel
+            secara digital dan melakukan kegiatan pembelajaran
+            berbasis pengamatan.
+        </p>
+
+    </div>
+
+</section>
 
 
 <footer>
-    Mikroskop Virtual | Media Pembelajaran IPA Berbasis QR Code<br>
-    Materi Sel untuk Siswa Kelas VIII
+
+    © 2026 Mikroskop Virtual Berbasis QR Code
+
+    <br>
+
+    Media Pembelajaran IPA – Materi Sel Kelas VIII
+
 </footer>
 
 </body>
