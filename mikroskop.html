@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mikroskop Virtual - UPTD SMPN 3 Barru</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -13,14 +15,16 @@
 }
 
 body{
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
     background:#f4f8f7;
     color:#455a64;
 }
 
+/* HEADER */
+
 header{
     background:#5f9f9a;
-    color:#fff;
+    color:white;
     padding:18px 6%;
     display:flex;
     justify-content:space-between;
@@ -32,9 +36,9 @@ header h2{
 }
 
 nav a{
-    color:#fff;
+    color:white;
     text-decoration:none;
-    margin-left:25px;
+    margin-left:22px;
     font-weight:bold;
 }
 
@@ -42,28 +46,33 @@ nav a:hover{
     text-decoration:underline;
 }
 
+/* HERO */
+
 .hero{
-    background:#fff;
+    background:white;
     text-align:center;
-    padding:45px 20px 30px;
+    padding:42px 20px 30px;
 }
 
 .hero h1{
+    color:#526b6e;
     font-size:30px;
-    color:#5d7478;
     margin-bottom:12px;
 }
 
 .hero p{
-    font-size:16px;
     line-height:1.6;
 }
+
+/* CONTAINER */
 
 .container{
     max-width:1100px;
     margin:35px auto;
     padding:0 20px;
 }
+
+/* SECTION */
 
 .section{
     display:none;
@@ -73,46 +82,48 @@ nav a:hover{
     display:block;
 }
 
+/* BOX */
+
 .menu-box,
 .info,
 .structure-box{
-    background:#fff;
+    background:white;
     border-radius:18px;
     padding:28px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
     margin-bottom:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
 .menu-box h2,
 .structure-box h2{
-    color:#5d7478;
+    color:#526b6e;
     text-align:center;
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
-/* MENU UTAMA */
+/* PILIHAN */
 
 .choice-grid,
 .type-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:20px;
+    gap:22px;
 }
 
 .choice-card,
 .type-card{
-    border:2px solid #d7e9e6;
     background:#f7fbfa;
+    border:2px solid #d8e9e6;
     border-radius:18px;
-    padding:30px 20px;
+    padding:32px 20px;
     text-align:center;
     cursor:pointer;
-    transition:.2s;
+    transition:.25s;
 }
 
 .choice-card:hover,
 .type-card:hover{
-    transform:translateY(-3px);
+    transform:translateY(-4px);
     background:#eaf5f3;
     border-color:#5f9f9a;
 }
@@ -131,19 +142,18 @@ nav a:hover{
 .choice-card p,
 .type-card p{
     line-height:1.6;
-    color:#607d80;
 }
 
-/* TOMBOL KEMBALI */
+/* BACK */
 
 .back-btn{
     border:0;
     background:#78909c;
-    color:#fff;
+    color:white;
     padding:10px 18px;
     border-radius:20px;
-    font-weight:bold;
     cursor:pointer;
+    font-weight:bold;
     margin-bottom:18px;
 }
 
@@ -151,7 +161,7 @@ nav a:hover{
     background:#607d86;
 }
 
-/* PILIH PREPARAT */
+/* PREPARAT */
 
 .preparat-list{
     display:grid;
@@ -160,11 +170,11 @@ nav a:hover{
 }
 
 .preparat-btn{
-    border:2px solid #d7e9e6;
-    padding:18px 12px;
-    border-radius:16px;
+    padding:17px 10px;
+    border-radius:15px;
+    border:2px solid #d8e9e6;
     background:#f7fbfa;
-    color:#456568;
+    color:#49686a;
     font-weight:bold;
     cursor:pointer;
 }
@@ -172,94 +182,63 @@ nav a:hover{
 .preparat-btn:hover,
 .preparat-btn.active{
     background:#5f9f9a;
-    color:#fff;
-    border-color:#5f9f9a;
+    color:white;
 }
 
-/* MIKROSKOP */
+/* ================================================= */
+/* GAMBAR MIKROSKOP REALISTIS */
+/* ================================================= */
 
-.microscope{
-    background:#263238;
+.microscope-realistic{
+    position:relative;
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    background:
+        radial-gradient(circle at 50% 45%,#ffffff 0%,#f1f5f4 65%,#e4eceb 100%);
     border-radius:20px;
-    padding:25px;
-    box-shadow:0 8px 25px rgba(0,0,0,.18);
-}
-
-.microscope-title{
-    color:#fff;
-    text-align:center;
-    margin-bottom:20px;
-    font-size:20px;
-}
-
-.viewer{
-    height:520px;
-    background:#111;
-    border:5px solid #455a64;
-    border-radius:15px;
     overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    border:1px solid #d7e3e1;
+    box-shadow:inset 0 0 30px rgba(0,0,0,.05);
 }
 
-.viewer img{
-    max-width:none;
-    width:80%;
+.microscope-realistic svg{
+    display:block;
+    width:100%;
     height:auto;
-    transition:transform .3s ease;
-    transform-origin:center center;
-    user-select:none;
 }
 
-.controls{
-    background:#37474f;
-    padding:20px;
-    margin-top:15px;
-    border-radius:12px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
+/* label nomor */
+
+.svg-number{
+    fill:#f5c400;
+    stroke:#604f00;
+    stroke-width:2;
 }
 
-.control-btn{
-    border:0;
-    padding:11px 18px;
-    border-radius:22px;
-    background:#f5c400;
-    color:#4f4f4f;
+.svg-number-text{
+    font-family:Arial,sans-serif;
     font-weight:bold;
-    cursor:pointer;
+    font-size:19px;
+    text-anchor:middle;
+    dominant-baseline:middle;
+    fill:#333;
 }
 
-.control-btn:hover{
-    opacity:.85;
+.svg-line{
+    stroke:#4f7775;
+    stroke-width:3;
+    fill:none;
 }
 
-.zoom-level{
-    color:#fff;
-    font-weight:bold;
-    display:flex;
-    align-items:center;
-    padding:0 10px;
-}
+/* CATATAN */
 
-/* INFO */
-
-.info h2{
-    color:#5d7478;
-    margin-bottom:12px;
-}
-
-.info p{
-    line-height:1.7;
-    margin-bottom:10px;
-}
-
-.info ul{
-    margin-left:20px;
-    line-height:1.8;
+.image-note{
+    text-align:center;
+    color:#78909c;
+    font-size:13px;
+    line-height:1.6;
+    margin-top:12px;
 }
 
 /* TABEL */
@@ -279,7 +258,7 @@ nav a:hover{
 
 .structure-table th{
     background:#5f9f9a;
-    color:#fff;
+    color:white;
 }
 
 .structure-table tr:nth-child(even){
@@ -287,37 +266,101 @@ nav a:hover{
 }
 
 .number{
-    display:inline-flex;
     width:30px;
     height:30px;
-    border-radius:50%;
-    background:#f5c400;
-    color:#333;
-    align-items:center;
+    display:inline-flex;
     justify-content:center;
+    align-items:center;
+    background:#f5c400;
+    border-radius:50%;
     font-weight:bold;
+    color:#333;
 }
 
-/* DIAGRAM MIKROSKOP */
+/* MIKROSKOP DIGITAL */
 
-.diagram{
-    background:#f8fbfa;
-    border-radius:16px;
-    padding:12px;
+.microscope{
+    background:#263238;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+    margin-bottom:25px;
+}
+
+.microscope-title{
+    color:white;
+    text-align:center;
+    margin-bottom:18px;
+    font-size:19px;
+}
+
+.viewer{
+    height:520px;
+    background:#111;
+    border:5px solid #455a64;
+    border-radius:15px;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.viewer img{
+    max-width:none;
+    width:80%;
+    height:auto;
+    transition:transform .3s ease;
+    transform-origin:center;
+}
+
+.controls{
+    background:#37474f;
+    padding:18px;
+    margin-top:15px;
+    border-radius:12px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+.control-btn{
+    border:0;
+    background:#f5c400;
+    color:#444;
+    padding:11px 18px;
+    border-radius:22px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.control-btn:hover{
+    opacity:.85;
+}
+
+.zoom-level{
+    color:white;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    padding:0 10px;
+}
+
+/* INFO */
+
+.info h2{
+    color:#526b6e;
     margin-bottom:12px;
 }
 
-.diagram svg{
-    width:100%;
-    height:auto;
-    display:block;
+.info p{
+    line-height:1.7;
+    margin-bottom:10px;
 }
 
-.image-note{
-    font-size:13px;
-    color:#78909c;
-    text-align:center;
-    line-height:1.5;
+.info ul{
+    margin-left:20px;
+    line-height:1.8;
 }
 
 /* AKTIVITAS */
@@ -330,7 +373,7 @@ nav a:hover{
 .activity a{
     display:inline-block;
     background:#5f9f9a;
-    color:#fff;
+    color:white;
     text-decoration:none;
     padding:14px 28px;
     border-radius:28px;
@@ -341,16 +384,20 @@ nav a:hover{
     background:#4f8f8a;
 }
 
+/* SOURCE */
+
 .source{
     font-size:12px;
     color:#78909c;
-    margin-top:20px;
     line-height:1.6;
+    margin-top:20px;
 }
+
+/* FOOTER */
 
 footer{
     background:#5f9f9a;
-    color:#fff;
+    color:white;
     text-align:center;
     padding:25px;
     margin-top:40px;
@@ -374,8 +421,8 @@ footer p{
     }
 
     nav a{
-        margin:0 6px;
-        font-size:13px;
+        margin:0 5px;
+        font-size:12px;
     }
 
     .hero h1{
@@ -403,38 +450,46 @@ footer p{
         font-size:13px;
     }
 
-    .controls{
-        gap:8px;
-    }
-
     .control-btn{
-        padding:10px 14px;
+        padding:10px 13px;
         font-size:13px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
+
+<!-- ================================================= -->
 <!-- HEADER -->
+<!-- ================================================= -->
 
 <header>
 
 <h2>🔬 Mikroskop Virtual</h2>
 
 <nav>
+
 <a href="index.html">Beranda</a>
+
 <a href="panduan.html">Panduan</a>
+
 <a href="materi.html">Materi</a>
+
 <a href="aktivitas.html">Aktivitas</a>
+
 <a href="mikroskop.html">Mikroskop</a>
+
 </nav>
 
 </header>
 
 
-<!-- JUDUL -->
+<!-- ================================================= -->
+<!-- HERO -->
+<!-- ================================================= -->
 
 <section class="hero">
 
@@ -451,7 +506,7 @@ Kenali bagian-bagian mikroskop dan amati preparat sel secara digital.
 
 
 <!-- ================================================= -->
-<!-- HALAMAN UTAMA -->
+<!-- HOME -->
 <!-- ================================================= -->
 
 <section id="home" class="section active">
@@ -463,9 +518,10 @@ Kenali bagian-bagian mikroskop dan amati preparat sel secara digital.
 <div class="choice-grid">
 
 
-<!-- BAGIAN MIKROSKOP -->
-
-<div class="choice-card" onclick="show('parts')">
+<div
+class="choice-card"
+onclick="show('parts')"
+>
 
 <div class="icon">🔬</div>
 
@@ -474,16 +530,17 @@ Bagian-bagian Mikroskop
 </h3>
 
 <p>
-Kenali bagian mikroskop, nomor,
-nama bagian, dan fungsinya.
+Kenali bagian mikroskop,
+nomor, nama, dan fungsinya.
 </p>
 
 </div>
 
 
-<!-- PREPARAT DIGITAL -->
-
-<div class="choice-card" onclick="show('types')">
+<div
+class="choice-card"
+onclick="show('types')"
+>
 
 <div class="icon">🧫</div>
 
@@ -498,6 +555,7 @@ atau sel hewan.
 
 </div>
 
+
 </div>
 
 </div>
@@ -505,14 +563,16 @@ atau sel hewan.
 </section>
 
 
-
 <!-- ================================================= -->
-<!-- BAGIAN-BAGIAN MIKROSKOP -->
+<!-- BAGIAN MIKROSKOP -->
 <!-- ================================================= -->
 
 <section id="parts" class="section">
 
-<button class="back-btn" onclick="show('home')">
+<button
+class="back-btn"
+onclick="show('home')"
+>
 ← Kembali
 </button>
 
@@ -524,498 +584,764 @@ atau sel hewan.
 </h2>
 
 
-<div class="diagram">
+<!-- ================================================= -->
+<!-- MIKROSKOP REALISTIS -->
+<!-- ================================================= -->
+
+<div class="microscope-realistic">
 
 <svg
-viewBox="0 0 900 650"
-role="img"
-aria-label="Diagram mikroskop bernomor"
+viewBox="0 0 1000 720"
+xmlns="http://www.w3.org/2000/svg"
+aria-label="Gambar mikroskop cahaya dengan penomoran bagian"
 >
 
 <defs>
 
+<!-- BODY METAL -->
+
 <linearGradient
-id="m"
+id="metal"
 x1="0"
 y1="0"
 x2="1"
 y2="1"
 >
 
-<stop
-offset="0"
-stop-color="#dce7e8"
-/>
+<stop offset="0%" stop-color="#f5f7f7"/>
 
-<stop
-offset=".5"
-stop-color="#8fa5a8"
-/>
+<stop offset="25%" stop-color="#bfcacc"/>
 
-<stop
-offset="1"
-stop-color="#52676b"
-/>
+<stop offset="50%" stop-color="#eef2f2"/>
+
+<stop offset="75%" stop-color="#87999d"/>
+
+<stop offset="100%" stop-color="#53676b"/>
 
 </linearGradient>
+
+
+<!-- DARK METAL -->
+
+<linearGradient
+id="darkMetal"
+x1="0"
+y1="0"
+x2="1"
+y2="1"
+>
+
+<stop offset="0%" stop-color="#718589"/>
+
+<stop offset="45%" stop-color="#37494d"/>
+
+<stop offset="100%" stop-color="#172326"/>
+
+</linearGradient>
+
+
+<!-- BLACK -->
+
+<linearGradient
+id="blackMetal"
+x1="0"
+y1="0"
+x2="0"
+y2="1"
+>
+
+<stop offset="0%" stop-color="#4a5a5e"/>
+
+<stop offset="50%" stop-color="#182326"/>
+
+<stop offset="100%" stop-color="#070b0c"/>
+
+</linearGradient>
+
+
+<!-- GLASS -->
+
+<linearGradient
+id="glass"
+x1="0"
+y1="0"
+x2="1"
+y2="1"
+>
+
+<stop offset="0%" stop-color="#dff9ff"/>
+
+<stop offset="50%" stop-color="#9fd2d9"/>
+
+<stop offset="100%" stop-color="#527c82"/>
+
+</linearGradient>
+
+
+<!-- SHADOW -->
+
+<filter id="shadow">
+
+<feDropShadow
+dx="4"
+dy="7"
+stdDeviation="7"
+flood-opacity=".25"
+/>
+
+</filter>
 
 </defs>
 
 
-<!-- KAKI -->
-
-<path
-d="M240 555Q270 505 365 510H625Q690 515 735 555V585H210Q215 565 240 555Z"
-fill="#52676b"
-/>
-
-
-<!-- LENGAN -->
-
-<path
-d="M330 500Q300 390 330 280Q350 185 430 135Q505 90 575 135Q625 165 635 230L590 250Q570 195 520 185Q460 170 425 220Q385 280 405 390L445 500Z"
-fill="url(#m)"
-stroke="#465a5e"
-stroke-width="5"
-/>
-
-
-<!-- TUBUS -->
-
-<path
-d="M470 125L520 65L565 85L520 160Z"
-fill="#5b7074"
-stroke="#3f5054"
-stroke-width="5"
-/>
-
-
-<!-- OKULER -->
-
-<path
-d="M485 65L530 25L575 48L555 85L510 78Z"
-fill="#39494d"
-/>
-
-
-<!-- REVOLVER -->
-
-<circle
-cx="520"
-cy="165"
-r="42"
-fill="#63797d"
-stroke="#3f5054"
-stroke-width="5"
-/>
-
-
-<!-- LENSA OBJEKTIF -->
-
-<path
-d="M490 190L475 250L500 258L520 198Z
-M520 195V258H548V195Z
-M548 195L565 245L590 235L570 185Z"
-fill="#39494d"
-/>
-
-
-<!-- MEJA -->
-
-<rect
-x="365"
-y="265"
-width="270"
-height="38"
-rx="8"
-fill="#6f8588"
-stroke="#405256"
-stroke-width="5"
-/>
-
-
-<!-- PREPARAT -->
-
-<rect
-x="410"
-y="275"
-width="180"
-height="18"
-rx="5"
-fill="#263238"
-/>
-
-
-<!-- PENJEPIT -->
-
-<path
-d="M430 265Q450 250 470 265
-M530 265Q550 250 570 265"
-fill="none"
-stroke="#e0e8e9"
-stroke-width="7"
-/>
-
-
-<!-- DIAFRAGMA -->
+<!-- ================================================= -->
+<!-- BAYANGAN -->
+<!-- ================================================= -->
 
 <ellipse
 cx="500"
-cy="325"
-rx="75"
-ry="22"
-fill="#455a5f"
-/>
-
-<circle
-cx="500"
-cy="325"
-r="18"
-fill="#111"
+cy="645"
+rx="350"
+ry="35"
+fill="#b9c5c5"
+opacity=".45"
 />
 
 
-<!-- LAMPU -->
+<!-- ================================================= -->
+<!-- KAKI MIKROSKOP -->
+<!-- ================================================= -->
 
 <path
-d="M455 345Q500 330 545 345L565 420H435Z"
-fill="#667d80"
-stroke="#405256"
+d="
+M250 585
+Q270 545 340 540
+L670 540
+Q740 545 770 585
+L795 620
+Q805 640 775 648
+L225 648
+Q195 640 205 620
+Z
+"
+fill="url(#darkMetal)"
+stroke="#26383b"
+stroke-width="5"
+filter="url(#shadow)"
+/>
+
+
+<!-- DETAIL KAKI -->
+
+<path
+d="M270 592 Q500 565 730 592"
+fill="none"
+stroke="#9cabad"
+stroke-width="6"
+opacity=".5"
+/>
+
+
+<!-- ================================================= -->
+<!-- LENGAN MIKROSKOP -->
+<!-- ================================================= -->
+
+<path
+d="
+M355 555
+Q315 490 330 395
+Q340 290 390 210
+Q430 145 510 130
+Q600 112 660 165
+Q700 200 705 275
+L650 290
+Q635 220 580 200
+Q515 175 470 225
+Q425 280 430 375
+L470 555
+Z
+"
+fill="url(#metal)"
+stroke="#4c5d60"
+stroke-width="6"
+filter="url(#shadow)"
+/>
+
+
+<!-- HIGHLIGHT LENGAN -->
+
+<path
+d="
+M400 500
+Q370 390 390 290
+Q410 205 475 165
+"
+fill="none"
+stroke="#ffffff"
+stroke-width="13"
+opacity=".4"
+/>
+
+
+<!-- ================================================= -->
+<!-- TUBUS -->
+<!-- ================================================= -->
+
+<path
+d="
+M480 155
+L500 75
+L570 88
+L550 170
+Z
+"
+fill="url(#darkMetal)"
+stroke="#26383b"
 stroke-width="5"
 />
 
 
-<!-- PEMUTAR FOKUS -->
+<!-- ================================================= -->
+<!-- Lensa okuler -->
+<!-- ================================================= -->
 
-<circle
-cx="355"
-cy="265"
-r="32"
-fill="#71878a"
-stroke="#405256"
+<path
+d="
+M480 76
+L500 30
+Q520 12 550 28
+L580 48
+L565 90
+Z
+"
+fill="url(#blackMetal)"
+stroke="#1d292c"
 stroke-width="5"
 />
 
-<circle
-cx="645"
-cy="265"
-r="24"
-fill="#71878a"
-stroke="#405256"
-stroke-width="5"
-/>
 
+<!-- kaca okuler -->
 
-<!-- NOMOR -->
-
-<g
-font-family="Arial"
-font-weight="bold"
-text-anchor="middle"
-font-size="20"
->
-
-
-<!-- 1 -->
-
-<g>
-
-<line
-x1="535"
-y1="50"
-x2="730"
-y2="35"
-stroke="#5f9f9a"
+<ellipse
+cx="535"
+cy="39"
+rx="25"
+ry="9"
+fill="url(#glass)"
+stroke="#293b3f"
 stroke-width="3"
 />
 
+
+<!-- ================================================= -->
+<!-- REVOLVER -->
+<!-- ================================================= -->
+
 <circle
-cx="755"
-cy="33"
+cx="530"
+cy="178"
+r="53"
+fill="url(#darkMetal)"
+stroke="#27383c"
+stroke-width="6"
+/>
+
+
+<circle
+cx="530"
+cy="178"
 r="20"
-fill="#f5c400"
+fill="#1a2528"
+/>
+
+
+<!-- ================================================= -->
+<!-- LENSA OBJEKTIF -->
+<!-- ================================================= -->
+
+<g>
+
+<!-- pendek -->
+
+<path
+d="
+M485 212
+L465 278
+L500 285
+L520 220
+Z
+"
+fill="url(#blackMetal)"
+stroke="#182326"
+stroke-width="4"
+/>
+
+<!-- sedang -->
+
+<path
+d="
+M520 215
+L520 285
+L555 285
+L552 215
+Z
+"
+fill="url(#blackMetal)"
+stroke="#182326"
+stroke-width="4"
+/>
+
+<!-- panjang -->
+
+<path
+d="
+M552 210
+L575 270
+L610 258
+L580 198
+Z
+"
+fill="url(#blackMetal)"
+stroke="#182326"
+stroke-width="4"
+/>
+
+</g>
+
+
+<!-- ================================================= -->
+<!-- MEJA PREPARAT -->
+<!-- ================================================= -->
+
+<rect
+x="335"
+y="285"
+width="365"
+height="45"
+rx="9"
+fill="url(#darkMetal)"
+stroke="#28393d"
+stroke-width="6"
+filter="url(#shadow)"
+/>
+
+
+<!-- PLATINUM -->
+
+<rect
+x="385"
+y="292"
+width="265"
+height="30"
+rx="5"
+fill="#11191b"
+/>
+
+
+<!-- ================================================= -->
+<!-- KACA PREPARAT -->
+<!-- ================================================= -->
+
+<rect
+x="430"
+y="298"
+width="170"
+height="7"
+rx="3"
+fill="url(#glass)"
+opacity=".9"
+/>
+
+
+<!-- ================================================= -->
+<!-- PENJEPIT -->
+<!-- ================================================= -->
+
+<path
+d="
+M420 286
+Q445 270 470 290
+"
+fill="none"
+stroke="#e8eeee"
+stroke-width="8"
+stroke-linecap="round"
+/>
+
+
+<path
+d="
+M570 290
+Q595 270 620 286
+"
+fill="none"
+stroke="#e8eeee"
+stroke-width="8"
+stroke-linecap="round"
+/>
+
+
+<!-- ================================================= -->
+<!-- KONDENSOR -->
+<!-- ================================================= -->
+
+<ellipse
+cx="520"
+cy="350"
+rx="90"
+ry="27"
+fill="url(#blackMetal)"
+stroke="#2b3b3f"
+stroke-width="5"
+/>
+
+
+<circle
+cx="520"
+cy="350"
+r="25"
+fill="#080d0e"
+/>
+
+
+<!-- ================================================= -->
+<!-- DIAFRAGMA -->
+<!-- ================================================= -->
+
+<ellipse
+cx="520"
+cy="377"
+rx="63"
+ry="16"
+fill="#111a1c"
+/>
+
+
+<circle
+cx="520"
+cy="377"
+r="12"
+fill="#5d767b"
+/>
+
+
+<!-- ================================================= -->
+<!-- LAMPU -->
+<!-- ================================================= -->
+
+<path
+d="
+M470 385
+L570 385
+L595 475
+L445 475
+Z
+"
+fill="url(#metal)"
+stroke="#44575b"
+stroke-width="5"
+/>
+
+
+<ellipse
+cx="520"
+cy="435"
+rx="52"
+ry="20"
+fill="#26373b"
+/>
+
+
+<ellipse
+cx="520"
+cy="435"
+rx="32"
+ry="12"
+fill="#dceff0"
+/>
+
+
+<!-- ================================================= -->
+<!-- KNOB FOCUS -->
+<!-- ================================================= -->
+
+<circle
+cx="365"
+cy="280"
+r="42"
+fill="url(#darkMetal)"
+stroke="#293a3e"
+stroke-width="6"
+/>
+
+
+<circle
+cx="365"
+cy="280"
+r="23"
+fill="#182528"
+/>
+
+
+<circle
+cx="680"
+cy="285"
+r="31"
+fill="url(#darkMetal)"
+stroke="#293a3e"
+stroke-width="5"
+/>
+
+
+<!-- ================================================= -->
+<!-- NOMOR 1 OKULER -->
+<!-- ================================================= -->
+
+<path
+class="svg-line"
+d="M535 43 L770 35"
+/>
+
+<circle
+class="svg-number"
+cx="800"
+cy="33"
+r="23"
 />
 
 <text
-x="755"
-y="40"
+class="svg-number-text"
+x="800"
+y="33"
 >
 1
 </text>
 
-</g>
 
+<!-- ================================================= -->
+<!-- NOMOR 2 TUBUS -->
+<!-- ================================================= -->
 
-<!-- 2 -->
-
-<g>
-
-<line
-x1="485"
-y1="120"
-x2="220"
-y2="95"
-stroke="#5f9f9a"
-stroke-width="3"
+<path
+class="svg-line"
+d="M500 110 L220 90"
 />
 
 <circle
-cx="195"
-cy="93"
-r="20"
-fill="#f5c400"
+class="svg-number"
+cx="190"
+cy="87"
+r="23"
 />
 
 <text
-x="195"
-y="100"
+class="svg-number-text"
+x="190"
+y="87"
 >
 2
 </text>
 
-</g>
 
+<!-- ================================================= -->
+<!-- NOMOR 3 REVOLVER -->
+<!-- ================================================= -->
 
-<!-- 3 -->
-
-<g>
-
-<line
-x1="520"
-y1="165"
-x2="735"
-y2="145"
-stroke="#5f9f9a"
-stroke-width="3"
+<path
+class="svg-line"
+d="M565 175 L785 150"
 />
 
 <circle
-cx="760"
-cy="143"
-r="20"
-fill="#f5c400"
+class="svg-number"
+cx="815"
+cy="147"
+r="23"
 />
 
 <text
-x="760"
-y="150"
+class="svg-number-text"
+x="815"
+y="147"
 >
 3
 </text>
 
-</g>
 
+<!-- ================================================= -->
+<!-- NOMOR 4 OBJEKTIF -->
+<!-- ================================================= -->
 
-<!-- 4 -->
-
-<g>
-
-<line
-x1="555"
-y1="225"
-x2="730"
-y2="220"
-stroke="#5f9f9a"
-stroke-width="3"
+<path
+class="svg-line"
+d="M575 245 L790 230"
 />
 
 <circle
-cx="755"
-cy="218"
-r="20"
-fill="#f5c400"
+class="svg-number"
+cx="820"
+cy="228"
+r="23"
 />
 
 <text
-x="755"
-y="225"
+class="svg-number-text"
+x="820"
+y="228"
 >
 4
 </text>
 
-</g>
 
+<!-- ================================================= -->
+<!-- NOMOR 5 MEJA -->
+<!-- ================================================= -->
 
-<!-- 5 -->
-
-<g>
-
-<line
-x1="600"
-y1="285"
-x2="730"
-y2="290"
-stroke="#5f9f9a"
-stroke-width="3"
+<path
+class="svg-line"
+d="M670 305 L790 305"
 />
 
 <circle
-cx="755"
-cy="292"
-r="20"
-fill="#f5c400"
+class="svg-number"
+cx="820"
+cy="305"
+r="23"
 />
 
 <text
-x="755"
-y="299"
+class="svg-number-text"
+x="820"
+y="305"
 >
 5
 </text>
 
-</g>
 
+<!-- ================================================= -->
+<!-- NOMOR 6 PENJEPIT -->
+<!-- ================================================= -->
 
-<!-- 6 -->
-
-<g>
-
-<line
-x1="430"
-y1="265"
-x2="210"
-y2="245"
-stroke="#5f9f9a"
-stroke-width="3"
+<path
+class="svg-line"
+d="M430 286 L210 250"
 />
 
 <circle
-cx="185"
-cy="243"
-r="20"
-fill="#f5c400"
+class="svg-number"
+cx="180"
+cy="245"
+r="23"
 />
 
 <text
-x="185"
-y="250"
+class="svg-number-text"
+x="180"
+y="245"
 >
 6
 </text>
 
-</g>
 
+<!-- ================================================= -->
+<!-- NOMOR 7 FOKUS -->
+<!-- ================================================= -->
 
-<!-- 7 -->
-
-<g>
-
-<line
-x1="355"
-y1="265"
-x2="180"
-y2="325"
-stroke="#5f9f9a"
-stroke-width="3"
+<path
+class="svg-line"
+d="M365 280 L170 330"
 />
 
 <circle
-cx="155"
-cy="333"
-r="20"
-fill="#f5c400"
+class="svg-number"
+cx="140"
+cy="338"
+r="23"
 />
 
 <text
-x="155"
-y="340"
+class="svg-number-text"
+x="140"
+y="338"
 >
 7
 </text>
 
-</g>
 
+<!-- ================================================= -->
+<!-- NOMOR 8 LENGAN -->
+<!-- ================================================= -->
 
-<!-- 8 -->
-
-<g>
-
-<line
-x1="390"
-y1="350"
-x2="185"
-y2="405"
-stroke="#5f9f9a"
-stroke-width="3"
+<path
+class="svg-line"
+d="M390 420 L180 430"
 />
 
 <circle
-cx="160"
-cy="412"
-r="20"
-fill="#f5c400"
+class="svg-number"
+cx="150"
+cy="430"
+r="23"
 />
 
 <text
-x="160"
-y="419"
+class="svg-number-text"
+x="150"
+y="430"
 >
 8
 </text>
 
-</g>
 
+<!-- ================================================= -->
+<!-- NOMOR 9 LAMPU -->
+<!-- ================================================= -->
 
-<!-- 9 -->
-
-<g>
-
-<line
-x1="540"
-y1="380"
-x2="720"
-y2="385"
-stroke="#5f9f9a"
-stroke-width="3"
+<path
+class="svg-line"
+d="M570 430 L780 425"
 />
 
 <circle
-cx="745"
-cy="387"
-r="20"
-fill="#f5c400"
+class="svg-number"
+cx="810"
+cy="425"
+r="23"
 />
 
 <text
-x="745"
-y="394"
+class="svg-number-text"
+x="810"
+y="425"
 >
 9
 </text>
 
-</g>
 
+<!-- ================================================= -->
+<!-- NOMOR 10 KAKI -->
+<!-- ================================================= -->
 
-<!-- 10 -->
-
-<g>
-
-<line
-x1="650"
-y1="550"
-x2="755"
-y2="535"
-stroke="#5f9f9a"
-stroke-width="3"
+<path
+class="svg-line"
+d="M675 585 L800 565"
 />
 
 <circle
-cx="780"
-cy="532"
-r="20"
-fill="#f5c400"
+class="svg-number"
+cx="830"
+cy="560"
+r="23"
 />
 
 <text
-x="780"
-y="539"
+class="svg-number-text"
+x="830"
+y="560"
 >
 10
 </text>
 
-</g>
-
-</g>
 
 </svg>
 
@@ -1026,14 +1352,16 @@ y="539"
 
 Perhatikan nomor pada gambar,
 kemudian cocokkan dengan nama bagian
-dan fungsinya.
+dan fungsi pada tabel di bawah.
 
 </p>
 
 </div>
 
 
-<!-- TABEL BAGIAN -->
+<!-- ================================================= -->
+<!-- TABEL BAGIAN MIKROSKOP -->
+<!-- ================================================= -->
 
 <div class="structure-box">
 
@@ -1058,7 +1386,6 @@ dan fungsinya.
 
 </thead>
 
-
 <tbody>
 
 
@@ -1069,7 +1396,7 @@ dan fungsinya.
 </td>
 
 <td>
-Lensa Okuler
+<strong>Lensa Okuler</strong>
 </td>
 
 <td>
@@ -1087,7 +1414,7 @@ dan membantu memperbesar bayangan.
 </td>
 
 <td>
-Tubus
+<strong>Tubus</strong>
 </td>
 
 <td>
@@ -1105,12 +1432,12 @@ dengan sistem lensa objektif.
 </td>
 
 <td>
-Revolver
+<strong>Revolver</strong>
 </td>
 
 <td>
 Tempat lensa objektif dan digunakan
-untuk memilih lensa objektif.
+untuk memilih perbesaran lensa objektif.
 </td>
 
 </tr>
@@ -1123,7 +1450,7 @@ untuk memilih lensa objektif.
 </td>
 
 <td>
-Lensa Objektif
+<strong>Lensa Objektif</strong>
 </td>
 
 <td>
@@ -1141,7 +1468,7 @@ dan membentuk bayangan objek.
 </td>
 
 <td>
-Meja Preparat
+<strong>Meja Preparat</strong>
 </td>
 
 <td>
@@ -1159,12 +1486,12 @@ yang akan diamati.
 </td>
 
 <td>
-Penjepit Preparat
+<strong>Penjepit Preparat</strong>
 </td>
 
 <td>
 Menahan preparat agar tetap
-pada posisi yang tepat.
+berada pada posisi yang tepat.
 </td>
 
 </tr>
@@ -1177,12 +1504,12 @@ pada posisi yang tepat.
 </td>
 
 <td>
-Pemutar Fokus
+<strong>Pemutar Fokus</strong>
 </td>
 
 <td>
-Mengatur fokus sehingga bayangan
-objek tampak jelas.
+Mengatur fokus sehingga
+bayangan objek terlihat jelas.
 </td>
 
 </tr>
@@ -1195,12 +1522,12 @@ objek tampak jelas.
 </td>
 
 <td>
-Lengan Mikroskop
+<strong>Lengan Mikroskop</strong>
 </td>
 
 <td>
-Menopang bagian utama dan menjadi
-pegangan saat memindahkan mikroskop.
+Menopang bagian utama mikroskop
+dan menjadi pegangan saat memindahkan.
 </td>
 
 </tr>
@@ -1213,12 +1540,12 @@ pegangan saat memindahkan mikroskop.
 </td>
 
 <td>
-Diafragma/Lampu
+<strong>Diafragma/Lampu</strong>
 </td>
 
 <td>
 Mengatur atau menyediakan pencahayaan
-untuk objek.
+agar objek dapat diamati.
 </td>
 
 </tr>
@@ -1231,11 +1558,12 @@ untuk objek.
 </td>
 
 <td>
-Kaki Mikroskop
+<strong>Kaki Mikroskop</strong>
 </td>
 
 <td>
-Menopang mikroskop agar berdiri stabil.
+Menopang mikroskop agar
+berdiri stabil.
 </td>
 
 </tr>
@@ -1248,7 +1576,6 @@ Menopang mikroskop agar berdiri stabil.
 </div>
 
 </section>
-
 
 
 <!-- ================================================= -->
@@ -1280,9 +1607,7 @@ class="type-card"
 onclick="show('plant')"
 >
 
-<div class="icon">
-🌱
-</div>
+<div class="icon">🌱</div>
 
 <h3>
 Preparat Sel Tumbuhan
@@ -1301,9 +1626,7 @@ class="type-card"
 onclick="show('animal')"
 >
 
-<div class="icon">
-🧫
-</div>
+<div class="icon">🧫</div>
 
 <h3>
 Preparat Sel Hewan
@@ -1324,9 +1647,8 @@ preparat sel hewan.
 </section>
 
 
-
 <!-- ================================================= -->
-<!-- PREPARAT TUMBUHAN -->
+<!-- TUMBUHAN -->
 <!-- ================================================= -->
 
 <section id="plant" class="section">
@@ -1383,9 +1705,8 @@ onclick="loadPrep('hydrilla',this)"
 </section>
 
 
-
 <!-- ================================================= -->
-<!-- PREPARAT HEWAN -->
+<!-- HEWAN -->
 <!-- ================================================= -->
 
 <section id="animal" class="section">
@@ -1442,13 +1763,16 @@ onclick="loadPrep('darah',this)"
 </section>
 
 
-
+<!-- ================================================= -->
 <!-- AKTIVITAS -->
+<!-- ================================================= -->
 
 <section class="activity">
 
 <a href="aktivitas.html">
+
 📝 MULAI AKTIVITAS PENGAMATAN
+
 </a>
 
 </section>
@@ -1458,16 +1782,19 @@ onclick="loadPrep('darah',this)"
 
 <strong>Catatan:</strong>
 
-Gambar preparat dapat diganti dengan
-foto mikroskopis yang telah dipilih
-dan diverifikasi oleh guru sesuai
-kebutuhan pembelajaran.
+Gunakan mikroskop virtual untuk mengamati
+bentuk, struktur, dan karakteristik visual
+sel sebelum mengerjakan aktivitas pengamatan.
 
 </section>
 
 
 </div>
 
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
 
 <footer>
 
@@ -1484,367 +1811,159 @@ UPTD SMPN 3 Barru
 </footer>
 
 
-
 <script>
 
-/* =====================================================
-DATA PREPARAT
-===================================================== */
+/* ================================================= */
+/* DATA PREPARAT */
+/* ================================================= */
 
-const prep = {
+const prep={
 
-
-/* ================================
-BAWANG MERAH
-================================ */
 
 bawang:{
-
 cat:"tumbuhan",
-
 name:"🌱 Sel Epidermis Bawang Merah",
-
 img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Onion_Epidermis_Cells_W.M._40x_-_185.jpg",
-
-desc:
-"Amati bentuk dan susunan sel epidermis bawang merah.",
-
+desc:"Amati bentuk dan susunan sel epidermis bawang merah.",
 focus:[
 "Bentuk dan susunan sel",
 "Dinding sel",
 "Inti sel",
 "Vakuola"
 ],
-
 parts:[
-
-[
-"1",
-"Dinding sel",
-"Memberi bentuk dan melindungi sel tumbuhan."
-],
-
-[
-"2",
-"Membran sel",
-"Mengatur keluar masuknya zat."
-],
-
-[
-"3",
-"Sitoplasma",
-"Tempat berbagai aktivitas metabolisme sel."
-],
-
-[
-"4",
-"Inti sel",
-"Mengatur aktivitas sel dan menyimpan materi genetik."
-],
-
-[
-"5",
-"Vakuola",
-"Menyimpan air dan berbagai zat terlarut."
+["1","Dinding sel","Memberi bentuk dan melindungi sel tumbuhan."],
+["2","Membran sel","Mengatur keluar masuknya zat."],
+["3","Sitoplasma","Tempat berbagai aktivitas metabolisme sel."],
+["4","Inti sel","Mengatur aktivitas sel dan menyimpan materi genetik."],
+["5","Vakuola","Menyimpan air dan berbagai zat terlarut."]
 ]
-
-]
-
 },
 
 
-
-/* ================================
-ELODEA
-================================ */
-
 elodea:{
-
 cat:"tumbuhan",
-
 name:"🌿 Sel Daun Elodea",
-
 img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Elodea_cells_under_microscope.jpg",
-
-desc:
-"Amati susunan sel dan kloroplas pada daun Elodea.",
-
+desc:"Amati susunan sel dan kloroplas pada daun Elodea.",
 focus:[
 "Bentuk sel",
 "Susunan sel",
 "Kloroplas",
 "Dinding sel"
 ],
-
 parts:[
-
-[
-"1",
-"Dinding sel",
-"Memberi bentuk dan perlindungan."
-],
-
-[
-"2",
-"Membran sel",
-"Mengatur pertukaran zat."
-],
-
-[
-"3",
-"Sitoplasma",
-"Tempat aktivitas metabolisme."
-],
-
-[
-"4",
-"Kloroplas",
-"Tempat berlangsungnya fotosintesis."
-],
-
-[
-"5",
-"Vakuola",
-"Menyimpan air dan zat terlarut."
+["1","Dinding sel","Memberi bentuk dan perlindungan."],
+["2","Membran sel","Mengatur pertukaran zat."],
+["3","Sitoplasma","Tempat aktivitas metabolisme."],
+["4","Kloroplas","Tempat berlangsungnya fotosintesis."],
+["5","Vakuola","Menyimpan air dan zat terlarut."]
 ]
-
-]
-
 },
 
 
-
-/* ================================
-HYDRILLA
-================================ */
-
 hydrilla:{
-
 cat:"tumbuhan",
-
 name:"🌿 Sel Daun Hydrilla",
-
 img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Hydrilla_leaf_cells.jpg",
-
-desc:
-"Amati susunan sel dan kloroplas pada daun Hydrilla.",
-
+desc:"Amati susunan sel dan kloroplas pada daun Hydrilla.",
 focus:[
 "Bentuk sel",
 "Dinding sel",
 "Kloroplas",
 "Sitoplasma"
 ],
-
 parts:[
-
-[
-"1",
-"Dinding sel",
-"Memberi bentuk dan perlindungan."
-],
-
-[
-"2",
-"Membran sel",
-"Mengatur keluar masuknya zat."
-],
-
-[
-"3",
-"Sitoplasma",
-"Tempat berbagai aktivitas metabolisme."
-],
-
-[
-"4",
-"Kloroplas",
-"Mengandung klorofil dan menjadi tempat fotosintesis."
-],
-
-[
-"5",
-"Vakuola",
-"Menyimpan air dan membantu menjaga tekanan turgor."
+["1","Dinding sel","Memberi bentuk dan perlindungan."],
+["2","Membran sel","Mengatur keluar masuknya zat."],
+["3","Sitoplasma","Tempat berbagai aktivitas metabolisme."],
+["4","Kloroplas","Mengandung klorofil dan menjadi tempat fotosintesis."],
+["5","Vakuola","Menyimpan air dan membantu menjaga tekanan turgor."]
 ]
-
-]
-
 },
 
 
-
-/* ================================
-SEL EPITEL PIPI
-================================ */
-
 pipi:{
-
 cat:"hewan",
-
 name:"🧫 Sel Epitel Pipi",
-
 img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Microscopic_Image_of_Human_Cheek_Cells.jpg",
-
-desc:
-"Amati bentuk sel epitel pipi dan struktur yang tampak.",
-
+desc:"Amati bentuk sel epitel pipi dan struktur yang tampak.",
 focus:[
 "Bentuk sel",
 "Membran sel",
 "Sitoplasma",
 "Inti sel"
 ],
-
 parts:[
-
-[
-"1",
-"Membran sel",
-"Membatasi sel dan mengatur keluar masuknya zat."
-],
-
-[
-"2",
-"Sitoplasma",
-"Tempat berbagai aktivitas metabolisme."
-],
-
-[
-"3",
-"Inti sel",
-"Mengatur aktivitas sel dan menyimpan materi genetik."
+["1","Membran sel","Membatasi sel dan mengatur keluar masuknya zat."],
+["2","Sitoplasma","Tempat berbagai aktivitas metabolisme."],
+["3","Inti sel","Mengatur aktivitas sel dan menyimpan materi genetik."]
 ]
-
-]
-
 },
 
 
-
-/* ================================
-SEL OTOT
-================================ */
-
 otot:{
-
 cat:"hewan",
-
 name:"💪 Sel Otot",
-
 img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Skeletal_muscle.jpg",
-
-desc:
-"Amati bentuk dan susunan jaringan otot pada preparat.",
-
+desc:"Amati bentuk dan susunan jaringan otot pada preparat.",
 focus:[
 "Bentuk serabut",
 "Membran sel",
 "Sitoplasma",
 "Inti sel"
 ],
-
 parts:[
-
-[
-"1",
-"Membran sel",
-"Membatasi sel dan membantu mengatur pertukaran zat."
-],
-
-[
-"2",
-"Sitoplasma",
-"Tempat berlangsungnya reaksi metabolisme."
-],
-
-[
-"3",
-"Inti sel",
-"Mengatur aktivitas sel dan menyimpan materi genetik."
+["1","Membran sel","Membatasi sel dan membantu mengatur pertukaran zat."],
+["2","Sitoplasma","Tempat berlangsungnya reaksi metabolisme."],
+["3","Inti sel","Mengatur aktivitas sel dan menyimpan materi genetik."]
 ]
-
-]
-
 },
 
 
-
-/* ================================
-SEL DARAH
-================================ */
-
 darah:{
-
 cat:"hewan",
-
 name:"🩸 Sel Darah",
-
 img:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Red_White_Blood_cells.jpg",
-
-desc:
-"Amati karakteristik visual sel darah pada preparat.",
-
+desc:"Amati karakteristik visual sel darah pada preparat.",
 focus:[
 "Bentuk sel",
 "Sel darah merah",
 "Sel darah putih",
 "Ciri visual sel"
 ],
-
 parts:[
-
-[
-"1",
-"Sel darah merah (eritrosit)",
-"Mengangkut oksigen dan sebagian karbon dioksida."
-],
-
-[
-"2",
-"Sel darah putih (leukosit)",
-"Berperan dalam pertahanan tubuh."
-],
-
-[
-"3",
-"Plasma darah",
-"Bagian cair darah yang membawa berbagai zat."
+["1","Sel darah merah (eritrosit)","Mengangkut oksigen dan sebagian karbon dioksida."],
+["2","Sel darah putih (leukosit)","Berperan dalam pertahanan tubuh."],
+["3","Plasma darah","Bagian cair darah yang membawa berbagai zat."]
 ]
-
-]
-
 }
 
 };
 
 
+/* ================================================= */
+/* VARIABEL */
+/* ================================================= */
 
-/* =====================================================
-VARIABEL
-===================================================== */
-
-let zoom = 1;
-
-let currentTarget = "";
+let zoom=1;
 
 
-
-/* =====================================================
-NAVIGASI
-===================================================== */
+/* ================================================= */
+/* NAVIGASI */
+/* ================================================= */
 
 function show(id){
 
 document
 .querySelectorAll(".section")
-.forEach(
-x=>x.classList.remove("active")
-);
+.forEach(x=>x.classList.remove("active"));
+
 
 document
 .getElementById(id)
 .classList.add("active");
+
 
 window.scrollTo({
 top:0,
@@ -1852,15 +1971,11 @@ behavior:"smooth"
 });
 
 
-/* default preparat */
-
 if(id==="plant"){
 
 loadPrep(
 "bawang",
-document.querySelector(
-"#plant .preparat-btn"
-)
+document.querySelector("#plant .preparat-btn")
 );
 
 }
@@ -1870,9 +1985,7 @@ if(id==="animal"){
 
 loadPrep(
 "pipi",
-document.querySelector(
-"#animal .preparat-btn"
-)
+document.querySelector("#animal .preparat-btn")
 );
 
 }
@@ -1880,19 +1993,15 @@ document.querySelector(
 }
 
 
-
-/* =====================================================
-MEMILIH PREPARAT
-===================================================== */
+/* ================================================= */
+/* LOAD PREPARAT */
+/* ================================================= */
 
 function loadPrep(key,btn){
 
-const d = prep[key];
+const d=prep[key];
 
-
-/* menentukan target */
-
-currentTarget =
+const target=
 d.cat==="tumbuhan"
 ?
 "plantContent"
@@ -1900,9 +2009,7 @@ d.cat==="tumbuhan"
 "animalContent";
 
 
-/* tombol aktif */
-
-const parent =
+const parent=
 d.cat==="tumbuhan"
 ?
 "plant"
@@ -1920,21 +2027,14 @@ x=>x.classList.remove("active")
 
 
 if(btn){
-
 btn.classList.add("active");
-
 }
 
 
 zoom=1;
 
 
-
-/* tampilkan preparat */
-
-document.getElementById(
-currentTarget
-).innerHTML = `
+document.getElementById(target).innerHTML=`
 
 <div class="microscope">
 
@@ -1958,7 +2058,6 @@ alt="${d.name}"
 
 
 <div class="controls">
-
 
 <button
 class="control-btn"
@@ -2015,11 +2114,9 @@ onclick="magnify(3)"
 400×
 </button>
 
-
 </div>
 
 </div>
-
 
 
 <div class="info">
@@ -2035,32 +2132,25 @@ ${d.desc}
 
 
 <p>
-<strong>
-Fokus pengamatan:
-</strong>
+<strong>Fokus pengamatan:</strong>
 </p>
 
 
 <ul>
 
 ${d.focus
-.map(
-x=>"<li>"+x+"</li>"
-)
-.join("")
-}
+.map(x=>"<li>"+x+"</li>")
+.join("")}
 
 </ul>
 
 </div>
 
 
-
 <div class="structure-box">
 
 <h2>
-📋 Keterangan Nomor,
-Nama Bagian, dan Fungsi
+📋 Keterangan Nomor, Nama Bagian, dan Fungsi
 </h2>
 
 
@@ -2070,17 +2160,11 @@ Nama Bagian, dan Fungsi
 
 <tr>
 
-<th>
-No.
-</th>
+<th>No.</th>
 
-<th>
-Nama Bagian
-</th>
+<th>Nama Bagian</th>
 
-<th>
-Fungsi
-</th>
+<th>Fungsi</th>
 
 </tr>
 
@@ -2089,43 +2173,29 @@ Fungsi
 
 <tbody>
 
-${d.parts.map(
-
-x=>`
+${d.parts.map(x=>`
 
 <tr>
 
 <td>
 
 <span class="number">
-
 ${x[0]}
-
 </span>
 
 </td>
 
-
 <td>
-
-<strong>
-${x[1]}
-</strong>
-
+<strong>${x[1]}</strong>
 </td>
 
-
 <td>
-
 ${x[2]}
-
 </td>
 
 </tr>
 
-`
-
-).join("")}
+`).join("")}
 
 </tbody>
 
@@ -2134,9 +2204,8 @@ ${x[2]}
 
 <p class="image-note">
 
-Nomor struktur harus disesuaikan
-dengan posisi struktur yang benar-benar
-tampak pada gambar preparat.
+Gunakan gambar preparat sebagai sumber
+informasi visual saat melakukan pengamatan.
 
 </p>
 
@@ -2147,16 +2216,15 @@ tampak pada gambar preparat.
 }
 
 
-
-/* =====================================================
-ZOOM
-===================================================== */
+/* ================================================= */
+/* ZOOM */
+/* ================================================= */
 
 function zoomIn(){
 
 if(zoom<4){
 
-zoom += .5;
+zoom+=.5;
 
 }
 
@@ -2169,7 +2237,7 @@ function zoomOut(){
 
 if(zoom>.5){
 
-zoom -= .5;
+zoom-=.5;
 
 }
 
@@ -2187,9 +2255,9 @@ updateZoom();
 }
 
 
-/* =====================================================
-MAGNIFICATION
-===================================================== */
+/* ================================================= */
+/* MAGNIFIKASI */
+/* ================================================= */
 
 function magnify(n){
 
@@ -2199,13 +2267,13 @@ zoom=1;
 
 }
 
-else if(n===2){
+if(n===2){
 
 zoom=2;
 
 }
 
-else if(n===3){
+if(n===3){
 
 zoom=4;
 
@@ -2216,27 +2284,24 @@ updateZoom();
 }
 
 
-/* =====================================================
-UPDATE ZOOM
-===================================================== */
+/* ================================================= */
+/* UPDATE */
+/* ================================================= */
 
 function updateZoom(){
 
-const image =
-document.getElementById(
-"preparatImage"
-);
+const image=
+document.getElementById("preparatImage");
 
 
 if(image){
 
-image.style.transform =
+image.style.transform=
 `scale(${zoom})`;
 
 
-document.getElementById(
-"zoomText"
-).textContent =
+document.getElementById("zoomText")
+.textContent=
 `Zoom ${zoom}×`;
 
 }
