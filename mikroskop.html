@@ -1,833 +1,764 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Mikroskop Virtual - UPTD SMPN 3 Barru</title>
 
 <style>
+
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f8f8;
-    color:#37474f;
+font-family:Arial,sans-serif;
+background:#f4f8f7;
+color:#455a64;
 }
+
+
+/* HEADER */
 
 header{
-    background:#5fa9a5;
-    color:white;
-    padding:18px 25px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
+background:#5f9f9a;
+color:white;
+padding:18px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-.logo{
-    font-size:24px;
-    font-weight:bold;
+header h2{
+font-size:22px;
 }
 
-header a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    font-weight:bold;
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:bold;
 }
+
+nav a:hover{
+text-decoration:underline;
+}
+
+
+/* JUDUL */
+
+.hero{
+background:white;
+text-align:center;
+padding:45px 20px 30px;
+}
+
+.hero h1{
+font-size:30px;
+color:#5d7478;
+margin-bottom:12px;
+}
+
+.hero p{
+font-size:16px;
+line-height:1.6;
+}
+
+
+/* CONTAINER */
 
 .container{
-    max-width:1200px;
-    margin:25px auto;
-    padding:0 18px;
+max-width:1100px;
+margin:35px auto;
+padding:0 20px;
 }
 
-.title{
-    background:white;
-    border-radius:18px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-    margin-bottom:20px;
+
+/* PILIH PREPARAT */
+
+.preparat-menu{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 5px 18px rgba(0,0,0,0.08);
+margin-bottom:25px;
 }
 
-.title h1{
-    color:#4d8f8b;
-    margin-bottom:8px;
+.preparat-menu h2{
+text-align:center;
+color:#5d7478;
+margin-bottom:20px;
 }
 
-.title p{
-    color:#65777b;
+.preparat-buttons{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:12px;
 }
 
-.layout{
-    display:grid;
-    grid-template-columns:280px 1fr;
-    gap:20px;
+.preparat-btn{
+border:none;
+padding:13px 20px;
+border-radius:25px;
+background:#e4f0ee;
+color:#456568;
+font-weight:bold;
+cursor:pointer;
 }
 
-.panel{
-    background:white;
-    border-radius:18px;
-    padding:20px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
+.preparat-btn:hover{
+background:#cde3df;
 }
 
-.panel h2{
-    font-size:20px;
-    color:#4d8f8b;
-    margin-bottom:15px;
+.preparat-btn.active{
+background:#5f9f9a;
+color:white;
 }
 
-label{
-    display:block;
-    font-weight:bold;
-    margin:15px 0 8px;
+
+/* AREA MIKROSKOP */
+
+.microscope{
+background:#263238;
+border-radius:20px;
+padding:25px;
+box-shadow:0 8px 25px rgba(0,0,0,0.18);
 }
 
-select{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccd9d9;
-    border-radius:10px;
-    font-size:15px;
+.microscope-title{
+color:white;
+text-align:center;
+margin-bottom:20px;
+font-size:20px;
 }
 
-button{
-    border:none;
-    border-radius:10px;
-    padding:11px 15px;
-    cursor:pointer;
-    font-weight:bold;
-    margin:4px;
-    background:#5fa9a5;
-    color:white;
+
+/* AREA GAMBAR */
+
+.viewer{
+height:520px;
+background:#111;
+border:5px solid #455a64;
+border-radius:15px;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
 }
 
-button:hover{
-    opacity:.85;
+.viewer img{
+max-width:none;
+width:80%;
+height:auto;
+transition:transform 0.3s ease;
+transform-origin:center center;
+user-select:none;
 }
 
-button.secondary{
-    background:#f2c94c;
-    color:#4d4d4d;
-}
 
-button.reset{
-    background:#78909c;
-}
+/* KONTROL */
 
 .controls{
-    display:flex;
-    flex-wrap:wrap;
-    margin-top:8px;
+background:#37474f;
+padding:20px;
+margin-top:15px;
+border-radius:12px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
 }
+
+.control-btn{
+border:none;
+padding:11px 18px;
+border-radius:22px;
+background:#f5c400;
+color:#4f4f4f;
+font-weight:bold;
+cursor:pointer;
+}
+
+.control-btn:hover{
+opacity:0.85;
+}
+
+.zoom-level{
+color:white;
+font-weight:bold;
+display:flex;
+align-items:center;
+padding:0 10px;
+}
+
+
+/* INFORMASI */
 
 .info{
-    margin-top:18px;
-    padding:14px;
-    background:#eef8f7;
-    border-left:5px solid #5fa9a5;
-    border-radius:8px;
-    line-height:1.6;
+background:white;
+border-radius:18px;
+padding:28px;
+margin-top:25px;
+box-shadow:0 5px 18px rgba(0,0,0,0.08);
 }
 
-.microscope-area{
-    background:#263238;
-    border-radius:18px;
-    padding:18px;
-    color:white;
+.info h2{
+color:#5d7478;
+margin-bottom:12px;
+}
+
+.info p{
+line-height:1.7;
+margin-bottom:10px;
+}
+
+.info ul{
+margin-left:20px;
+line-height:1.8;
+}
+
+
+/* AKTIVITAS */
+
+.activity{
+text-align:center;
+margin-top:25px;
+}
+
+.activity a{
+display:inline-block;
+background:#5f9f9a;
+color:white;
+text-decoration:none;
+padding:14px 28px;
+border-radius:28px;
+font-weight:bold;
+}
+
+.activity a:hover{
+background:#4f8f8a;
+}
+
+
+/* SUMBER */
+
+.source{
+font-size:12px;
+color:#78909c;
+margin-top:20px;
+line-height:1.6;
+}
+
+.source a{
+color:#527d79;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#5f9f9a;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+footer p{
+margin:5px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+nav{
+text-align:center;
+}
+
+nav a{
+margin:0 6px;
+font-size:13px;
+}
+
+.hero h1{
+font-size:24px;
 }
 
 .viewer{
-    width:100%;
-    height:500px;
-    background:#111;
-    border-radius:14px;
-    overflow:hidden;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+height:380px;
 }
 
-.cell{
-    width:420px;
-    height:300px;
-    position:relative;
-    transition:transform .4s ease, filter .5s ease;
+.viewer img{
+width:95%;
 }
 
-.cell.focused{
-    filter:blur(0);
+.preparat-buttons{
+flex-direction:column;
 }
 
-.cell:not(.focused){
-    filter:blur(2.5px);
+.preparat-btn{
+width:100%;
 }
 
-/* SEL TUMBUHAN */
-
-.plant-cell{
-    border:7px solid #7cb342;
-    background:#dff0c2;
-    border-radius:22px;
+.controls{
+gap:8px;
 }
 
-.plant-cell .nucleus{
-    width:70px;
-    height:70px;
-    background:#9c6ade;
-    border-radius:50%;
-    position:absolute;
-    left:175px;
-    top:110px;
-    border:5px solid #7045a8;
+.control-btn{
+padding:10px 14px;
+font-size:13px;
 }
 
-.plant-cell .vacuole{
-    width:180px;
-    height:120px;
-    background:#b9e7f0;
-    border:4px solid #68b9c9;
-    border-radius:50%;
-    position:absolute;
-    left:120px;
-    top:70px;
-    opacity:.8;
 }
 
-.plant-cell .chloroplast{
-    width:28px;
-    height:18px;
-    background:#4caf50;
-    border-radius:50%;
-    position:absolute;
-}
-
-.p1{left:40px;top:45px;}
-.p2{right:45px;top:45px;}
-.p3{left:45px;bottom:45px;}
-.p4{right:45px;bottom:45px;}
-.p5{left:195px;top:25px;}
-.p6{left:195px;bottom:25px;}
-
-/* SEL HEWAN */
-
-.animal-cell{
-    border:6px solid #ce93d8;
-    background:#f5d9f7;
-    border-radius:50%;
-}
-
-.animal-cell .nucleus{
-    width:95px;
-    height:95px;
-    background:#8e5bb7;
-    border-radius:50%;
-    position:absolute;
-    left:160px;
-    top:100px;
-    border:6px solid #69438c;
-}
-
-.animal-cell .mitochondria{
-    width:40px;
-    height:22px;
-    background:#ef8b61;
-    border:3px solid #c75d35;
-    border-radius:50%;
-    position:absolute;
-}
-
-.m1{left:70px;top:70px;}
-.m2{right:65px;top:80px;}
-.m3{left:70px;bottom:70px;}
-.m4{right:65px;bottom:70px;}
-
-.label-box{
-    position:absolute;
-    bottom:12px;
-    left:15px;
-    background:rgba(0,0,0,.65);
-    padding:8px 12px;
-    border-radius:8px;
-    font-size:14px;
-}
-
-.scale{
-    text-align:center;
-    margin-top:12px;
-    color:#cfd8dc;
-}
-
-.status{
-    margin-top:12px;
-    text-align:center;
-    padding:10px;
-    background:#37474f;
-    border-radius:10px;
-}
-
-.structure{
-    margin-top:20px;
-}
-
-.structure h2{
-    color:#4d8f8b;
-    margin-bottom:12px;
-}
-
-.structure-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-}
-
-.structure-card{
-    background:white;
-    padding:15px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,.07);
-}
-
-.structure-card h3{
-    color:#4d8f8b;
-    margin-bottom:6px;
-}
-
-footer{
-    text-align:center;
-    margin:30px 0;
-    color:#718083;
-}
-
-@media(max-width:800px){
-    .layout{
-        grid-template-columns:1fr;
-    }
-
-    .viewer{
-        height:400px;
-    }
-
-    .cell{
-        width:320px;
-        height:230px;
-    }
-
-    .structure-grid{
-        grid-template-columns:1fr;
-    }
-}
 </style>
+
 </head>
+
 
 <body>
 
-<header>
-    <div class="logo">🔬 Mikroskop Virtual</div>
 
-    <nav>
-        <a href="index.html">Beranda</a>
-        <a href="panduan.html">Panduan</a>
-    </nav>
+<!-- HEADER -->
+
+<header>
+
+<h2>🔬 Mikroskop Virtual</h2>
+
+<nav>
+
+<a href="index.html">Beranda</a>
+
+<a href="panduan.html">Panduan</a>
+
+<a href="materi.html">Materi</a>
+
+<a href="aktivitas.html">Aktivitas</a>
+
+<a href="mikroskop.html">Mikroskop</a>
+
+</nav>
+
 </header>
+
+
+<!-- JUDUL -->
+
+<section class="hero">
+
+<h1>🔬 Mikroskop Virtual</h1>
+
+<p>
+Amati preparat sel secara digital dan identifikasi
+struktur yang tampak melalui pengamatan visual.
+</p>
+
+</section>
+
 
 <div class="container">
 
-    <section class="title">
-        <h1>Mikroskop Virtual</h1>
-        <p>
-            Media Pembelajaran IPA Berbasis QR Code
-        </p>
-        <p>
-            Materi Sel – Kelas VIII | UPTD SMPN 3 Barru
-        </p>
-    </section>
 
-    <div class="layout">
+<!-- PILIH PREPARAT -->
 
-        <!-- PANEL KONTROL -->
+<section class="preparat-menu">
 
-        <aside class="panel">
+<h2>🔬 Pilih Preparat Digital</h2>
 
-            <h2>🔬 Pengaturan Pengamatan</h2>
+<div class="preparat-buttons">
 
-            <label for="specimen">
-                Pilih Preparat
-            </label>
+<button
+class="preparat-btn active"
+onclick="pilihPreparat('bawang')">
+🌱 Sel Epidermis Bawang Merah
+</button>
 
-            <select id="specimen" onchange="changeSpecimen()">
-                <option value="plant">
-                    Sel Tumbuhan
-                </option>
+<button
+class="preparat-btn"
+onclick="pilihPreparat('elodea')">
+🌿 Sel Daun Elodea
+</button>
 
-                <option value="animal">
-                    Sel Hewan
-                </option>
-            </select>
-
-            <label>
-                Perbesaran
-            </label>
-
-            <div class="controls">
-
-                <button onclick="setMagnification(1)">
-                    40×
-                </button>
-
-                <button onclick="setMagnification(1.6)">
-                    100×
-                </button>
-
-                <button onclick="setMagnification(2.5)">
-                    400×
-                </button>
-
-            </div>
-
-            <label>
-                Kontrol Pengamatan
-            </label>
-
-            <div class="controls">
-
-                <button onclick="zoomIn()">
-                    ＋ Zoom
-                </button>
-
-                <button onclick="zoomOut()">
-                    − Zoom
-                </button>
-
-                <button
-                    class="secondary"
-                    onclick="focusImage()">
-                    🎯 Fokus
-                </button>
-
-                <button
-                    class="reset"
-                    onclick="resetView()">
-                    ↻ Reset
-                </button>
-
-            </div>
-
-            <div class="info">
-
-                <strong>Petunjuk:</strong>
-
-                <ol style="padding-left:20px;margin-top:8px;">
-
-                    <li>
-                        Pilih preparat.
-                    </li>
-
-                    <li>
-                        Pilih tingkat perbesaran.
-                    </li>
-
-                    <li>
-                        Gunakan Zoom untuk memperbesar.
-                    </li>
-
-                    <li>
-                        Gunakan Fokus untuk memperjelas objek.
-                    </li>
-
-                    <li>
-                        Amati struktur sel.
-                    </li>
-
-                </ol>
-
-            </div>
-
-        </aside>
-
-        <!-- AREA MIKROSKOP -->
-
-        <main class="microscope-area">
-
-            <div class="viewer">
-
-                <div
-                    id="cell"
-                    class="cell plant-cell focused">
-
-                    <div class="vacuole"></div>
-
-                    <div class="nucleus"></div>
-
-                    <div class="chloroplast p1"></div>
-                    <div class="chloroplast p2"></div>
-                    <div class="chloroplast p3"></div>
-                    <div class="chloroplast p4"></div>
-                    <div class="chloroplast p5"></div>
-                    <div class="chloroplast p6"></div>
-
-                </div>
-
-                <div class="label-box" id="specimenLabel">
-                    Preparat: Sel Tumbuhan
-                </div>
-
-            </div>
-
-            <div class="scale">
-                Perbesaran:
-                <strong id="magnification">
-                    40×
-                </strong>
-            </div>
-
-            <div class="status" id="status">
-                Objek siap diamati.
-            </div>
-
-        </main>
-
-    </div>
-
-    <!-- INFORMASI STRUKTUR -->
-
-    <section class="panel structure">
-
-        <h2>
-            🧬 Struktur Sel yang Diamati
-        </h2>
-
-        <div
-            class="structure-grid"
-            id="structureInfo">
-
-            <div class="structure-card">
-
-                <h3>Dinding Sel</h3>
-
-                <p>
-                    Memberikan bentuk dan melindungi sel tumbuhan.
-                </p>
-
-            </div>
-
-            <div class="structure-card">
-
-                <h3>Vakuola</h3>
-
-                <p>
-                    Berperan dalam penyimpanan air dan berbagai zat.
-                </p>
-
-            </div>
-
-            <div class="structure-card">
-
-                <h3>Inti Sel</h3>
-
-                <p>
-                    Mengatur berbagai aktivitas sel.
-                </p>
-
-            </div>
-
-            <div class="structure-card">
-
-                <h3>Kloroplas</h3>
-
-                <p>
-                    Tempat berlangsungnya fotosintesis pada sel tumbuhan.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
+<button
+class="preparat-btn"
+onclick="pilihPreparat('pipi')">
+🧫 Sel Epitel Pipi
+</button>
 
 </div>
 
+</section>
+
+
+<!-- MIKROSKOP -->
+
+<section class="microscope">
+
+<div class="microscope-title">
+
+🔬 AREA PENGAMATAN MIKROSKOP
+
+</div>
+
+
+<div class="viewer">
+
+<img
+id="preparatImage"
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Onion_Epidermis_Cells_W.M._40x_-_185.jpg"
+alt="Preparat Sel Epidermis Bawang Merah">
+
+</div>
+
+
+<!-- KONTROL -->
+
+<div class="controls">
+
+<button
+class="control-btn"
+onclick="zoomOut()">
+➖ Zoom Out
+</button>
+
+<span
+class="zoom-level"
+id="zoomText">
+Zoom 1×
+</span>
+
+<button
+class="control-btn"
+onclick="zoomIn()">
+➕ Zoom In
+</button>
+
+<button
+class="control-btn"
+onclick="resetZoom()">
+🔄 Reset
+</button>
+
+<button
+class="control-btn"
+onclick="setMagnification(1)">
+40×
+</button>
+
+<button
+class="control-btn"
+onclick="setMagnification(2)">
+100×
+</button>
+
+<button
+class="control-btn"
+onclick="setMagnification(3)">
+400×
+</button>
+
+</div>
+
+</section>
+
+
+<!-- INFORMASI -->
+
+<section class="info">
+
+<h2 id="namaPreparat">
+🌱 Sel Epidermis Bawang Merah
+</h2>
+
+<p id="deskripsiPreparat">
+
+Preparat menunjukkan sel epidermis bawang merah
+yang diamati menggunakan mikroskop. Perhatikan
+susunan sel yang tampak seperti ruang-ruang
+berbentuk teratur.
+
+</p>
+
+<p><strong>Fokus pengamatan:</strong></p>
+
+<ul id="fokusPreparat">
+
+<li>Bentuk dan susunan sel</li>
+
+<li>Dinding sel</li>
+
+<li>Inti sel yang tampak</li>
+
+<li>Perbedaan struktur dengan sel hewan</li>
+
+</ul>
+
+</section>
+
+
+<!-- AKTIVITAS -->
+
+<section class="activity">
+
+<a href="aktivitas.html">
+
+📝 MULAI AKTIVITAS PENGAMATAN
+
+</a>
+
+</section>
+
+
+<!-- SUMBER -->
+
+<section class="source">
+
+<strong>Sumber preparat digital:</strong><br>
+
+1. Onion Epidermis Cells – Logan Rickert,
+Creative Commons Attribution 2.0.<br>
+
+2. Elodea Cells Under Microscope – ~delta,
+Creative Commons Attribution-ShareAlike 4.0.<br>
+
+3. Microscopic Image of Human Cheek Cells –
+Aholderfield, Creative Commons Attribution 4.0.
+
+</section>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
 <footer>
 
-    Mikroskop Virtual Berbasis QR Code<br>
-    IPA Materi Sel – Kelas VIII<br>
-    UPTD SMPN 3 Barru
+<p>
+Media Pembelajaran IPA – Mikroskop Virtual Berbasis QR Code
+</p>
+
+<p>
+Materi Sel Kelas VIII | UPTD SMPN 3 Barru
+</p>
 
 </footer>
 
 
 <script>
 
-let zoom = 1;
 
-let magnification = 1;
+/* DATA PREPARAT */
 
-let focused = true;
+const preparat = {
+
+bawang:{
+
+nama:"🌱 Sel Epidermis Bawang Merah",
+
+gambar:
+"https://commons.wikimedia.org/wiki/Special:Redirect/file/Onion_Epidermis_Cells_W.M._40x_-_185.jpg",
+
+deskripsi:
+"Preparat sel epidermis bawang merah menunjukkan susunan sel tumbuhan yang relatif teratur. Amati bentuk sel dan bagian yang dapat dikenali secara visual.",
+
+fokus:[
+"Bentuk dan susunan sel",
+"Dinding sel",
+"Inti sel yang tampak",
+"Ciri khas sel tumbuhan"
+]
+
+},
+
+elodea:{
+
+nama:"🌿 Sel Daun Elodea",
+
+gambar:
+"https://commons.wikimedia.org/wiki/Special:Redirect/file/Elodea_cells_under_microscope.jpg",
+
+deskripsi:
+"Preparat daun Elodea memperlihatkan sel tumbuhan dengan struktur yang dapat diamati secara visual, termasuk susunan sel dan kloroplas.",
+
+fokus:[
+"Bentuk sel",
+"Susunan sel",
+"Kloroplas",
+"Ciri khas sel tumbuhan"
+]
+
+},
+
+pipi:{
+
+nama:"🧫 Sel Epitel Pipi",
+
+gambar:
+"https://commons.wikimedia.org/wiki/Special:Redirect/file/Microscopic_Image_of_Human_Cheek_Cells.jpg",
+
+deskripsi:
+"Preparat sel epitel pipi merupakan contoh sel hewan. Amati bentuk sel dan bagian yang dapat terlihat pada preparat.",
+
+fokus:[
+"Bentuk sel",
+"Membran sel",
+"Inti sel",
+"Ciri khas sel hewan"
+]
+
+}
+
+};
 
 
-/* GANTI PREPARAT */
+let zoom=1;
 
-function changeSpecimen(){
 
-    const specimen =
-        document.getElementById("specimen").value;
+/* PILIH PREPARAT */
 
-    const cell =
-        document.getElementById("cell");
+function pilihPreparat(jenis){
 
-    const label =
-        document.getElementById("specimenLabel");
+const data=preparat[jenis];
 
-    const structureInfo =
-        document.getElementById("structureInfo");
+document.getElementById("preparatImage").src=data.gambar;
 
-    if(specimen === "plant"){
+document.getElementById("preparatImage").alt=data.nama;
 
-        cell.className =
-            "cell plant-cell focused";
+document.getElementById("namaPreparat").innerHTML=data.nama;
 
-        cell.innerHTML = `
-            <div class="vacuole"></div>
-            <div class="nucleus"></div>
+document.getElementById("deskripsiPreparat").innerHTML=data.deskripsi;
 
-            <div class="chloroplast p1"></div>
-            <div class="chloroplast p2"></div>
-            <div class="chloroplast p3"></div>
-            <div class="chloroplast p4"></div>
-            <div class="chloroplast p5"></div>
-            <div class="chloroplast p6"></div>
-        `;
 
-        label.innerText =
-            "Preparat: Sel Tumbuhan";
+const fokus=document.getElementById("fokusPreparat");
 
-        structureInfo.innerHTML = `
+fokus.innerHTML="";
 
-            <div class="structure-card">
-                <h3>Dinding Sel</h3>
-                <p>
-                Memberikan bentuk dan melindungi sel tumbuhan.
-                </p>
-            </div>
+data.fokus.forEach(function(item){
 
-            <div class="structure-card">
-                <h3>Vakuola</h3>
-                <p>
-                Berperan dalam penyimpanan air dan berbagai zat.
-                </p>
-            </div>
+const li=document.createElement("li");
 
-            <div class="structure-card">
-                <h3>Inti Sel</h3>
-                <p>
-                Mengatur berbagai aktivitas sel.
-                </p>
-            </div>
+li.textContent=item;
 
-            <div class="structure-card">
-                <h3>Kloroplas</h3>
-                <p>
-                Tempat berlangsungnya fotosintesis.
-                </p>
-            </div>
-        `;
+fokus.appendChild(li);
 
-    }
+});
 
-    else{
 
-        cell.className =
-            "cell animal-cell focused";
+document.querySelectorAll(".preparat-btn").forEach(function(btn){
 
-        cell.innerHTML = `
+btn.classList.remove("active");
 
-            <div class="nucleus"></div>
+});
 
-            <div class="mitochondria m1"></div>
-            <div class="mitochondria m2"></div>
-            <div class="mitochondria m3"></div>
-            <div class="mitochondria m4"></div>
 
-        `;
+event.currentTarget.classList.add("active");
 
-        label.innerText =
-            "Preparat: Sel Hewan";
 
-        structureInfo.innerHTML = `
-
-            <div class="structure-card">
-                <h3>Membran Sel</h3>
-                <p>
-                Membatasi sel dan mengatur keluar masuknya zat.
-                </p>
-            </div>
-
-            <div class="structure-card">
-                <h3>Inti Sel</h3>
-                <p>
-                Mengatur berbagai aktivitas sel.
-                </p>
-            </div>
-
-            <div class="structure-card">
-                <h3>Mitokondria</h3>
-                <p>
-                Berperan dalam penyediaan energi bagi sel.
-                </p>
-            </div>
-
-        `;
-
-    }
-
-    zoom = 1;
-    magnification = 1;
-
-    updateView();
-
-    document.getElementById("status").innerText =
-        "Preparat berhasil dipilih. Silakan lakukan pengamatan.";
+resetZoom();
 
 }
 
 
-/* PERBESARAN */
-
-function setMagnification(value){
-
-    magnification = value;
-
-    updateView();
-
-    let text = "40×";
-
-    if(value === 1.6){
-        text = "100×";
-    }
-
-    if(value === 2.5){
-        text = "400×";
-    }
-
-    document.getElementById("magnification").innerText =
-        text;
-
-    document.getElementById("status").innerText =
-        "Perbesaran diatur ke " + text + ".";
-
-}
-
-
-/* ZOOM */
+/* ZOOM IN */
 
 function zoomIn(){
 
-    zoom += 0.2;
+if(zoom<4){
 
-    updateView();
-
-    document.getElementById("status").innerText =
-        "Objek diperbesar.";
+zoom+=0.5;
 
 }
 
+updateZoom();
+
+}
+
+
+/* ZOOM OUT */
 
 function zoomOut(){
 
-    if(zoom > 0.6){
+if(zoom>0.5){
 
-        zoom -= 0.2;
-
-    }
-
-    updateView();
-
-    document.getElementById("status").innerText =
-        "Objek diperkecil.";
+zoom-=0.5;
 
 }
 
-
-/* FOKUS */
-
-function focusImage(){
-
-    const cell =
-        document.getElementById("cell");
-
-    focused = !focused;
-
-    if(focused){
-
-        cell.classList.add("focused");
-
-        document.getElementById("status").innerText =
-            "Fokus diperbaiki. Struktur objek lebih jelas.";
-
-    }
-
-    else{
-
-        cell.classList.remove("focused");
-
-        document.getElementById("status").innerText =
-            "Fokus dikurangi. Objek tampak kurang jelas.";
-
-    }
-
-}
-
-
-/* UPDATE TAMPILAN */
-
-function updateView(){
-
-    const cell =
-        document.getElementById("cell");
-
-    const scale =
-        zoom * magnification;
-
-    cell.style.transform =
-        "scale(" + scale + ")";
+updateZoom();
 
 }
 
 
 /* RESET */
 
-function resetView(){
+function resetZoom(){
 
-    zoom = 1;
+zoom=1;
 
-    magnification = 1;
+updateZoom();
 
-    focused = true;
+}
 
-    const cell =
-        document.getElementById("cell");
 
-    cell.classList.add("focused");
+/* PEMBESARAN DIGITAL */
 
-    updateView();
+function setMagnification(level){
 
-    document.getElementById("magnification").innerText =
-        "40×";
+if(level===1){
 
-    document.getElementById("status").innerText =
-        "Pengamatan dikembalikan ke pengaturan awal.";
+zoom=1;
+
+}
+
+if(level===2){
+
+zoom=2;
+
+}
+
+if(level===3){
+
+zoom=4;
+
+}
+
+updateZoom();
+
+}
+
+
+/* UPDATE TAMPILAN */
+
+function updateZoom(){
+
+const image=document.getElementById("preparatImage");
+
+image.style.transform="scale("+zoom+")";
+
+document.getElementById("zoomText").textContent=
+"Zoom "+zoom+"×";
 
 }
 
 </script>
 
+
 </body>
+
 </html>
