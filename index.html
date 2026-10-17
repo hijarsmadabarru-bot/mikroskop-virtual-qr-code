@@ -1,15 +1,365 @@
-┌─────────────────────────────────────┐
-│        MIKROSKOP VIRTUAL            │
-│     Media Pembelajaran IPA          │
-│                                     │
-│          MATERI SEL                 │
-│            KELAS VIII               │
-│                                     │
-│        UPTD SMPN 3 BARRU            │
-│                                     │
-│      [ MULAI PENGAMATAN ]           │
-│      [ PANDUAN PENGGUNAAN ]         │
-│                                     │
-│  Amati struktur sel melalui        │
-│  mikroskop virtual berbasis QR Code │
-└─────────────────────────────────────┘
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mikroskop Virtual - Materi Sel Kelas VIII</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4fbf8;
+            color: #173b35;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #087f6b, #12a889);
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                radial-gradient(circle at top right, #c9f3e7, transparent 35%),
+                linear-gradient(135deg, #f4fbf8, #e7f7f2);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #086c5c;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 22px;
+            color: #355c55;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #536b65;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f2c94c;
+            color: #173b35;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background: #087f6b;
+            color: white;
+        }
+
+        section {
+            padding: 65px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #087f6b;
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 28px 22px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            border-top: 5px solid #12a889;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #087f6b;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #60756f;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about-box {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            color: #536b65;
+            font-size: 16px;
+        }
+
+        footer {
+            background: #075b4e;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        🔬 Mikroskop Virtual
+    </div>
+
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#fitur">Fitur</a>
+        <a href="#tentang">Tentang</a>
+    </nav>
+
+</header>
+
+
+<section class="hero" id="beranda">
+
+    <div class="hero-content">
+
+        <div class="icon">🔬</div>
+
+        <h1>Mikroskop Virtual</h1>
+
+        <h2>Media Pembelajaran IPA Berbasis QR Code</h2>
+
+        <p>
+            Materi Sel untuk Siswa Kelas VIII
+        </p>
+
+        <p>
+            Ayo belajar mengenal struktur dan fungsi sel
+            melalui pengalaman mengamati secara digital.
+        </p>
+
+        <a href="#fitur" class="btn">
+            🚀 MULAI BELAJAR
+        </a>
+
+        <a href="#tentang" class="btn btn-secondary">
+            📖 PANDUAN
+        </a>
+
+    </div>
+
+</section>
+
+
+<section id="fitur">
+
+    <h2 class="section-title">
+        Menu Pembelajaran
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">🔬</div>
+            <h3>Mikroskop Virtual</h3>
+            <p>
+                Mengamati preparat sel secara digital
+                menggunakan perangkat komputer atau smartphone.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌱</div>
+            <h3>Sel Tumbuhan</h3>
+            <p>
+                Mengenal struktur dan bagian-bagian
+                sel tumbuhan.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🧫</div>
+            <h3>Sel Hewan</h3>
+            <p>
+                Mengamati dan mengenali struktur
+                sel hewan.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📚</div>
+            <h3>Materi Sel</h3>
+            <p>
+                Mempelajari konsep sel, mikroskop,
+                organisasi kehidupan, dan materi terkait.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📝</div>
+            <h3>Evaluasi</h3>
+            <p>
+                Menguji pemahaman melalui aktivitas
+                dan soal pembelajaran.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📱</div>
+            <h3>QR Code</h3>
+            <p>
+                Akses media pembelajaran dengan cepat
+                melalui QR Code.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about" id="tentang">
+
+    <h2 class="section-title">
+        Tentang Media
+    </h2>
+
+    <div class="about-box">
+
+        <p>
+            Media Pembelajaran Mikroskop Virtual Berbasis QR Code
+            dikembangkan untuk mendukung pembelajaran IPA materi Sel
+            kelas VIII.
+        </p>
+
+        <br>
+
+        <p>
+            Media ini membantu siswa mengamati struktur sel secara
+            digital dan mendukung kegiatan pembelajaran yang lebih
+            interaktif.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Mikroskop Virtual Berbasis QR Code
+    </p>
+
+    <p>
+        Media Pembelajaran IPA – Materi Sel Kelas VIII
+    </p>
+
+</footer>
+
+</body>
+</html>
