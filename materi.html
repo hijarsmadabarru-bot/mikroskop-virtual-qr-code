@@ -1,360 +1,468 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Materi Sel - UPTD SMPN 3 Barru</title>
 
 <style>
 
+/* =========================
+   DASAR
+========================= */
+
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:#f4f8f7;
-    color:#455a64;
-    line-height:1.7;
+font-family:Arial, sans-serif;
+background:#f4f8f7;
+color:#455a64;
+line-height:1.7;
 }
 
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-    background:#5f9f9a;
-    color:white;
-    padding:18px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+background:#5f9f9a;
+color:white;
+padding:18px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 header h2{
-    font-size:22px;
+font-size:22px;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:22px;
-    font-weight:bold;
+color:white;
+text-decoration:none;
+margin-left:22px;
+font-weight:bold;
 }
 
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:40px 20px;
+nav a:hover{
+text-decoration:underline;
 }
+
+
+/* =========================
+   JUDUL
+========================= */
 
 .hero{
-    background:white;
-    text-align:center;
-    padding:45px 20px;
-    border-radius:20px;
-    margin-bottom:30px;
-    box-shadow:0 5px 18px rgba(0,0,0,0.07);
+background:white;
+text-align:center;
+padding:55px 20px 45px;
 }
 
 .hero h1{
-    color:#5d7478;
-    font-size:32px;
-    margin-bottom:10px;
+font-size:30px;
+color:#5d7478;
+margin-bottom:12px;
+}
+
+.hero h2{
+font-size:22px;
+color:#465d61;
+margin-bottom:12px;
 }
 
 .hero p{
-    color:#718083;
+font-size:16px;
 }
 
+
+/* =========================
+   KONTEN
+========================= */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:35px 20px 60px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
 .section{
-    background:white;
-    padding:30px;
-    margin-bottom:28px;
-    border-radius:18px;
-    box-shadow:0 5px 18px rgba(0,0,0,0.06);
+background:white;
+border-radius:18px;
+padding:30px;
+margin-bottom:28px;
+box-shadow:0 5px 18px rgba(0,0,0,0.07);
 }
 
 .section h2{
-    color:#587477;
-    margin-bottom:18px;
-    font-size:26px;
+color:#587477;
+font-size:24px;
+margin-bottom:18px;
+border-left:6px solid #6da9a4;
+padding-left:14px;
 }
 
 .section h3{
-    color:#5f9f9a;
-    margin-top:20px;
-    margin-bottom:10px;
+color:#5f9f9a;
+margin-top:20px;
+margin-bottom:10px;
+font-size:20px;
 }
 
 .section p{
-    margin-bottom:15px;
+margin-bottom:12px;
 }
 
-.remember{
-    background:#fff6d8;
-    border-left:6px solid #f5c400;
-    padding:18px;
-    border-radius:10px;
-    margin-top:20px;
+
+/* =========================
+   POIN
+========================= */
+
+ul{
+padding-left:25px;
+margin-bottom:15px;
 }
 
-.remember strong{
-    color:#8a7100;
+li{
+margin-bottom:7px;
 }
+
+
+/* =========================
+   GAMBAR STRUKTUR SEL
+========================= */
+
+.cell-image-box{
+text-align:center;
+margin:25px 0;
+}
+
+.cell-image-box img{
+width:100%;
+max-width:1200px;
+height:auto;
+display:block;
+margin:auto;
+border-radius:18px;
+box-shadow:0 6px 22px rgba(0,0,0,0.12);
+}
+
+.caption{
+font-size:14px;
+color:#607d82;
+margin-top:12px;
+font-style:italic;
+}
+
+
+/* =========================
+   KARTU ORGANEL
+========================= */
 
 .organel-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:18px;
-    margin-top:20px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-top:20px;
 }
 
 .organel{
-    background:#f5f9f8;
-    border-radius:15px;
-    padding:20px;
-    border:1px solid #e1ecea;
+background:#f4f9f8;
+border-radius:14px;
+padding:20px;
+border-left:5px solid #6da9a4;
 }
 
-.organel h3{
-    margin-top:0;
-    font-size:18px;
+.organel h4{
+color:#557578;
+font-size:18px;
+margin-bottom:8px;
 }
 
 .organel p{
-    font-size:14px;
+font-size:14px;
+margin:0;
 }
 
-.compare{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:20px;
-    overflow:hidden;
+
+/* =========================
+   PERBANDINGAN
+========================= */
+
+.table-wrapper{
+overflow-x:auto;
+margin-top:20px;
 }
 
-.compare th,
-.compare td{
-    border:1px solid #d9e5e3;
-    padding:14px;
-    text-align:left;
-    vertical-align:top;
+table{
+width:100%;
+border-collapse:collapse;
+min-width:650px;
 }
 
-.compare th{
-    background:#5f9f9a;
-    color:white;
+th,
+td{
+border:1px solid #d5e1df;
+padding:13px;
+text-align:left;
 }
 
-.compare tr:nth-child(even){
-    background:#f5f9f8;
+th{
+background:#6da9a4;
+color:white;
 }
 
-.highlight{
-    background:#eef7f5;
-    padding:20px;
-    border-radius:14px;
-    margin-top:20px;
+tr:nth-child(even){
+background:#f5f9f8;
 }
 
-.list{
-    padding-left:25px;
+
+/* =========================
+   RINGKASAN
+========================= */
+
+.summary{
+background:#eef8f6;
+border-radius:15px;
+padding:22px;
+border-left:6px solid #5f9f9a;
 }
 
-.list li{
-    margin-bottom:8px;
-}
 
-.organization{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    margin:25px 0;
-}
-
-.level{
-    background:#5f9f9a;
-    color:white;
-    padding:15px 20px;
-    border-radius:12px;
-    font-weight:bold;
-    text-align:center;
-}
-
-.arrow{
-    font-size:25px;
-    color:#f5c400;
-    font-weight:bold;
-}
-
-.activity{
-    background:#eef7f5;
-    border-radius:16px;
-    padding:25px;
-    margin-top:20px;
-}
-
-.activity ol{
-    padding-left:25px;
-}
+/* =========================
+   TOMBOL
+========================= */
 
 .button-area{
-    text-align:center;
-    margin-top:30px;
+text-align:center;
+margin-top:30px;
 }
 
 .btn{
-    display:inline-block;
-    padding:14px 25px;
-    border-radius:28px;
-    text-decoration:none;
-    font-weight:bold;
-    margin:5px;
+display:inline-block;
+padding:13px 25px;
+margin:6px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
 }
 
-.btn-primary{
-    background:#f5c400;
-    color:#4f4f4f;
+.btn-microscope{
+background:#5f9f9a;
+color:white;
 }
 
-.btn-secondary{
-    background:#5f9f9a;
-    color:white;
+.btn-activity{
+background:#f5c400;
+color:#4f4f4f;
 }
+
+.btn-home{
+background:#78909c;
+color:white;
+}
+
+.btn:hover{
+transform:scale(1.03);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    background:#5f9f9a;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:20px;
+background:#5f9f9a;
+color:white;
+text-align:center;
+padding:25px;
 }
+
+footer p{
+margin:5px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:700px){
 
-    header{
-        flex-direction:column;
-        gap:15px;
-        text-align:center;
-    }
+header{
+flex-direction:column;
+gap:15px;
+}
 
-    nav a{
-        margin:0 7px;
-        font-size:14px;
-    }
+nav{
+text-align:center;
+}
 
-    .hero h1{
-        font-size:25px;
-    }
+nav a{
+margin:0 6px;
+font-size:13px;
+}
 
-    .section{
-        padding:22px;
-    }
+.hero{
+padding:40px 18px;
+}
 
-    .compare{
-        font-size:13px;
-    }
+.hero h1{
+font-size:24px;
+}
 
-    .organization{
-        flex-direction:column;
-    }
+.hero h2{
+font-size:19px;
+}
 
-    .arrow{
-        transform:rotate(90deg);
-    }
+.container{
+padding:25px 14px 45px;
+}
+
+.section{
+padding:22px 18px;
+}
+
+.section h2{
+font-size:21px;
+}
+
+.organel-grid{
+grid-template-columns:1fr;
+}
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
-<h2>📚 Materi Sel</h2>
+<h2>🔬 Mikroskop Virtual</h2>
 
 <nav>
+
 <a href="index.html">Beranda</a>
+
 <a href="panduan.html">Panduan</a>
+
 <a href="materi.html">Materi</a>
+
+<a href="aktivitas.html">Aktivitas</a>
+
 <a href="mikroskop.html">Mikroskop</a>
+
 </nav>
 
 </header>
 
 
-<div class="container">
-
-
-<!-- PEMBUKA -->
+<!-- =========================
+     JUDUL
+========================= -->
 
 <section class="hero">
 
-<h1>Materi IPA Kelas VIII</h1>
+<h1>
+Materi Sel untuk Siswa Kelas VIII
+</h1>
 
-<p>
-<strong>Pengenalan Sel</strong>
-</p>
-
-<p>
+<h2>
 UPTD SMPN 3 Barru
-</p>
+</h2>
 
 <p>
-Pelajari materi berikut sebelum melakukan pengamatan menggunakan Mikroskop Virtual.
+Mengenal struktur, fungsi, dan organisasi kehidupan melalui pembelajaran visual dan pengamatan digital.
 </p>
 
 </section>
 
 
-<!-- BAGIAN 1 -->
+<!-- =========================
+     KONTEN UTAMA
+========================= -->
+
+<main class="container">
+
+
+<!-- 1. PENGERTIAN SEL -->
 
 <section class="section">
 
-<h2>🔬 1. Pengertian Sel</h2>
+<h2>1. Pengertian Sel</h2>
 
 <p>
 Sel merupakan unit struktural dan fungsional terkecil penyusun makhluk hidup.
-Setiap makhluk hidup tersusun atas sel. Ada makhluk hidup yang hanya terdiri atas satu sel
-dan ada pula yang tersusun atas banyak sel.
+Setiap makhluk hidup tersusun atas satu sel atau lebih.
 </p>
-
-<div class="remember">
-
-<strong>💡 Ingat!</strong>
 
 <p>
-Sel merupakan bagian dasar penyusun tubuh makhluk hidup yang menjalankan berbagai fungsi kehidupan.
+Sel memiliki berbagai bagian yang bekerja bersama untuk menjalankan aktivitas kehidupan.
 </p>
-
-</div>
 
 </section>
 
 
-<!-- BAGIAN 2 -->
+<!-- 2. STRUKTUR SEL -->
 
 <section class="section">
 
-<h2>🧫 2. Struktur dan Fungsi Sel</h2>
+<h2>2. Struktur dan Bagian-Bagian Sel</h2>
 
 <p>
-Secara umum, sel memiliki beberapa bagian utama yang memiliki fungsi berbeda.
-Bagian-bagian tersebut bekerja sama untuk menjaga kelangsungan hidup sel.
+Sel memiliki berbagai organel atau bagian dengan struktur dan fungsi yang berbeda.
+Amatilah gambar berikut untuk mengenali bagian-bagian utama sel tumbuhan dan sel hewan.
 </p>
+
+
+<div class="cell-image-box">
+
+<img
+src="struktur-bagian-sel.png"
+alt="Struktur dan bagian-bagian sel tumbuhan dan sel hewan"
+>
+
+<p class="caption">
+Gambar struktur dan bagian-bagian sel tumbuhan dan sel hewan.
+</p>
+
+</div>
+
+
+<h3>Bagian-Bagian Sel</h3>
 
 <div class="organel-grid">
 
 
 <div class="organel">
 
-<h3>🔵 Membran Sel</h3>
+<h4>🟢 Dinding Sel</h4>
 
 <p>
-Membatasi sel dengan lingkungan di sekitarnya dan mengatur keluar masuknya zat
-ke dalam dan ke luar sel.
+Lapisan pelindung yang memberikan bentuk dan kekuatan pada sel tumbuhan.
 </p>
 
 </div>
@@ -362,10 +470,10 @@ ke dalam dan ke luar sel.
 
 <div class="organel">
 
-<h3>🧬 Inti Sel</h3>
+<h4>🔵 Membran Sel</h4>
 
 <p>
-Berperan sebagai pusat pengendali aktivitas sel dan menyimpan materi genetik.
+Bagian yang membatasi sel dan mengatur keluar masuknya zat.
 </p>
 
 </div>
@@ -373,10 +481,10 @@ Berperan sebagai pusat pengendali aktivitas sel dan menyimpan materi genetik.
 
 <div class="organel">
 
-<h3>💧 Sitoplasma</h3>
+<h4>🟣 Sitoplasma</h4>
 
 <p>
-Bagian sel tempat berlangsungnya berbagai aktivitas dan reaksi metabolisme.
+Cairan di dalam sel tempat berlangsungnya berbagai aktivitas dan reaksi kimia.
 </p>
 
 </div>
@@ -384,10 +492,10 @@ Bagian sel tempat berlangsungnya berbagai aktivitas dan reaksi metabolisme.
 
 <div class="organel">
 
-<h3>⚡ Mitokondria</h3>
+<h4>🟣 Nukleus</h4>
 
 <p>
-Berperan dalam menghasilkan energi yang diperlukan untuk berbagai aktivitas sel.
+Inti sel yang mengatur berbagai aktivitas sel dan menyimpan materi genetik.
 </p>
 
 </div>
@@ -395,10 +503,10 @@ Berperan dalam menghasilkan energi yang diperlukan untuk berbagai aktivitas sel.
 
 <div class="organel">
 
-<h3>🌿 Kloroplas</h3>
+<h4>🟠 Mitokondria</h4>
 
 <p>
-Terdapat pada sel tumbuhan dan berperan dalam proses fotosintesis.
+Organel yang berperan dalam menghasilkan energi bagi aktivitas sel.
 </p>
 
 </div>
@@ -406,10 +514,10 @@ Terdapat pada sel tumbuhan dan berperan dalam proses fotosintesis.
 
 <div class="organel">
 
-<h3>🧱 Dinding Sel</h3>
+<h4>🟢 Kloroplas</h4>
 
 <p>
-Terdapat pada sel tumbuhan dan membantu memberikan bentuk serta kekuatan pada sel.
+Organel khas sel tumbuhan yang mengandung klorofil dan menjadi tempat berlangsungnya fotosintesis.
 </p>
 
 </div>
@@ -417,10 +525,65 @@ Terdapat pada sel tumbuhan dan membantu memberikan bentuk serta kekuatan pada se
 
 <div class="organel">
 
-<h3>💧 Vakuola</h3>
+<h4>🟡 Ribosom</h4>
 
 <p>
-Berfungsi sebagai tempat penyimpanan air, zat makanan, dan berbagai zat lainnya.
+Organel yang berperan dalam sintesis atau pembentukan protein.
+</p>
+
+</div>
+
+
+<div class="organel">
+
+<h4>🩷 Retikulum Endoplasma</h4>
+
+<p>
+Sistem membran yang berperan dalam sintesis dan transportasi berbagai zat di dalam sel.
+</p>
+
+</div>
+
+
+<div class="organel">
+
+<h4>🩷 Badan Golgi</h4>
+
+<p>
+Berperan dalam mengolah, mengemas, dan mendistribusikan berbagai zat yang dihasilkan sel.
+</p>
+
+</div>
+
+
+<div class="organel">
+
+<h4>🔵 Vakuola</h4>
+
+<p>
+Ruang penyimpanan air, zat makanan, dan berbagai zat lainnya. Vakuola besar umumnya ditemukan pada sel tumbuhan.
+</p>
+
+</div>
+
+
+<div class="organel">
+
+<h4>🟢 Lisosom</h4>
+
+<p>
+Organel yang mengandung enzim untuk membantu proses pencernaan zat di dalam sel.
+</p>
+
+</div>
+
+
+<div class="organel">
+
+<h4>🟠 Sentriol</h4>
+
+<p>
+Struktur yang berperan dalam proses pembelahan sel dan organisasi mikrotubulus pada sel hewan.
 </p>
 
 </div>
@@ -431,33 +594,69 @@ Berfungsi sebagai tempat penyimpanan air, zat makanan, dan berbagai zat lainnya.
 </section>
 
 
-<!-- BAGIAN 3 -->
+<!-- 3. SEL TUMBUHAN -->
 
 <section class="section">
 
-<h2>🌱 3. Perbedaan Sel Hewan dan Sel Tumbuhan</h2>
+<h2>3. Sel Tumbuhan</h2>
 
 <p>
-Sel tumbuhan dan sel hewan memiliki beberapa struktur yang sama.
-Namun, terdapat beberapa struktur yang menjadi ciri khas masing-masing sel.
+Sel tumbuhan memiliki beberapa struktur yang tidak ditemukan pada sel hewan, terutama dinding sel, kloroplas, dan vakuola sentral yang besar.
 </p>
 
-<table class="compare">
+<p>
+Dinding sel membantu mempertahankan bentuk sel, sedangkan kloroplas berperan dalam fotosintesis.
+</p>
+
+</section>
+
+
+<!-- 4. SEL HEWAN -->
+
+<section class="section">
+
+<h2>4. Sel Hewan</h2>
+
+<p>
+Sel hewan memiliki membran sel, sitoplasma, inti sel, mitokondria, ribosom, retikulum endoplasma, badan Golgi, lisosom, dan berbagai struktur lainnya.
+</p>
+
+<p>
+Berbeda dengan sel tumbuhan, sel hewan tidak memiliki dinding sel dan kloroplas.
+</p>
+
+</section>
+
+
+<!-- 5. PERBEDAAN -->
+
+<section class="section">
+
+<h2>5. Perbedaan Sel Tumbuhan dan Sel Hewan</h2>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
 
 <tr>
 
-<th>Struktur</th>
+<th>Karakteristik</th>
 
-<th>🌱 Sel Tumbuhan</th>
+<th>Sel Tumbuhan</th>
 
-<th>🐾 Sel Hewan</th>
+<th>Sel Hewan</th>
 
 </tr>
 
+</thead>
+
+<tbody>
 
 <tr>
 
-<td><strong>Dinding sel</strong></td>
+<td>Dinding sel</td>
 
 <td>Ada</td>
 
@@ -465,10 +664,9 @@ Namun, terdapat beberapa struktur yang menjadi ciri khas masing-masing sel.
 
 </tr>
 
-
 <tr>
 
-<td><strong>Kloroplas</strong></td>
+<td>Kloroplas</td>
 
 <td>Ada</td>
 
@@ -476,83 +674,96 @@ Namun, terdapat beberapa struktur yang menjadi ciri khas masing-masing sel.
 
 </tr>
 
-
 <tr>
 
-<td><strong>Vakuola</strong></td>
+<td>Vakuola</td>
 
-<td>Umumnya berukuran besar</td>
+<td>Umumnya besar</td>
 
-<td>Umumnya kecil atau lebih banyak</td>
+<td>Umumnya kecil atau tidak menonjol</td>
 
 </tr>
 
-
 <tr>
 
-<td><strong>Membran sel</strong></td>
+<td>Bentuk sel</td>
 
-<td>Ada</td>
+<td>Cenderung lebih tetap</td>
 
-<td>Ada</td>
+<td>Cenderung lebih fleksibel</td>
 
 </tr>
 
-
 <tr>
 
-<td><strong>Inti sel</strong></td>
+<td>Sentriol</td>
 
-<td>Ada</td>
+<td>Tidak umum seperti pada sel hewan</td>
 
 <td>Ada</td>
 
 </tr>
 
-
-<tr>
-
-<td><strong>Sitoplasma</strong></td>
-
-<td>Ada</td>
-
-<td>Ada</td>
-
-</tr>
-
-
-<tr>
-
-<td><strong>Mitokondria</strong></td>
-
-<td>Ada</td>
-
-<td>Ada</td>
-
-</tr>
-
-
-<tr>
-
-<td><strong>Bentuk sel</strong></td>
-
-<td>Cenderung lebih tetap karena adanya dinding sel</td>
-
-<td>Lebih beragam dan fleksibel</td>
-
-</tr>
+</tbody>
 
 </table>
 
+</div>
 
-<div class="remember">
+</section>
 
-<strong>💡 Kesimpulan:</strong>
+
+<!-- 6. SEL PUNCA -->
+
+<section class="section">
+
+<h2>6. Sel Punca (Stem Cell)</h2>
 
 <p>
-Sel tumbuhan dan sel hewan sama-sama memiliki membran sel, sitoplasma,
-inti sel, dan mitokondria. Sel tumbuhan memiliki struktur khusus berupa
-dinding sel dan kloroplas.
+Sel punca merupakan sel yang memiliki kemampuan untuk memperbanyak diri dan dapat berkembang menjadi jenis sel tertentu.
+</p>
+
+<p>
+Sel punca memiliki peran penting dalam pertumbuhan, perkembangan, dan proses perbaikan jaringan.
+</p>
+
+</section>
+
+
+<!-- 7. DIFERENSIASI -->
+
+<section class="section">
+
+<h2>7. Diferensiasi dan Spesialisasi Sel</h2>
+
+<p>
+Diferensiasi sel merupakan proses perubahan sel menjadi sel yang memiliki bentuk dan fungsi khusus.
+</p>
+
+<p>
+Sel yang telah mengalami spesialisasi memiliki struktur yang sesuai dengan fungsi yang dijalankannya.
+</p>
+
+</section>
+
+
+<!-- 8. ORGANISASI KEHIDUPAN -->
+
+<section class="section">
+
+<h2>8. Sistem Organisasi Kehidupan</h2>
+
+<p>
+Dalam makhluk hidup multiseluler, sel-sel yang memiliki fungsi tertentu dapat membentuk jaringan.
+Jaringan kemudian membentuk organ, organ membentuk sistem organ, dan berbagai sistem organ bekerja bersama membentuk organisme.
+</p>
+
+<div class="summary">
+
+<strong>Urutan organisasi kehidupan:</strong>
+
+<p>
+Sel → Jaringan → Organ → Sistem Organ → Organisme
 </p>
 
 </div>
@@ -560,274 +771,56 @@ dinding sel dan kloroplas.
 </section>
 
 
-<!-- BAGIAN 4 -->
+<!-- 9. RINGKASAN -->
 
 <section class="section">
 
-<h2>🧬 4. Sel Punca (Stem Cell)</h2>
+<h2>9. Ringkasan Materi</h2>
 
-<p>
-Sel punca atau <strong>stem cell</strong> merupakan sel yang memiliki kemampuan
-untuk memperbanyak diri dan dapat berkembang menjadi berbagai jenis sel tertentu.
-</p>
+<div class="summary">
 
-<h3>Karakteristik Sel Punca</h3>
-
-<ul class="list">
-
-<li>Mampu memperbanyak diri.</li>
-
-<li>Dapat berkembang menjadi jenis sel tertentu.</li>
-
-<li>Memiliki peran dalam pertumbuhan dan perbaikan jaringan.</li>
-
-</ul>
-
-
-<div class="highlight">
-
-<strong>💡 Tahukah Kamu?</strong>
-
-<p>
-Kemampuan sel punca untuk berkembang menjadi berbagai jenis sel membuatnya
-menjadi salah satu bidang yang penting dalam perkembangan ilmu biologi dan kesehatan.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- BAGIAN 5 -->
-
-<section class="section">
-
-<h2>🔄 5. Diferensiasi dan Spesialisasi Sel</h2>
-
-<p>
-Sel pada organisme multiseluler dapat mengalami perubahan sehingga memiliki
-struktur dan fungsi yang berbeda. Proses perubahan tersebut disebut
-<strong>diferensiasi sel</strong>.
-</p>
-
-<p>
-Setelah mengalami diferensiasi, sel dapat memiliki struktur dan fungsi khusus.
-Keadaan ini disebut <strong>spesialisasi sel</strong>.
-</p>
-
-
-<h3>Contoh Spesialisasi Sel</h3>
-
-<div class="organel-grid">
-
-
-<div class="organel">
-
-<h3>🩸 Sel Darah Merah</h3>
-
-<p>
-Berfungsi mengangkut oksigen ke berbagai bagian tubuh.
-</p>
-
-</div>
-
-
-<div class="organel">
-
-<h3>🧠 Sel Saraf</h3>
-
-<p>
-Berfungsi menerima dan meneruskan informasi atau impuls.
-</p>
-
-</div>
-
-
-<div class="organel">
-
-<h3>🌿 Sel Rambut Akar</h3>
-
-<p>
-Membantu tumbuhan menyerap air dan mineral dari tanah.
-</p>
-
-</div>
-
-
-<div class="organel">
-
-<h3>💪 Sel Otot</h3>
-
-<p>
-Berperan dalam menghasilkan gerakan melalui kemampuan berkontraksi.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- BAGIAN 6 -->
-
-<section class="section">
-
-<h2>🌍 6. Sistem Organisasi Kehidupan</h2>
-
-<p>
-Tubuh makhluk hidup tersusun atas berbagai tingkat organisasi.
-Pada organisme multiseluler, sel-sel yang memiliki struktur dan fungsi tertentu
-dapat membentuk jaringan, kemudian membentuk organ dan sistem organ.
-</p>
-
-
-<div class="organization">
-
-<div class="level">
-SEL
-</div>
-
-<div class="arrow">
-→
-</div>
-
-<div class="level">
-JARINGAN
-</div>
-
-<div class="arrow">
-→
-</div>
-
-<div class="level">
-ORGAN
-</div>
-
-<div class="arrow">
-→
-</div>
-
-<div class="level">
-SISTEM ORGAN
-</div>
-
-<div class="arrow">
-→
-</div>
-
-<div class="level">
-ORGANISME
-</div>
-
-</div>
-
-
-<h3>Contoh</h3>
-
-<p>
-Sel otot → jaringan otot → organ jantung → sistem peredaran darah → manusia.
-</p>
-
-
-<div class="remember">
-
-<strong>💡 Ingat urutannya!</strong>
-
-<p>
-<strong>Sel → Jaringan → Organ → Sistem Organ → Organisme</strong>
-</p>
-
-</div>
-
-</section>
-
-
-<!-- RINGKASAN -->
-
-<section class="section">
-
-<h2>📝 7. Ringkasan Materi</h2>
-
-<ul class="list">
+<ul>
 
 <li>Sel merupakan unit struktural dan fungsional terkecil makhluk hidup.</li>
 
-<li>Sel memiliki berbagai bagian yang bekerja sama menjalankan fungsi kehidupan.</li>
+<li>Sel memiliki berbagai bagian yang menjalankan fungsi tertentu.</li>
 
 <li>Sel tumbuhan memiliki dinding sel dan kloroplas yang tidak dimiliki sel hewan.</li>
 
-<li>Sel punca memiliki kemampuan memperbanyak diri dan berkembang menjadi jenis sel tertentu.</li>
+<li>Sel hewan memiliki struktur khusus seperti sentriol dan lisosom.</li>
 
-<li>Diferensiasi menyebabkan sel memiliki struktur dan fungsi khusus.</li>
+<li>Sel dapat mengalami diferensiasi dan spesialisasi untuk menjalankan fungsi tertentu.</li>
 
-<li>Sel-sel yang memiliki fungsi tertentu dapat membentuk jaringan, organ, dan sistem organ.</li>
+<li>Organisasi kehidupan tersusun dari sel hingga organisme.</li>
 
 </ul>
-
-</section>
-
-
-<!-- AKTIVITAS -->
-
-<section class="section">
-
-<h2>🔎 8. Aktivitas Pembelajaran</h2>
-
-<p>
-Setelah mempelajari materi, lakukan pengamatan menggunakan Mikroskop Virtual.
-Perhatikan struktur sel tumbuhan dan sel hewan yang tersedia.
-</p>
-
-<div class="activity">
-
-<h3>Langkah Pengamatan</h3>
-
-<ol>
-
-<li>Pilih objek sel yang akan diamati.</li>
-
-<li>Gunakan pembesaran yang tersedia.</li>
-
-<li>Atur fokus untuk mendapatkan tampilan yang lebih jelas.</li>
-
-<li>Amati bagian-bagian sel.</li>
-
-<li>Identifikasi struktur yang terlihat.</li>
-
-<li>Catat hasil pengamatan.</li>
-
-<li>Bandingkan sel tumbuhan dan sel hewan.</li>
-
-<li>Tarik kesimpulan berdasarkan hasil pengamatan.</li>
-
-</ol>
 
 </div>
 
 </section>
 
 
-<!-- MIKROSKOP -->
+<!-- 10. MIKROSKOP -->
 
 <section class="section">
 
-<h2>🔬 9. Amati dengan Mikroskop Virtual</h2>
+<h2>🔬 10. Amati dengan Mikroskop Virtual</h2>
 
 <p>
-Sekarang saatnya menerapkan pengetahuan yang telah dipelajari.
-Gunakan Mikroskop Virtual untuk mengamati sel secara digital.
+Setelah mempelajari struktur dan bagian-bagian sel, lakukan pengamatan menggunakan Mikroskop Virtual.
+</p>
+
+<p>
+Amati preparat digital dan perhatikan bentuk, susunan, serta struktur yang dapat kamu identifikasi.
 </p>
 
 <div class="button-area">
 
-<a href="mikroskop.html" class="btn btn-primary">
-🔬 MULAI PENGAMATAN
-</a>
-
-<a href="index.html" class="btn btn-secondary">
-🏠 KEMBALI KE BERANDA
+<a
+href="mikroskop.html"
+class="btn btn-microscope"
+>
+🔬 Buka Mikroskop Virtual
 </a>
 
 </div>
@@ -835,8 +828,43 @@ Gunakan Mikroskop Virtual untuk mengamati sel secara digital.
 </section>
 
 
+<!-- 11. AKTIVITAS -->
+
+<section class="section">
+
+<h2>📝 11. Aktivitas Pembelajaran</h2>
+
+<p>
+Gunakan hasil pengamatan melalui Mikroskop Virtual untuk mengerjakan aktivitas pengamatan, pencatatan, perbandingan, dan analisis.
+</p>
+
+<div class="button-area">
+
+<a
+href="aktivitas.html"
+class="btn btn-activity"
+>
+📝 Mulai Aktivitas
+</a>
+
+<a
+href="index.html"
+class="btn btn-home"
+>
+🏠 Kembali ke Beranda
+</a>
+
 </div>
 
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -852,4 +880,5 @@ Materi Sel Kelas VIII | UPTD SMPN 3 Barru
 
 
 </body>
+
 </html>
