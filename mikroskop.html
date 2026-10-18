@@ -4,331 +4,505 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aktivitas Sel - Mikroskop Virtual</title>
+<title>Mikroskop Virtual - UPTD SMPN 3 Barru</title>
 
 <style>
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-    margin:0;
     font-family:Arial, Helvetica, sans-serif;
     background:#eef8f5;
-    color:#174b3d;
+    color:#164c42;
+    min-height:100vh;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 header{
-    background:#07845f;
+    background:#07835f;
     color:white;
     padding:28px 20px;
     text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 header h1{
-    margin:0;
-    font-size:32px;
+    font-size:36px;
+    margin-bottom:8px;
 }
 
 header p{
-    margin:8px 0 0;
+    font-size:18px;
+}
+
+/* =========================
+   NAVIGASI
+========================= */
+
+nav{
+    background:white;
+    padding:14px 20px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    border-bottom:1px solid #d8eee7;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav-btn{
+    text-decoration:none;
+    color:#087e5c;
+    border:2px solid #bce9dc;
+    background:white;
+    padding:10px 20px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.nav-btn:hover{
+    background:#07835f;
+    color:white;
+    border-color:#07835f;
+}
+
+.nav-btn.active{
+    background:#07835f;
+    color:white;
+    border-color:#07835f;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    max-width:1500px;
+    margin:30px auto;
+    padding:0 30px 50px;
+}
+
+/* =========================
+   JUDUL BAGIAN
+========================= */
+
+.section-title{
+    background:white;
+    border-left:7px solid #07835f;
+    border-radius:16px;
+    padding:25px 30px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.section-title h2{
+    color:#087e5c;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#56766f;
     font-size:17px;
 }
 
-.navbar{
-    background:white;
-    padding:12px 20px;
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
-    position:sticky;
-    top:0;
-    z-index:10;
-}
+/* =========================
+   MENU UTAMA
+========================= */
 
-.navbar a{
-    text-decoration:none;
-    color:#07845f;
-    font-weight:bold;
-    padding:10px 18px;
-    border-radius:25px;
-    border:1px solid #b9e5d7;
-    background:#f8fffd;
-}
-
-.navbar a:hover{
-    background:#07845f;
-    color:white;
-}
-
-.container{
-    max-width:1250px;
-    margin:30px auto;
-    padding:0 20px;
-}
-
-.card{
-    background:white;
-    border-radius:18px;
-    padding:25px;
-    margin-bottom:25px;
-    box-shadow:0 5px 18px rgba(0,0,0,.07);
-}
-
-.card h2{
-    color:#07845f;
-    margin-top:0;
-}
-
-.card h3{
-    color:#087b5b;
-}
-
-.info{
-    background:#effaf6;
-    border-left:6px solid #07845f;
-    padding:15px 18px;
-    border-radius:10px;
-    margin:15px 0;
-}
-
-.identity{
-    display:grid;
-    grid-template-columns:2fr 1fr 1.5fr;
-    gap:15px;
-}
-
-.identity label{
-    font-weight:bold;
-}
-
-input, select, textarea{
-    width:100%;
-    padding:11px;
-    border:1px solid #b8ddd2;
-    border-radius:8px;
-    margin-top:6px;
-    font-size:15px;
-}
-
-textarea{
-    min-height:90px;
-    resize:vertical;
-}
-
-button{
-    border:none;
-    border-radius:9px;
-    padding:11px 17px;
-    font-weight:bold;
-    cursor:pointer;
-    margin:4px;
-}
-
-.btn-green{
-    background:#07845f;
-    color:white;
-}
-
-.btn-yellow{
-    background:#f4c542;
-    color:#173b30;
-}
-
-.btn-red{
-    background:#d9534f;
-    color:white;
-}
-
-.btn-blue{
-    background:#3b82c4;
-    color:white;
-}
-
-button:hover{
-    opacity:.88;
-}
-
-/* TUJUAN */
-.objectives{
+.main-menu{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:30px;
+    margin-top:25px;
 }
 
-.objective{
-    background:#f5fbf9;
-    border:1px solid #c8e8de;
-    padding:15px;
-    border-radius:12px;
+.menu-card{
+    background:white;
+    border:2px solid #cceee4;
+    border-radius:25px;
+    padding:55px 30px;
+    text-align:center;
+    cursor:pointer;
+    transition:.25s;
+    min-height:330px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 }
 
-/* TABEL */
-.table-wrap{
-    overflow-x:auto;
+.menu-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,100,80,.12);
+    border-color:#07835f;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:15px;
+.menu-icon{
+    font-size:70px;
+    margin-bottom:25px;
 }
 
-th, td{
-    border:1px solid #b8ddd2;
-    padding:10px;
-    vertical-align:top;
+.menu-card h3{
+    font-size:29px;
+    color:#087e5c;
+    margin-bottom:15px;
 }
 
-th{
-    background:#07845f;
+.menu-card p{
+    color:#617b75;
+    font-size:17px;
+    line-height:1.6;
+}
+
+/* =========================
+   PANEL
+========================= */
+
+.panel{
+    display:none;
+}
+
+.panel.active{
+    display:block;
+}
+
+/* =========================
+   TOMBOL KEMBALI
+========================= */
+
+.back-btn{
+    display:inline-block;
+    margin-bottom:20px;
+    background:#07835f;
     color:white;
+    text-decoration:none;
+    padding:11px 20px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-td input,
-td textarea{
-    margin:0;
+.back-btn:hover{
+    background:#056b4e;
 }
 
-/* PREPARAT */
-.specimen-selector{
+/* =========================
+   GAMBAR MIKROSKOP
+========================= */
+
+.microscope-box{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+    margin-bottom:25px;
+    text-align:center;
+}
+
+.microscope-box img{
+    max-width:100%;
+    width:100%;
+    max-height:650px;
+    object-fit:contain;
+    border-radius:15px;
+}
+
+/* =========================
+   KETERANGAN BAGIAN
+========================= */
+
+.parts-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.part-card{
+    background:white;
+    border:1px solid #cceee4;
+    border-radius:16px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,.04);
+}
+
+.part-number{
+    width:40px;
+    height:40px;
+    background:#f7c928;
+    color:#164c42;
+    border-radius:50%;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.part-card h3{
+    color:#07835f;
+    margin-bottom:8px;
+}
+
+.part-card p{
+    color:#56766f;
+    line-height:1.6;
+}
+
+/* =========================
+   PILIHAN PREPARAT
+========================= */
+
+.category-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.category-btn{
+    border:2px solid #b9e6d9;
+    background:white;
+    color:#087e5c;
+    padding:13px 30px;
+    border-radius:30px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.category-btn.active{
+    background:#07835f;
+    color:white;
+    border-color:#07835f;
+}
+
+.specimen-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
     gap:20px;
 }
 
-.specimen-box{
-    background:#f4fbf8;
-    border:2px solid #c7e9de;
-    border-radius:15px;
-    padding:20px;
-}
-
-.specimen-image{
-    width:100%;
-    max-height:350px;
-    object-fit:contain;
-    border-radius:12px;
-    margin-top:15px;
+.specimen-card{
     background:white;
-    border:1px solid #d8ebe5;
+    border:2px solid #d0eee6;
+    border-radius:20px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.25s;
 }
 
-.magnification{
+.specimen-card:hover{
+    transform:translateY(-5px);
+    border-color:#07835f;
+    box-shadow:0 10px 25px rgba(0,100,80,.1);
+}
+
+.specimen-card.selected{
+    border:3px solid #07835f;
+}
+
+.specimen-card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    display:block;
+    background:#f5f5f5;
+}
+
+.specimen-info{
+    padding:18px;
+    text-align:center;
+}
+
+.specimen-info h3{
+    color:#07835f;
+    margin-bottom:7px;
+    font-size:19px;
+}
+
+.specimen-info p{
+    color:#6b817c;
+    font-size:14px;
+}
+
+/* =========================
+   AREA PENGAMATAN
+========================= */
+
+.observation{
+    margin-top:30px;
+    background:white;
+    border-radius:22px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.observation h2{
+    color:#07835f;
+    margin-bottom:8px;
+}
+
+.observation-subtitle{
+    color:#69817c;
+    margin-bottom:20px;
+}
+
+.zoom-buttons{
     display:flex;
     justify-content:center;
-    gap:8px;
+    gap:12px;
     flex-wrap:wrap;
-    margin:15px 0;
+    margin:20px 0;
 }
 
-.mag{
-    background:#07845f;
+.zoom-btn{
+    border:none;
+    background:#e8f7f2;
+    color:#087e5c;
+    border:2px solid #bce9dc;
+    padding:11px 25px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.zoom-btn:hover,
+.zoom-btn.active{
+    background:#07835f;
+    color:white;
+    border-color:#07835f;
+}
+
+/* =========================
+   VIEWER
+========================= */
+
+.viewer{
+    width:100%;
+    height:600px;
+    background:#101817;
+    border-radius:18px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.viewer img{
+    max-width:90%;
+    max-height:90%;
+    object-fit:contain;
+    transition:transform .4s ease;
+    transform-origin:center center;
+}
+
+.viewer-label{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:rgba(0,0,0,.65);
     color:white;
     padding:8px 15px;
     border-radius:20px;
-    font-weight:bold;
+    font-size:14px;
 }
 
-/* GAMBAR */
-.drawing-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-}
+/* =========================
+   INFORMASI PENGAMATAN
+========================= */
 
-.drawing-card{
-    background:#f8fcfb;
-    border:2px solid #c9e9df;
-    border-radius:15px;
-    padding:18px;
-}
-
-.canvas-wrap{
-    background:white;
-    border:2px dashed #76bda9;
-    border-radius:12px;
-    margin-top:12px;
-    overflow:hidden;
-}
-
-canvas{
-    display:block;
-    width:100%;
-    height:420px;
-    cursor:crosshair;
-    background:white;
-}
-
-.draw-tools{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-top:10px;
-}
-
-.color-btn{
-    width:35px;
-    height:35px;
-    border-radius:50%;
-    padding:0;
-    border:2px solid #555;
-}
-
-.parts-title{
+.info-box{
     margin-top:20px;
-    color:#07845f;
+    padding:18px 20px;
+    background:#effaf6;
+    border-left:5px solid #07835f;
+    border-radius:10px;
+    line-height:1.7;
 }
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    background:#087b5b;
+    background:#087e5c;
     color:white;
     text-align:center;
     padding:25px;
-    margin-top:40px;
+    margin-top:50px;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+    .specimen-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
 @media(max-width:800px){
-    .identity,
-    .specimen-selector,
-    .drawing-grid,
-    .objectives{
+
+    header h1{
+        font-size:28px;
+    }
+
+    header p{
+        font-size:15px;
+    }
+
+    .main-menu{
         grid-template-columns:1fr;
     }
 
-    header h1{
-        font-size:25px;
+    .parts-grid{
+        grid-template-columns:1fr;
     }
 
-    canvas{
-        height:330px;
+    .specimen-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .viewer{
+        height:450px;
     }
 }
 
-/* PRINT */
-@media print{
-    .navbar,
-    button,
-    .draw-tools,
-    .magnification{
-        display:none !important;
+@media(max-width:550px){
+
+    .container{
+        padding:0 15px 40px;
     }
 
-    body{
-        background:white;
+    .specimen-grid{
+        grid-template-columns:1fr;
     }
 
-    .card{
-        box-shadow:none;
-        border:1px solid #ccc;
-        break-inside:avoid;
+    .menu-card{
+        min-height:260px;
     }
 
-    canvas{
-        border:1px solid #333;
+    .viewer{
+        height:350px;
+    }
+
+    .section-title h2{
+        font-size:24px;
     }
 }
 </style>
@@ -336,717 +510,692 @@ footer{
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-    <h1>🔬 AKTIVITAS PEMBELAJARAN SEL</h1>
-    <p>Mikroskop Virtual • IPA Kelas VIII • UPTD SMPN 3 Barru</p>
+    <h1>🔬 MIKROSKOP VIRTUAL</h1>
+    <p>Media Pembelajaran IPA Kelas VIII • UPTD SMPN 3 Barru</p>
 </header>
 
-<div class="navbar">
-    <a href="index.html">🏠 Beranda</a>
-    <a href="panduan.html">📘 Panduan</a>
-    <a href="materi.html">📚 Materi Sel</a>
-    <a href="mikroskop.html">🔬 Mikroskop Virtual</a>
-    <a href="aktivitas.html">📝 Aktivitas</a>
-</div>
+
+<!-- =========================
+     NAVIGASI
+========================= -->
+
+<nav>
+
+    <a href="index.html" class="nav-btn">
+        🏠 Beranda
+    </a>
+
+    <a href="panduan.html" class="nav-btn">
+        📘 Panduan
+    </a>
+
+    <a href="materi.html" class="nav-btn">
+        📚 Materi Sel
+    </a>
+
+    <a href="mikroskop.html" class="nav-btn active">
+        🔬 Mikroskop Virtual
+    </a>
+
+    <a href="aktivitas.html" class="nav-btn">
+        📝 Aktivitas
+    </a>
+
+</nav>
+
 
 <div class="container">
 
-<!-- IDENTITAS -->
-<section class="card">
-    <h2>📝 Identitas Peserta Didik</h2>
+<!-- =====================================================
+     MENU UTAMA MIKROSKOP VIRTUAL
+===================================================== -->
 
-    <div class="identity">
+<section id="homePanel" class="panel active">
 
-        <div>
-            <label>Nama Lengkap</label>
-            <input type="text" id="nama" placeholder="Masukkan nama lengkap">
-        </div>
-
-        <div>
-            <label>Kelas</label>
-            <select id="kelas">
-                <option value="">Pilih kelas</option>
-                <option>VIII-1</option>
-                <option>VIII-2</option>
-                <option>VIII-3</option>
-            </select>
-        </div>
-
-        <div>
-            <label>Tanggal Pengamatan</label>
-            <input type="date" id="tanggal">
-        </div>
-
-    </div>
-</section>
-
-
-<!-- TUJUAN -->
-<section class="card">
-    <h2>🎯 Tujuan Kegiatan</h2>
-
-    <div class="objectives">
-
-        <div class="objective">
-            <b>1. Mengamati</b><br>
-            Mengamati preparat sel tumbuhan dan sel hewan melalui mikroskop virtual.
-        </div>
-
-        <div class="objective">
-            <b>2. Mengidentifikasi</b><br>
-            Mengidentifikasi bagian atau struktur sel yang tampak pada preparat.
-        </div>
-
-        <div class="objective">
-            <b>3. Menggambar</b><br>
-            Menggambar hasil pengamatan preparat secara sederhana dan proporsional.
-        </div>
-
-        <div class="objective">
-            <b>4. Menjelaskan</b><br>
-            Menjelaskan fungsi bagian sel berdasarkan hasil pengamatan.
-        </div>
-
-    </div>
-</section>
-
-
-<!-- PETUNJUK -->
-<section class="card">
-
-    <h2>📌 Petunjuk Kegiatan</h2>
-
-    <div class="info">
-        <ol>
-            <li>Buka menu <b>Mikroskop Virtual → Preparat Digital</b>.</li>
-            <li>Pilih <b>satu preparat tumbuhan</b> dan <b>satu preparat hewan</b>.</li>
-            <li>Amati preparat menggunakan perbesaran <b>40×, 100×, dan 400×</b>.</li>
-            <li>Perhatikan bentuk, susunan, warna, dan struktur yang terlihat.</li>
-            <li>Gunakan gambar preparat sebagai acuan untuk membuat gambar pengamatan.</li>
-            <li>Gambarkan bagian-bagian yang dapat diamati.</li>
-            <li>Tuliskan nama bagian sel dan fungsinya.</li>
-            <li>Gunakan bukti visual dari preparat untuk menjawab pertanyaan.</li>
-        </ol>
-    </div>
-
-</section>
-
-
-<!-- PENGAMATAN UMUM -->
-<section class="card">
-
-    <h2>🔎 Tabel Pengamatan Preparat</h2>
-
-    <div class="table-wrap">
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Preparat</th>
-                    <th>Perbesaran</th>
-                    <th>Struktur yang Terlihat</th>
-                    <th>Ciri Visual</th>
-                    <th>Fungsi/Peran</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>1</td>
-                    <td>Sel Tumbuhan</td>
-                    <td>
-                        <input type="text" placeholder="40× / 100× / 400×">
-                    </td>
-                    <td>
-                        <textarea placeholder="Tuliskan struktur yang terlihat"></textarea>
-                    </td>
-                    <td>
-                        <textarea placeholder="Tuliskan ciri visual"></textarea>
-                    </td>
-                    <td>
-                        <textarea placeholder="Tuliskan fungsi"></textarea>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>2</td>
-                    <td>Sel Hewan</td>
-                    <td>
-                        <input type="text" placeholder="40× / 100× / 400×">
-                    </td>
-                    <td>
-                        <textarea placeholder="Tuliskan struktur yang terlihat"></textarea>
-                    </td>
-                    <td>
-                        <textarea placeholder="Tuliskan ciri visual"></textarea>
-                    </td>
-                    <td>
-                        <textarea placeholder="Tuliskan fungsi"></textarea>
-                    </td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</section>
-
-
-<!-- ================================================= -->
-<!-- KEGIATAN MENGGAMBAR -->
-<!-- ================================================= -->
-
-<section class="card">
-
-    <h2>🎨 Kegiatan Menggambar Preparat Sel</h2>
-
-    <div class="info">
-
-        <b>Instruksi:</b>
-
+    <div class="section-title">
+        <h2>🔬 Mikroskop Virtual</h2>
         <p>
-            Pilih <b>1 preparat tumbuhan</b> dan <b>1 preparat hewan</b>
-            yang terdapat pada menu <b>Preparat Digital</b>.
-            Amati gambar preparat, kemudian buat gambar hasil pengamatan
-            pada kotak gambar berikut.
+            Pilih menu yang ingin dipelajari.
         </p>
+    </div>
+
+    <div class="main-menu">
+
+        <!-- BAGIAN MIKROSKOP -->
+
+        <div class="menu-card" onclick="openPanel('microscopePanel')">
+
+            <div class="menu-icon">
+                🔬
+            </div>
+
+            <h3>
+                Bagian-Bagian Mikroskop
+            </h3>
+
+            <p>
+                Pelajari bagian mikroskop,
+                nomor penunjukan, nama bagian,
+                dan fungsinya.
+            </p>
+
+        </div>
+
+
+        <!-- PREPARAT DIGITAL -->
+
+        <div class="menu-card" onclick="openPanel('specimenPanel')">
+
+            <div class="menu-icon">
+                🧫
+            </div>
+
+            <h3>
+                Preparat Digital
+            </h3>
+
+            <p>
+                Amati preparat tumbuhan dan hewan
+                dengan pilihan perbesaran
+                40×, 100×, dan 400×.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BAGIAN-BAGIAN MIKROSKOP
+===================================================== -->
+
+<section id="microscopePanel" class="panel">
+
+    <div class="section-title">
+
+        <button class="back-btn" onclick="openPanel('homePanel')">
+            ← Kembali ke Menu Mikroskop
+        </button>
+
+        <h2>🔬 Bagian-Bagian Mikroskop</h2>
 
         <p>
-            Setelah menggambar, beri keterangan bagian-bagian sel yang
-            dapat kamu identifikasi dan tuliskan fungsinya.
+            Perhatikan nomor penunjukan pada gambar,
+            kemudian pelajari nama dan fungsi setiap bagian.
         </p>
 
     </div>
 
 
-    <!-- SELECT PREPARAT -->
-    <div class="specimen-selector">
+    <!-- GAMBAR MIKROSKOP -->
 
-        <!-- TUMBUHAN -->
-        <div class="specimen-box">
+    <div class="microscope-box">
 
-            <h3>🌿 A. Preparat Sel Tumbuhan</h3>
+        <img
+            src="Annotated%20Laboratory%20Microscope%20Diagram.png"
+            alt="Bagian-bagian mikroskop">
 
-            <label>
-                Pilih Preparat Tumbuhan
-            </label>
+    </div>
 
-            <select id="plantSelect" onchange="changePlant()">
 
-                <option value="sel bawang merah.jpg">
-                    Sel Bawang Merah
-                </option>
+    <!-- KETERANGAN -->
 
-                <option value="elodea.jpg">
-                    Elodea
-                </option>
+    <div class="parts-grid">
 
-                <option value="hydrilla.jpg">
-                    Hydrilla
-                </option>
+        <div class="part-card">
+            <div class="part-number">1</div>
+            <h3>Lensa Okuler</h3>
+            <p>
+                Lensa yang digunakan untuk melihat objek
+                dan memperbesar bayangan yang dibentuk
+                oleh lensa objektif.
+            </p>
+        </div>
 
-                <option value="kentang.jpg">
-                    Kentang
-                </option>
 
-            </select>
+        <div class="part-card">
+            <div class="part-number">2</div>
+            <h3>Tubus</h3>
+            <p>
+                Bagian yang menghubungkan lensa okuler
+                dengan lensa objektif serta menjaga
+                posisi optik mikroskop.
+            </p>
+        </div>
+
+
+        <div class="part-card">
+            <div class="part-number">3</div>
+            <h3>Revolver</h3>
+            <p>
+                Bagian yang digunakan untuk memilih
+                dan mengganti lensa objektif.
+            </p>
+        </div>
+
+
+        <div class="part-card">
+            <div class="part-number">4</div>
+            <h3>Lensa Objektif</h3>
+            <p>
+                Lensa yang berada dekat dengan preparat
+                dan berfungsi memperbesar objek yang diamati.
+            </p>
+        </div>
+
+
+        <div class="part-card">
+            <div class="part-number">5</div>
+            <h3>Meja Preparat</h3>
+            <p>
+                Tempat meletakkan kaca preparat
+                selama proses pengamatan.
+            </p>
+        </div>
+
+
+        <div class="part-card">
+            <div class="part-number">6</div>
+            <h3>Penjepit Preparat</h3>
+            <p>
+                Berfungsi menahan kaca preparat
+                agar tetap berada pada posisi yang tepat.
+            </p>
+        </div>
+
+
+        <div class="part-card">
+            <div class="part-number">7</div>
+            <h3>Pemutar Fokus</h3>
+            <p>
+                Digunakan untuk mengatur fokus sehingga
+                bayangan objek terlihat lebih jelas.
+            </p>
+        </div>
+
+
+        <div class="part-card">
+            <div class="part-number">8</div>
+            <h3>Lengan Mikroskop</h3>
+            <p>
+                Berfungsi sebagai pegangan mikroskop
+                dan menopang bagian-bagian utama mikroskop.
+            </p>
+        </div>
+
+
+        <div class="part-card">
+            <div class="part-number">9</div>
+            <h3>Diafragma / Lampu</h3>
+            <p>
+                Mengatur atau menyediakan pencahayaan
+                yang diperlukan untuk menerangi objek.
+            </p>
+        </div>
+
+
+        <div class="part-card">
+            <div class="part-number">10</div>
+            <h3>Kaki Mikroskop</h3>
+            <p>
+                Menopang mikroskop agar tetap stabil
+                selama digunakan.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PREPARAT DIGITAL
+===================================================== -->
+
+<section id="specimenPanel" class="panel">
+
+    <div class="section-title">
+
+        <button class="back-btn" onclick="openPanel('homePanel')">
+            ← Kembali ke Menu Mikroskop
+        </button>
+
+        <h2>🧫 Preparat Digital</h2>
+
+        <p>
+            Pilih jenis preparat yang ingin diamati.
+        </p>
+
+    </div>
+
+
+    <!-- PILIHAN TUMBUHAN / HEWAN -->
+
+    <div class="category-buttons">
+
+        <button
+            id="plantBtn"
+            class="category-btn active"
+            onclick="showCategory('plant')">
+
+            🌿 Preparat Tumbuhan
+
+        </button>
+
+
+        <button
+            id="animalBtn"
+            class="category-btn"
+            onclick="showCategory('animal')">
+
+            🐾 Preparat Hewan
+
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         PREPARAT TUMBUHAN
+    ================================================= -->
+
+    <div id="plantCategory">
+
+        <div class="section-title">
+
+            <h2>🌿 Pilihan Preparat Tumbuhan</h2>
+
+            <p>
+                Pilih salah satu preparat untuk melakukan
+                pengamatan digital.
+            </p>
+
+        </div>
+
+
+        <div class="specimen-grid">
+
+            <!-- BAWANG MERAH -->
+
+            <div
+                class="specimen-card selected"
+                onclick="selectSpecimen(
+                    this,
+                    'Sel Bawang Merah',
+                    'Epidermis bawang merah',
+                    'sel%20bawang%20merah.jpg'
+                )">
+
+                <img
+                    src="sel%20bawang%20merah.jpg"
+                    alt="Sel Bawang Merah">
+
+                <div class="specimen-info">
+
+                    <h3>Sel Bawang Merah</h3>
+
+                    <p>
+                        Epidermis bawang merah
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ELODEA -->
+
+            <div
+                class="specimen-card"
+                onclick="selectSpecimen(
+                    this,
+                    'Elodea',
+                    'Sel tumbuhan air',
+                    'elodea.jpg'
+                )">
+
+                <img
+                    src="elodea.jpg"
+                    alt="Elodea">
+
+                <div class="specimen-info">
+
+                    <h3>Elodea</h3>
+
+                    <p>
+                        Sel tumbuhan air
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- HYDRILLA -->
+
+            <div
+                class="specimen-card"
+                onclick="selectSpecimen(
+                    this,
+                    'Hydrilla',
+                    'Sel tumbuhan air',
+                    'hydrilla.jpg'
+                )">
+
+                <img
+                    src="hydrilla.jpg"
+                    alt="Hydrilla">
+
+                <div class="specimen-info">
+
+                    <h3>Hydrilla</h3>
+
+                    <p>
+                        Sel tumbuhan air
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- KENTANG -->
+
+            <div
+                class="specimen-card"
+                onclick="selectSpecimen(
+                    this,
+                    'Kentang',
+                    'Sel penyimpan pati',
+                    'kentang.jpg'
+                )">
+
+                <img
+                    src="kentang.jpg"
+                    alt="Kentang">
+
+                <div class="specimen-info">
+
+                    <h3>Kentang</h3>
+
+                    <p>
+                        Sel penyimpan pati
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         PREPARAT HEWAN
+    ================================================= -->
+
+    <div id="animalCategory" style="display:none;">
+
+        <div class="section-title">
+
+            <h2>🐾 Pilihan Preparat Hewan</h2>
+
+            <p>
+                Pilih salah satu preparat untuk melakukan
+                pengamatan digital.
+            </p>
+
+        </div>
+
+
+        <div class="specimen-grid">
+
+            <!-- EPITEL PIPI -->
+
+            <div
+                class="specimen-card"
+                onclick="selectSpecimen(
+                    this,
+                    'Sel Epitel Pipi',
+                    'Sel epitel manusia',
+                    'sel%20epitel%20pipi.jpg'
+                )">
+
+                <img
+                    src="sel%20epitel%20pipi.jpg"
+                    alt="Sel Epitel Pipi">
+
+                <div class="specimen-info">
+
+                    <h3>Sel Epitel Pipi</h3>
+
+                    <p>
+                        Sel epitel manusia
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEL DARAH -->
+
+            <div
+                class="specimen-card"
+                onclick="selectSpecimen(
+                    this,
+                    'Sel Darah Merah',
+                    'Eritrosit',
+                    'sel%20darah%20merah.jpg'
+                )">
+
+                <img
+                    src="sel%20darah%20merah.jpg"
+                    alt="Sel Darah Merah">
+
+                <div class="specimen-info">
+
+                    <h3>Sel Darah Merah</h3>
+
+                    <p>
+                        Eritrosit
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- OTOT RANGKA -->
+
+            <div
+                class="specimen-card"
+                onclick="selectSpecimen(
+                    this,
+                    'Otot Rangka',
+                    'Serabut otot rangka',
+                    'sel%20otot%20rangka.jpg'
+                )">
+
+                <img
+                    src="sel%20otot%20rangka.jpg"
+                    alt="Otot Rangka">
+
+                <div class="specimen-info">
+
+                    <h3>Otot Rangka</h3>
+
+                    <p>
+                        Serabut otot rangka
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- OTOT JANTUNG -->
+
+            <div
+                class="specimen-card"
+                onclick="selectSpecimen(
+                    this,
+                    'Otot Jantung',
+                    'Serabut otot jantung',
+                    'sel%20otot%20jantung.jpg'
+                )">
+
+                <img
+                    src="sel%20otot%20jantung.jpg"
+                    alt="Otot Jantung">
+
+                <div class="specimen-info">
+
+                    <h3>Otot Jantung</h3>
+
+                    <p>
+                        Serabut otot jantung
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- TULANG RAWAN -->
+
+            <div
+                class="specimen-card"
+                onclick="selectSpecimen(
+                    this,
+                    'Tulang Rawan',
+                    'Kondrosit dan lakuna',
+                    'sel%20tulang%20rawan.jpg'
+                )">
+
+                <img
+                    src="sel%20tulang%20rawan.jpg"
+                    alt="Tulang Rawan">
+
+                <div class="specimen-info">
+
+                    <h3>Tulang Rawan</h3>
+
+                    <p>
+                        Kondrosit dan lakuna
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         AREA PENGAMATAN
+    ================================================= -->
+
+    <div class="observation">
+
+        <h2 id="selectedTitle">
+            Sel Bawang Merah
+        </h2>
+
+        <p
+            class="observation-subtitle"
+            id="selectedSubtitle">
+
+            Preparat Tumbuhan • Epidermis bawang merah
+        </p>
+
+
+        <!-- PERBESARAN -->
+
+        <div class="zoom-buttons">
+
+            <button
+                class="zoom-btn active"
+                onclick="setZoom(40,this)">
+
+                40×
+
+            </button>
+
+
+            <button
+                class="zoom-btn"
+                onclick="setZoom(100,this)">
+
+                100×
+
+            </button>
+
+
+            <button
+                class="zoom-btn"
+                onclick="setZoom(400,this)">
+
+                400×
+
+            </button>
+
+        </div>
+
+
+        <!-- VIEWER -->
+
+        <div class="viewer">
+
+            <div class="viewer-label">
+                Perbesaran:
+                <span id="zoomLabel">40×</span>
+            </div>
 
             <img
-                id="plantImage"
-                class="specimen-image"
+                id="mainSpecimenImage"
                 src="sel%20bawang%20merah.jpg"
-                alt="Preparat tumbuhan">
-
-            <div class="magnification">
-                <span class="mag">40×</span>
-                <span class="mag">100×</span>
-                <span class="mag">400×</span>
-            </div>
+                alt="Preparat digital">
 
         </div>
 
 
-        <!-- HEWAN -->
-        <div class="specimen-box">
+        <!-- INFORMASI -->
 
-            <h3>🐾 B. Preparat Sel Hewan</h3>
+        <div class="info-box">
 
-            <label>
-                Pilih Preparat Hewan
-            </label>
+            <strong>🔎 Petunjuk Pengamatan</strong>
 
-            <select id="animalSelect" onchange="changeAnimal()">
+            <br>
 
-                <option value="sel epitel pipi.jpg">
-                    Sel Epitel Pipi
-                </option>
+            Pilih perbesaran
+            <strong>40×, 100×, atau 400×</strong>
+            untuk mengamati objek.
 
-                <option value="sel darah merah.jpg">
-                    Sel Darah Merah
-                </option>
+            <br>
 
-                <option value="sel otot rangka.jpg">
-                    Sel Otot Rangka
-                </option>
+            Amati bentuk sel, susunan sel,
+            bagian sel yang terlihat,
+            serta ciri-ciri visual preparat.
 
-                <option value="sel otot jantung.jpg">
-                    Sel Otot Jantung
-                </option>
+            <br>
 
-                <option value="sel tulang rawan.jpg">
-                    Sel Tulang Rawan
-                </option>
-
-            </select>
-
-            <img
-                id="animalImage"
-                class="specimen-image"
-                src="sel%20epitel%20pipi.jpg"
-                alt="Preparat hewan">
-
-            <div class="magnification">
-                <span class="mag">40×</span>
-                <span class="mag">100×</span>
-                <span class="mag">400×</span>
-            </div>
-
+            <strong>Catatan:</strong>
+            pilihan perbesaran pada halaman ini merupakan
+            simulasi pembesaran digital untuk membantu
+            kegiatan pengamatan.
+            
         </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================================================= -->
-<!-- GAMBAR TUMBUHAN & HEWAN -->
-<!-- ================================================= -->
-
-<section class="card">
-
-    <h2>✏️ Gambar Hasil Pengamatan</h2>
-
-    <div class="drawing-grid">
-
-        <!-- GAMBAR TUMBUHAN -->
-        <div class="drawing-card">
-
-            <h3>🌿 Gambar Preparat Tumbuhan</h3>
-
-            <p>
-                Buat gambar berdasarkan preparat tumbuhan yang telah dipilih.
-            </p>
-
-            <div class="canvas-wrap">
-                <canvas id="plantCanvas" width="900" height="600"></canvas>
-            </div>
-
-            <div class="draw-tools">
-
-                <button class="btn-green" onclick="setCanvas('plant')">
-                    ✏️ Pensil
-                </button>
-
-                <button class="btn-yellow" onclick="setEraser('plant')">
-                    🧽 Penghapus
-                </button>
-
-                <button class="btn-red" onclick="clearCanvas('plant')">
-                    🗑 Hapus Gambar
-                </button>
-
-            </div>
-
-            <label>
-                Judul gambar:
-            </label>
-
-            <input
-                type="text"
-                id="plantTitle"
-                placeholder="Contoh: Pengamatan Sel Bawang Merah">
-
-        </div>
-
-
-        <!-- GAMBAR HEWAN -->
-        <div class="drawing-card">
-
-            <h3>🐾 Gambar Preparat Hewan</h3>
-
-            <p>
-                Buat gambar berdasarkan preparat hewan yang telah dipilih.
-            </p>
-
-            <div class="canvas-wrap">
-                <canvas id="animalCanvas" width="900" height="600"></canvas>
-            </div>
-
-            <div class="draw-tools">
-
-                <button class="btn-green" onclick="setCanvas('animal')">
-                    ✏️ Pensil
-                </button>
-
-                <button class="btn-yellow" onclick="setEraser('animal')">
-                    🧽 Penghapus
-                </button>
-
-                <button class="btn-red" onclick="clearCanvas('animal')">
-                    🗑 Hapus Gambar
-                </button>
-
-            </div>
-
-            <label>
-                Judul gambar:
-            </label>
-
-            <input
-                type="text"
-                id="animalTitle"
-                placeholder="Contoh: Pengamatan Sel Epitel Pipi">
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================================================= -->
-<!-- BAGIAN SEL & FUNGSI -->
-<!-- ================================================= -->
-
-<section class="card">
-
-    <h2>🔬 Identifikasi Bagian dan Fungsi Sel</h2>
-
-    <div class="info">
-        Setelah menggambar, tuliskan bagian-bagian sel yang dapat kamu
-        identifikasi pada gambar dan jelaskan fungsinya.
-    </div>
-
-
-    <!-- TUMBUHAN -->
-    <h3>🌿 A. Preparat Tumbuhan</h3>
-
-    <div class="table-wrap">
-
-        <table id="plantPartsTable">
-
-            <thead>
-
-                <tr>
-                    <th>No.</th>
-                    <th>Bagian/Struktur Sel</th>
-                    <th>Ciri yang Terlihat</th>
-                    <th>Fungsi</th>
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <input type="text" placeholder="Contoh: Dinding sel">
-                    </td>
-                    <td>
-                        <textarea placeholder="Ciri yang terlihat"></textarea>
-                    </td>
-                    <td>
-                        <textarea placeholder="Fungsi bagian sel"></textarea>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>2</td>
-                    <td>
-                        <input type="text" placeholder="Bagian sel">
-                    </td>
-                    <td>
-                        <textarea placeholder="Ciri yang terlihat"></textarea>
-                    </td>
-                    <td>
-                        <textarea placeholder="Fungsi bagian sel"></textarea>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>3</td>
-                    <td>
-                        <input type="text" placeholder="Bagian sel">
-                    </td>
-                    <td>
-                        <textarea placeholder="Ciri yang terlihat"></textarea>
-                    </td>
-                    <td>
-                        <textarea placeholder="Fungsi bagian sel"></textarea>
-                    </td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-    <button class="btn-green" onclick="addRow('plantPartsTable')">
-        ＋ Tambah Bagian
-    </button>
-
-
-    <!-- HEWAN -->
-    <h3>🐾 B. Preparat Hewan</h3>
-
-    <div class="table-wrap">
-
-        <table id="animalPartsTable">
-
-            <thead>
-
-                <tr>
-                    <th>No.</th>
-                    <th>Bagian/Struktur Sel</th>
-                    <th>Ciri yang Terlihat</th>
-                    <th>Fungsi</th>
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <input type="text" placeholder="Contoh: Membran sel">
-                    </td>
-                    <td>
-                        <textarea placeholder="Ciri yang terlihat"></textarea>
-                    </td>
-                    <td>
-                        <textarea placeholder="Fungsi bagian sel"></textarea>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>2</td>
-                    <td>
-                        <input type="text" placeholder="Bagian sel">
-                    </td>
-                    <td>
-                        <textarea placeholder="Ciri yang terlihat"></textarea>
-                    </td>
-                    <td>
-                        <textarea placeholder="Fungsi bagian sel"></textarea>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>3</td>
-                    <td>
-                        <input type="text" placeholder="Bagian sel">
-                    </td>
-                    <td>
-                        <textarea placeholder="Ciri yang terlihat"></textarea>
-                    </td>
-                    <td>
-                        <textarea placeholder="Fungsi bagian sel"></textarea>
-                    </td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-    <button class="btn-green" onclick="addRow('animalPartsTable')">
-        ＋ Tambah Bagian
-    </button>
-
-</section>
-
-
-<!-- ================================================= -->
-<!-- PERBANDINGAN -->
-<!-- ================================================= -->
-
-<section class="card">
-
-    <h2>⚖️ Perbandingan Sel Tumbuhan dan Sel Hewan</h2>
-
-    <table>
-
-        <thead>
-            <tr>
-                <th>Aspek</th>
-                <th>Sel Tumbuhan</th>
-                <th>Sel Hewan</th>
-            </tr>
-        </thead>
-
-        <tbody>
-
-            <tr>
-                <td>Dinding sel</td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-            </tr>
-
-            <tr>
-                <td>Kloroplas</td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-            </tr>
-
-            <tr>
-                <td>Vakuola</td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-            </tr>
-
-            <tr>
-                <td>Bentuk sel</td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-            </tr>
-
-            <tr>
-                <td>Ciri visual</td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-            </tr>
-
-        </tbody>
-
-    </table>
-
-</section>
-
-
-<!-- ================================================= -->
-<!-- LITERASI SAINS -->
-<!-- ================================================= -->
-
-<section class="card">
-
-    <h2>🧠 Pertanyaan Literasi Sains</h2>
-
-    <ol>
-
-        <li>
-            Berdasarkan hasil pengamatan, apa perbedaan utama
-            antara sel tumbuhan dan sel hewan?
-            <textarea placeholder="Tuliskan jawaban berdasarkan bukti pengamatan"></textarea>
-        </li>
-
-        <li>
-            Mengapa sel tumbuhan memiliki struktur yang tidak ditemukan
-            pada sebagian besar sel hewan?
-            <textarea placeholder="Tuliskan jawaban"></textarea>
-        </li>
-
-        <li>
-            Bagaimana bentuk dan struktur sel berkaitan dengan fungsinya?
-            <textarea placeholder="Tuliskan jawaban"></textarea>
-        </li>
-
-        <li>
-            Apa bukti visual yang kamu gunakan untuk menjelaskan
-            jawabanmu?
-            <textarea placeholder="Tuliskan bukti dari gambar/preparat"></textarea>
-        </li>
-
-    </ol>
-
-</section>
-
-
-<!-- ================================================= -->
-<!-- KESIMPULAN -->
-<!-- ================================================= -->
-
-<section class="card">
-
-    <h2>📌 Kesimpulan</h2>
-
-    <textarea
-        style="min-height:140px"
-        placeholder="Tuliskan kesimpulan berdasarkan hasil pengamatan sel tumbuhan dan sel hewan..."
-    ></textarea>
-
-</section>
-
-
-<!-- REFLEKSI -->
-
-<section class="card">
-
-    <h2>💭 Refleksi</h2>
-
-    <ol>
-
-        <li>
-            Hal baru apa yang kamu pelajari?
-            <textarea></textarea>
-        </li>
-
-        <li>
-            Bagian pengamatan mana yang paling menarik?
-            <textarea></textarea>
-        </li>
-
-        <li>
-            Kesulitan apa yang kamu alami saat mengidentifikasi
-            bagian-bagian sel?
-            <textarea></textarea>
-        </li>
-
-        <li>
-            Bagaimana mikroskop virtual membantu kamu memahami sel?
-            <textarea></textarea>
-        </li>
-
-    </ol>
-
-</section>
-
-
-<!-- TOMBOL -->
-
-<section class="card">
-
-    <h2>📄 Penyelesaian Aktivitas</h2>
-
-    <div style="text-align:center">
-
-        <button class="btn-green" onclick="window.print()">
-            🖨️ Cetak / Simpan PDF
-        </button>
-
-        <button class="btn-red" onclick="resetActivity()">
-            🔄 Reset Aktivitas
-        </button>
-
-        <a href="mikroskop.html">
-            <button class="btn-blue">
-                🔬 Kembali ke Mikroskop Virtual
-            </button>
-        </a>
-
-        <a href="index.html">
-            <button class="btn-yellow">
-                🏠 Kembali ke Beranda
-            </button>
-        </a>
 
     </div>
 
@@ -1055,415 +1204,255 @@ footer{
 </div>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-    <b>MIKROSKOP VIRTUAL BERBASIS QR CODE</b><br>
-    Materi Sel • IPA Kelas VIII • UPTD SMPN 3 Barru
+
+    <strong>
+        Mikroskop Virtual • UPTD SMPN 3 Barru
+    </strong>
+
+    <br>
+
+    Media Pembelajaran IPA Kelas VIII
+
 </footer>
 
 
 <script>
 
-/* ==========================================
-   PILIH PREPARAT TUMBUHAN
-========================================== */
-
-function changePlant(){
-
-    const select = document.getElementById("plantSelect");
-    const image = document.getElementById("plantImage");
-
-    image.src = encodeURI(select.value);
-
-}
-
-
-/* ==========================================
-   PILIH PREPARAT HEWAN
-========================================== */
-
-function changeAnimal(){
-
-    const select = document.getElementById("animalSelect");
-    const image = document.getElementById("animalImage");
-
-    image.src = encodeURI(select.value);
-
-}
-
-
-/* ==========================================
-   CANVAS
-========================================== */
-
-const canvases = {
-
-    plant: document.getElementById("plantCanvas"),
-    animal: document.getElementById("animalCanvas")
-
-};
-
-const contexts = {
-
-    plant: canvases.plant.getContext("2d"),
-    animal: canvases.animal.getContext("2d")
-
-};
-
-let currentCanvas = "plant";
-let drawing = false;
-let eraser = false;
-
-
-/* Background canvas */
-
-function prepareCanvas(type){
-
-    const ctx = contexts[type];
-
-    ctx.fillStyle = "white";
-    ctx.fillRect(
-        0,
-        0,
-        canvases[type].width,
-        canvases[type].height
-    );
-
-    ctx.lineWidth = 3;
-    ctx.lineCap = "round";
-    ctx.strokeStyle = "#174b3d";
-}
-
-prepareCanvas("plant");
-prepareCanvas("animal");
-
-
-/* Drawing */
-
-function getPosition(canvas, event){
-
-    const rect = canvas.getBoundingClientRect();
-
-    const scaleX = canvas.width / rect.width;
-    const scaleY = canvas.height / rect.height;
-
-    return {
-
-        x:(event.clientX - rect.left) * scaleX,
-
-        y:(event.clientY - rect.top) * scaleY
-
-    };
-
-}
-
-
-function startDrawing(type,event){
-
-    drawing = true;
-
-    currentCanvas = type;
-
-    const pos = getPosition(
-        canvases[type],
-        event
-    );
-
-    contexts[type].beginPath();
-
-    contexts[type].moveTo(
-        pos.x,
-        pos.y
-    );
-
-}
-
-
-function draw(type,event){
-
-    if(!drawing) return;
-
-    const pos = getPosition(
-        canvases[type],
-        event
-    );
-
-    const ctx = contexts[type];
-
-    ctx.lineTo(
-        pos.x,
-        pos.y
-    );
-
-    ctx.stroke();
-
-}
-
-
-function stopDrawing(){
-
-    drawing = false;
-
-}
-
-
-/* Mouse */
-
-canvases.plant.addEventListener(
-    "mousedown",
-    e=>startDrawing("plant",e)
-);
-
-canvases.plant.addEventListener(
-    "mousemove",
-    e=>draw("plant",e)
-);
-
-canvases.plant.addEventListener(
-    "mouseup",
-    stopDrawing
-);
-
-canvases.plant.addEventListener(
-    "mouseleave",
-    stopDrawing
-);
-
-
-canvases.animal.addEventListener(
-    "mousedown",
-    e=>startDrawing("animal",e)
-);
-
-canvases.animal.addEventListener(
-    "mousemove",
-    e=>draw("animal",e)
-);
-
-canvases.animal.addEventListener(
-    "mouseup",
-    stopDrawing
-);
-
-canvases.animal.addEventListener(
-    "mouseleave",
-    stopDrawing
-);
-
-
-/* Touch */
-
-function touchStart(type,e){
-
-    e.preventDefault();
-
-    const touch = e.touches[0];
-
-    startDrawing(
-        type,
-        touch
-    );
-
-}
-
-
-function touchMove(type,e){
-
-    e.preventDefault();
-
-    const touch = e.touches[0];
-
-    draw(
-        type,
-        touch
-    );
-
-}
-
-
-canvases.plant.addEventListener(
-    "touchstart",
-    e=>touchStart("plant",e),
-    {passive:false}
-);
-
-canvases.plant.addEventListener(
-    "touchmove",
-    e=>touchMove("plant",e),
-    {passive:false}
-);
-
-canvases.plant.addEventListener(
-    "touchend",
-    stopDrawing
-);
-
-
-canvases.animal.addEventListener(
-    "touchstart",
-    e=>touchStart("animal",e),
-    {passive:false}
-);
-
-canvases.animal.addEventListener(
-    "touchmove",
-    e=>touchMove("animal",e),
-    {passive:false}
-);
-
-canvases.animal.addEventListener(
-    "touchend",
-    stopDrawing
-);
-
-
-/* ==========================================
-   PENSIL / PENGHAPUS
-========================================== */
-
-function setCanvas(type){
-
-    currentCanvas = type;
-
-    eraser = false;
-
-    contexts[type].strokeStyle = "#174b3d";
-
-    contexts[type].lineWidth = 3;
-
-}
-
-
-function setEraser(type){
-
-    currentCanvas = type;
-
-    eraser = true;
-
-    contexts[type].strokeStyle = "white";
-
-    contexts[type].lineWidth = 25;
-
-}
-
-
-/* ==========================================
-   HAPUS GAMBAR
-========================================== */
-
-function clearCanvas(type){
-
-    const canvas = canvases[type];
-    const ctx = contexts[type];
-
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
-
-    ctx.fillStyle = "white";
-
-    ctx.fillRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
-
-    ctx.strokeStyle = "#174b3d";
-    ctx.lineWidth = 3;
-
-}
-
-
-/* ==========================================
-   TAMBAH BARIS TABEL
-========================================== */
-
-function addRow(tableId){
-
-    const table =
-        document.getElementById(tableId);
-
-    const tbody =
-        table.querySelector("tbody");
-
-    const rowNumber =
-        tbody.rows.length + 1;
-
-    const row =
-        tbody.insertRow();
-
-    row.innerHTML = `
-
-        <td>${rowNumber}</td>
-
-        <td>
-            <input
-                type="text"
-                placeholder="Bagian/struktur sel"
-            >
-        </td>
-
-        <td>
-            <textarea
-                placeholder="Ciri yang terlihat"
-            ></textarea>
-        </td>
-
-        <td>
-            <textarea
-                placeholder="Fungsi bagian sel"
-            ></textarea>
-        </td>
-
-    `;
-
-}
-
-
-/* ==========================================
-   RESET
-========================================== */
-
-function resetActivity(){
-
-    if(
-        !confirm(
-            "Apakah Anda yakin ingin menghapus seluruh jawaban?"
-        )
-    ){
-        return;
-    }
+/* =====================================================
+   PINDAH PANEL
+===================================================== */
+
+function openPanel(panelId){
 
     document
-        .querySelectorAll(
-            "input, textarea"
-        )
-        .forEach(
-            element=>{
+        .querySelectorAll('.panel')
+        .forEach(function(panel){
 
-                if(
-                    element.type !== "button" &&
-                    element.type !== "submit"
-                ){
+            panel.classList.remove('active');
 
-                    element.value = "";
+        });
 
-                }
 
-            }
+    document
+        .getElementById(panelId)
+        .classList.add('active');
+
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+
+}
+
+
+/* =====================================================
+   PILIH TUMBUHAN / HEWAN
+===================================================== */
+
+function showCategory(category){
+
+    const plant =
+        document.getElementById('plantCategory');
+
+    const animal =
+        document.getElementById('animalCategory');
+
+    const plantBtn =
+        document.getElementById('plantBtn');
+
+    const animalBtn =
+        document.getElementById('animalBtn');
+
+
+    if(category === 'plant'){
+
+        plant.style.display = 'block';
+
+        animal.style.display = 'none';
+
+        plantBtn.classList.add('active');
+
+        animalBtn.classList.remove('active');
+
+    }
+
+
+    if(category === 'animal'){
+
+        plant.style.display = 'none';
+
+        animal.style.display = 'block';
+
+        plantBtn.classList.remove('active');
+
+        animalBtn.classList.add('active');
+
+    }
+
+}
+
+
+/* =====================================================
+   PILIH PREPARAT
+===================================================== */
+
+function selectSpecimen(
+    card,
+    title,
+    subtitle,
+    image
+){
+
+    /* Hapus selected dari semua kartu */
+
+    document
+        .querySelectorAll('.specimen-card')
+        .forEach(function(item){
+
+            item.classList.remove('selected');
+
+        });
+
+
+    /* Tandai kartu terpilih */
+
+    card.classList.add('selected');
+
+
+    /* Ubah judul */
+
+    document
+        .getElementById('selectedTitle')
+        .textContent = title;
+
+
+    document
+        .getElementById('selectedSubtitle')
+        .textContent =
+        'Preparat Digital • ' + subtitle;
+
+
+    /* Ubah gambar utama */
+
+    const mainImage =
+        document.getElementById(
+            'mainSpecimenImage'
         );
 
-    document.getElementById("plantSelect").selectedIndex = 0;
-    document.getElementById("animalSelect").selectedIndex = 0;
 
-    changePlant();
-    changeAnimal();
+    mainImage.src = image;
 
-    clearCanvas("plant");
-    clearCanvas("animal");
+    mainImage.alt = title;
+
+
+    /* Kembalikan zoom ke 40x */
+
+    mainImage.style.transform =
+        'scale(1)';
+
+
+    document
+        .getElementById('zoomLabel')
+        .textContent = '40×';
+
+
+    /* Aktifkan tombol 40x */
+
+    document
+        .querySelectorAll('.zoom-btn')
+        .forEach(function(btn){
+
+            btn.classList.remove('active');
+
+        });
+
+
+    document
+        .querySelector('.zoom-btn')
+        .classList.add('active');
+
+
+    /* Scroll ke viewer */
+
+    document
+        .querySelector('.observation')
+        .scrollIntoView({
+            behavior:'smooth',
+            block:'start'
+        });
+
+}
+
+
+/* =====================================================
+   PERBESARAN DIGITAL
+===================================================== */
+
+function setZoom(value, button){
+
+    const image =
+        document.getElementById(
+            'mainSpecimenImage'
+        );
+
+
+    /*
+       Skala simulasi:
+       40x  = 1
+       100x = 1.8
+       400x = 3.2
+    */
+
+    let scale = 1;
+
+
+    if(value === 40){
+
+        scale = 1;
+
+    }
+
+    else if(value === 100){
+
+        scale = 1.8;
+
+    }
+
+    else if(value === 400){
+
+        scale = 3.2;
+
+    }
+
+
+    image.style.transform =
+        'scale(' + scale + ')';
+
+
+    document
+        .getElementById('zoomLabel')
+        .textContent =
+        value + '×';
+
+
+    /* ubah tombol aktif */
+
+    document
+        .querySelectorAll('.zoom-btn')
+        .forEach(function(btn){
+
+            btn.classList.remove('active');
+
+        });
+
+
+    button.classList.add('active');
 
 }
 
