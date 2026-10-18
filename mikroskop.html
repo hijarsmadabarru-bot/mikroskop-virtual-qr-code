@@ -35,7 +35,6 @@ header h1{
 
 header p{
     font-size:15px;
-    opacity:.95;
 }
 
 .container{
@@ -133,7 +132,7 @@ header p{
 }
 
 /* =========================
-   MIKROSKOP
+   GAMBAR MIKROSKOP
 ========================= */
 
 .microscope-box{
@@ -155,7 +154,7 @@ header p{
 }
 
 /* =========================
-   TABEL BAGIAN MIKROSKOP
+   BAGIAN MIKROSKOP
 ========================= */
 
 .parts-grid{
@@ -199,7 +198,7 @@ header p{
 }
 
 /* =========================
-   SUB MENU PREPARAT
+   MENU TUMBUHAN / HEWAN
 ========================= */
 
 .specimen-menu{
@@ -228,7 +227,7 @@ header p{
 }
 
 /* =========================
-   DAFTAR PREPARAT
+   PREPARAT
 ========================= */
 
 .specimen-section{
@@ -267,7 +266,7 @@ header p{
 
 .specimen-card img{
     width:100%;
-    height:170px;
+    height:180px;
     object-fit:cover;
     border-radius:12px;
     background:#edf7f3;
@@ -287,7 +286,7 @@ header p{
 }
 
 /* =========================
-   AREA PENGAMATAN
+   PENGAMATAN
 ========================= */
 
 .observation{
@@ -311,6 +310,10 @@ header p{
     color:#698078;
 }
 
+/* =========================
+   PERBESARAN
+========================= */
+
 .zoom-buttons{
     display:flex;
     justify-content:center;
@@ -321,12 +324,13 @@ header p{
 
 .zoom-buttons button{
     border:none;
-    padding:11px 22px;
+    padding:11px 25px;
     border-radius:10px;
     background:#dff4eb;
     color:#087f5b;
     font-weight:bold;
     cursor:pointer;
+    font-size:16px;
 }
 
 .zoom-buttons button.active,
@@ -334,6 +338,10 @@ header p{
     background:#087f5b;
     color:white;
 }
+
+/* =========================
+   VIEWER
+========================= */
 
 .image-viewer{
     width:100%;
@@ -348,12 +356,17 @@ header p{
 }
 
 .image-viewer img{
+    width:100%;
     max-width:100%;
     max-height:650px;
     object-fit:contain;
     border-radius:10px;
     transition:.4s;
 }
+
+/* =========================
+   INFORMASI
+========================= */
 
 .info-box{
     margin-top:20px;
@@ -424,12 +437,23 @@ footer{
 
 <body>
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
+
     <h1>🔬 MIKROSKOP VIRTUAL</h1>
-    <p>Media Pembelajaran IPA Kelas VIII • UPTD SMPN 3 Barru</p>
+
+    <p>
+        Media Pembelajaran IPA Kelas VIII • UPTD SMPN 3 Barru
+    </p>
+
 </header>
 
+
 <div class="container">
+
 
 <!-- =====================================================
      MENU UTAMA
@@ -438,28 +462,58 @@ footer{
 <div id="home">
 
     <div class="section-title">
+
         <h2>🔬 Mikroskop Virtual</h2>
-        <p>Pilih menu yang ingin dipelajari.</p>
+
+        <p>
+            Pilih menu yang ingin dipelajari.
+        </p>
+
     </div>
+
 
     <div class="main-menu">
 
-        <div class="menu-card" onclick="showMain('parts')">
-            <div class="menu-icon">🔬</div>
-            <h2>Bagian-Bagian Mikroskop</h2>
+        <!-- BAGIAN MIKROSKOP -->
+
+        <div class="menu-card"
+             onclick="showMain('parts')">
+
+            <div class="menu-icon">
+                🔬
+            </div>
+
+            <h2>
+                Bagian-Bagian Mikroskop
+            </h2>
+
             <p>
-                Pelajari bagian mikroskop, nomor penunjukan,
-                nama bagian, dan fungsinya.
+                Pelajari bagian mikroskop,
+                nomor penunjukan, nama bagian,
+                dan fungsinya.
             </p>
+
         </div>
 
-        <div class="menu-card" onclick="showMain('specimen')">
-            <div class="menu-icon">🧫</div>
-            <h2>Preparat Digital</h2>
+
+        <!-- PREPARAT DIGITAL -->
+
+        <div class="menu-card"
+             onclick="showMain('specimen')">
+
+            <div class="menu-icon">
+                🧫
+            </div>
+
+            <h2>
+                Preparat Digital
+            </h2>
+
             <p>
-                Amati preparat tumbuhan dan hewan
-                dengan pilihan perbesaran.
+                Amati preparat tumbuhan dan
+                hewan dengan pilihan perbesaran.
             </p>
+
         </div>
 
     </div>
@@ -468,146 +522,275 @@ footer{
 
 
 <!-- =====================================================
-     BAGIAN MIKROSKOP
+     BAGIAN-BAGIAN MIKROSKOP
 ===================================================== -->
 
 <section id="parts" class="section">
 
-    <button class="back-btn" onclick="showMain('home')">
+
+    <button class="back-btn"
+            onclick="showMain('home')">
+
         ← Kembali ke Menu Utama
+
     </button>
 
+
     <div class="section-title">
-        <h2>🔬 Bagian-Bagian Mikroskop</h2>
+
+        <h2>
+            🔬 Bagian-Bagian Mikroskop
+        </h2>
+
         <p>
-            Perhatikan nomor pada gambar, kemudian pelajari
-            nama dan fungsi setiap bagian mikroskop.
+            Perhatikan nomor pada gambar,
+            kemudian pelajari nama dan fungsi
+            setiap bagian mikroskop.
         </p>
+
     </div>
+
+
+    <!-- GAMBAR -->
 
     <div class="microscope-box">
 
         <img
             src="Annotated%20Laboratory%20Microscope%20Diagram.png"
             alt="Bagian-bagian mikroskop"
-            onerror="this.style.display='none';"
         >
 
     </div>
 
+
+    <!-- KETERANGAN -->
+
     <div class="parts-grid">
 
-        <div class="part-card">
-            <div class="part-number">1</div>
-            <div>
-                <h3>Lensa Okuler</h3>
-                <p>
-                    Bagian yang digunakan untuk melihat objek.
-                    Lensa okuler memperbesar bayangan yang dibentuk
-                    oleh lensa objektif.
-                </p>
-            </div>
-        </div>
 
         <div class="part-card">
-            <div class="part-number">2</div>
-            <div>
-                <h3>Tubus Mikroskop</h3>
-                <p>
-                    Menghubungkan lensa okuler dengan sistem
-                    lensa objektif dan menjaga posisi optik
-                    tetap sejajar.
-                </p>
+
+            <div class="part-number">
+                1
             </div>
+
+            <div>
+
+                <h3>
+                    Lensa Okuler
+                </h3>
+
+                <p>
+                    Bagian yang digunakan untuk melihat
+                    objek. Lensa okuler memperbesar
+                    bayangan yang dibentuk oleh
+                    lensa objektif.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="part-card">
-            <div class="part-number">3</div>
-            <div>
-                <h3>Revolver</h3>
-                <p>
-                    Tempat lensa objektif dan digunakan untuk
-                    memilih atau mengganti lensa objektif.
-                </p>
-            </div>
-        </div>
 
         <div class="part-card">
-            <div class="part-number">4</div>
-            <div>
-                <h3>Lensa Objektif</h3>
-                <p>
-                    Lensa yang berada dekat dengan objek preparat
-                    dan berfungsi memperbesar bayangan objek.
-                </p>
+
+            <div class="part-number">
+                2
             </div>
+
+            <div>
+
+                <h3>
+                    Tubus Mikroskop
+                </h3>
+
+                <p>
+                    Menghubungkan lensa okuler dengan
+                    sistem lensa objektif.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="part-card">
-            <div class="part-number">5</div>
-            <div>
-                <h3>Meja Preparat</h3>
-                <p>
-                    Tempat meletakkan kaca preparat agar objek
-                    dapat diamati melalui mikroskop.
-                </p>
-            </div>
-        </div>
 
         <div class="part-card">
-            <div class="part-number">6</div>
-            <div>
-                <h3>Penjepit Preparat</h3>
-                <p>
-                    Menahan kaca preparat agar tidak bergeser
-                    selama proses pengamatan.
-                </p>
+
+            <div class="part-number">
+                3
             </div>
+
+            <div>
+
+                <h3>
+                    Revolver
+                </h3>
+
+                <p>
+                    Tempat lensa objektif dan digunakan
+                    untuk memilih atau mengganti
+                    lensa objektif.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="part-card">
-            <div class="part-number">7</div>
-            <div>
-                <h3>Pemutar Fokus</h3>
-                <p>
-                    Digunakan untuk mengatur fokus sehingga
-                    bayangan objek terlihat lebih jelas.
-                </p>
-            </div>
-        </div>
 
         <div class="part-card">
-            <div class="part-number">8</div>
-            <div>
-                <h3>Lengan Mikroskop</h3>
-                <p>
-                    Digunakan sebagai pegangan saat membawa
-                    atau memindahkan mikroskop.
-                </p>
+
+            <div class="part-number">
+                4
             </div>
+
+            <div>
+
+                <h3>
+                    Lensa Objektif
+                </h3>
+
+                <p>
+                    Lensa yang berada dekat dengan
+                    preparat dan berfungsi memperbesar
+                    bayangan objek.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="part-card">
-            <div class="part-number">9</div>
-            <div>
-                <h3>Diafragma / Lampu</h3>
-                <p>
-                    Mengatur dan memberikan pencahayaan agar
-                    objek preparat dapat terlihat dengan jelas.
-                </p>
-            </div>
-        </div>
 
         <div class="part-card">
-            <div class="part-number">10</div>
-            <div>
-                <h3>Kaki Mikroskop</h3>
-                <p>
-                    Menopang mikroskop sehingga tetap stabil
-                    saat digunakan.
-                </p>
+
+            <div class="part-number">
+                5
             </div>
+
+            <div>
+
+                <h3>
+                    Meja Preparat
+                </h3>
+
+                <p>
+                    Tempat meletakkan kaca preparat
+                    agar objek dapat diamati.
+                </p>
+
+            </div>
+
         </div>
+
+
+        <div class="part-card">
+
+            <div class="part-number">
+                6
+            </div>
+
+            <div>
+
+                <h3>
+                    Penjepit Preparat
+                </h3>
+
+                <p>
+                    Menahan kaca preparat agar
+                    tidak bergeser selama pengamatan.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="part-card">
+
+            <div class="part-number">
+                7
+            </div>
+
+            <div>
+
+                <h3>
+                    Pemutar Fokus
+                </h3>
+
+                <p>
+                    Digunakan untuk mengatur fokus
+                    sehingga bayangan objek terlihat jelas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="part-card">
+
+            <div class="part-number">
+                8
+            </div>
+
+            <div>
+
+                <h3>
+                    Lengan Mikroskop
+                </h3>
+
+                <p>
+                    Digunakan sebagai pegangan saat
+                    membawa atau memindahkan mikroskop.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="part-card">
+
+            <div class="part-number">
+                9
+            </div>
+
+            <div>
+
+                <h3>
+                    Diafragma / Lampu
+                </h3>
+
+                <p>
+                    Mengatur dan memberikan pencahayaan
+                    agar objek dapat terlihat dengan jelas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="part-card">
+
+            <div class="part-number">
+                10
+            </div>
+
+            <div>
+
+                <h3>
+                    Kaki Mikroskop
+                </h3>
+
+                <p>
+                    Menopang mikroskop sehingga tetap
+                    stabil saat digunakan.
+                </p>
+
+            </div>
+
+        </div>
+
 
     </div>
 
@@ -620,202 +803,295 @@ footer{
 
 <section id="specimen" class="section">
 
-    <button class="back-btn" onclick="showMain('home')">
+
+    <button class="back-btn"
+            onclick="showMain('home')">
+
         ← Kembali ke Menu Utama
+
     </button>
 
+
     <div class="section-title">
-        <h2>🧫 Preparat Digital</h2>
+
+        <h2>
+            🧫 Preparat Digital
+        </h2>
+
         <p>
             Pilih kelompok preparat yang ingin diamati.
         </p>
+
     </div>
+
+
+    <!-- PILIH TUMBUHAN / HEWAN -->
 
     <div class="specimen-menu">
 
+
         <button id="plantButton"
                 onclick="showSpecimenType('plant')">
+
             🌿 Preparat Tumbuhan
+
         </button>
+
 
         <button id="animalButton"
                 onclick="showSpecimenType('animal')">
+
             🐾 Preparat Hewan
+
         </button>
+
 
     </div>
 
 
-    <!-- ================================================
+    <!-- =================================================
          PREPARAT TUMBUHAN
-    ================================================= -->
+    ================================================== -->
 
-    <div id="plant" class="specimen-section">
+    <div id="plant"
+         class="specimen-section">
+
 
         <h2 style="margin-bottom:15px;color:#087f5b;">
+
             🌿 Pilihan Preparat Tumbuhan
+
         </h2>
 
+
         <div class="specimen-list">
+
+
+            <!-- BAWANG MERAH -->
 
             <div class="specimen-card"
                  onclick="selectSpecimen(this,'bawang')">
 
-                <img src="sel%20bawang%20merah.jpg"
-                     alt="Sel Bawang Merah">
+                <img
+                    src="sel%20bawang%20merah.jpg"
+                    alt="Sel Bawang Merah"
+                >
 
-                <h3>Sel Bawang Merah</h3>
-                <p>Epidermis bawang merah</p>
+                <h3>
+                    Sel Bawang Merah
+                </h3>
+
+                <p>
+                    Epidermis bawang merah
+                </p>
 
             </div>
 
+
+            <!-- ELODEA -->
 
             <div class="specimen-card"
                  onclick="selectSpecimen(this,'elodea')">
 
-                <img src="elodea.jpg"
-                     alt="Sel Elodea">
+                <img
+                    src="elodea.jpg"
+                    alt="Sel Elodea"
+                >
 
-                <h3>Elodea</h3>
-                <p>Sel tumbuhan air</p>
+                <h3>
+                    Elodea
+                </h3>
+
+                <p>
+                    Sel tumbuhan air
+                </p>
 
             </div>
 
+
+            <!-- HYDRILLA -->
 
             <div class="specimen-card"
                  onclick="selectSpecimen(this,'hydrilla')">
 
-                <img src="hydrilla.jpg"
-                     alt="Sel Hydrilla">
+                <img
+                    src="hydrilla.jpg"
+                    alt="Sel Hydrilla"
+                >
 
-                <h3>Hydrilla</h3>
-                <p>Sel tumbuhan air</p>
+                <h3>
+                    Hydrilla
+                </h3>
+
+                <p>
+                    Sel tumbuhan air
+                </p>
 
             </div>
 
+
+            <!-- KENTANG -->
 
             <div class="specimen-card"
                  onclick="selectSpecimen(this,'kentang')">
 
-                <img src="kentang.jpg"
-                     alt="Sel Kentang">
+                <img
+                    src="kentang.jpg"
+                    alt="Sel Kentang"
+                >
 
-                <h3>Kentang</h3>
-                <p>Sel penyimpan pati</p>
+                <h3>
+                    Kentang
+                </h3>
 
-            </div>
-
-
-            <div class="specimen-card"
-                 onclick="selectSpecimen(this,'tebu')">
-
-                <img src="batang%20tebu.jpg"
-                     alt="Batang Tebu">
-
-                <h3>Batang Tebu</h3>
-                <p>Penampang melintang batang</p>
+                <p>
+                    Sel penyimpan pati
+                </p>
 
             </div>
 
-
-            <div class="specimen-card"
-                 onclick="selectSpecimen(this,'dikotil')">
-
-                <img src="batang%20dikotil.jpg"
-                     alt="Batang Dikotil">
-
-                <h3>Batang Dikotil</h3>
-                <p>Penampang melintang batang</p>
-
-            </div>
 
         </div>
 
     </div>
 
 
-    <!-- ================================================
+    <!-- =================================================
          PREPARAT HEWAN
-    ================================================= -->
+    ================================================== -->
 
-    <div id="animal" class="specimen-section">
+    <div id="animal"
+         class="specimen-section">
+
 
         <h2 style="margin-bottom:15px;color:#087f5b;">
+
             🐾 Pilihan Preparat Hewan
+
         </h2>
 
+
         <div class="specimen-list">
+
+
+            <!-- EPITEL PIPI -->
 
             <div class="specimen-card"
                  onclick="selectSpecimen(this,'epitel')">
 
-                <img src="sel%20epitel%20pipi.jpg"
-                     alt="Sel Epitel Pipi">
+                <img
+                    src="sel%20epitel%20pipi.jpg"
+                    alt="Sel Epitel Pipi"
+                >
 
-                <h3>Sel Epitel Pipi</h3>
-                <p>Sel epitel manusia</p>
+                <h3>
+                    Sel Epitel Pipi
+                </h3>
+
+                <p>
+                    Sel epitel manusia
+                </p>
 
             </div>
 
+
+            <!-- DARAH MERAH -->
 
             <div class="specimen-card"
                  onclick="selectSpecimen(this,'darah')">
 
-                <img src="sel%20darah%20merah.jpg"
-                     alt="Sel Darah Merah">
+                <img
+                    src="sel%20darah%20merah.jpg"
+                    alt="Sel Darah Merah"
+                >
 
-                <h3>Sel Darah Merah</h3>
-                <p>Eritrosit</p>
+                <h3>
+                    Sel Darah Merah
+                </h3>
+
+                <p>
+                    Eritrosit
+                </p>
 
             </div>
 
+
+            <!-- OTOT RANGKA -->
 
             <div class="specimen-card"
                  onclick="selectSpecimen(this,'ototrangka')">
 
-                <img src="sel%20otot%20rangka.jpg"
-                     alt="Sel Otot Rangka">
+                <img
+                    src="sel%20otot%20rangka.jpg"
+                    alt="Sel Otot Rangka"
+                >
 
-                <h3>Otot Rangka</h3>
-                <p>Serabut otot rangka</p>
+                <h3>
+                    Otot Rangka
+                </h3>
+
+                <p>
+                    Serabut otot rangka
+                </p>
 
             </div>
 
+
+            <!-- OTOT JANTUNG -->
 
             <div class="specimen-card"
                  onclick="selectSpecimen(this,'ototjantung')">
 
-                <img src="sel%20otot%20jantung.jpg"
-                     alt="Sel Otot Jantung">
+                <img
+                    src="sel%20otot%20jantung.jpg"
+                    alt="Sel Otot Jantung"
+                >
 
-                <h3>Otot Jantung</h3>
-                <p>Serabut otot jantung</p>
+                <h3>
+                    Otot Jantung
+                </h3>
+
+                <p>
+                    Serabut otot jantung
+                </p>
 
             </div>
 
+
+            <!-- TULANG RAWAN -->
 
             <div class="specimen-card"
                  onclick="selectSpecimen(this,'tulangrawan')">
 
-                <img src="sel%20tulang%20rawan.jpg"
-                     alt="Sel Tulang Rawan">
+                <img
+                    src="sel%20tulang%20rawan.jpg"
+                    alt="Sel Tulang Rawan"
+                >
 
-                <h3>Tulang Rawan</h3>
-                <p>Kondrosit dan lakuna</p>
+                <h3>
+                    Tulang Rawan
+                </h3>
+
+                <p>
+                    Kondrosit dan lakuna
+                </p>
 
             </div>
+
 
         </div>
 
     </div>
 
 
-    <!-- ================================================
-         HASIL PENGAMATAN
-    ================================================= -->
+    <!-- =================================================
+         AREA PENGAMATAN
+    ================================================== -->
 
-    <div id="observation" class="observation"
+    <div id="observation"
+         class="observation"
          style="display:none;">
+
 
         <div class="observation-header">
 
@@ -853,9 +1129,11 @@ footer{
 
         <div class="image-viewer">
 
-            <img id="mainSpecimenImage"
-                 src=""
-                 alt="Preparat digital">
+            <img
+                id="mainSpecimenImage"
+                src=""
+                alt="Preparat digital"
+            >
 
         </div>
 
@@ -864,28 +1142,46 @@ footer{
 
         <div class="info-box">
 
-            <h3>🔎 Informasi Pengamatan</h3>
+            <h3>
+                🔎 Informasi Pengamatan
+            </h3>
 
             <p id="specimenDescription"></p>
 
             <br>
 
-            <h3>📌 Fokus Pengamatan</h3>
+            <h3>
+                📌 Fokus Pengamatan
+            </h3>
 
             <ul id="specimenFocus"></ul>
 
         </div>
 
+
     </div>
+
 
 </section>
 
 </div>
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-    <strong>UPTD SMPN 3 Barru</strong><br>
-    Media Pembelajaran IPA Kelas VIII – Mikroskop Virtual
+
+    <strong>
+        UPTD SMPN 3 Barru
+    </strong>
+
+    <br>
+
+    Media Pembelajaran IPA Kelas VIII –
+    Mikroskop Virtual
+
 </footer>
 
 
@@ -897,12 +1193,24 @@ footer{
 
 const specimens = {
 
+
+    /* ==========================
+       TUMBUHAN
+    ========================== */
+
     bawang:{
+
         title:"Sel Bawang Merah",
-        subtitle:"Preparat Tumbuhan • Epidermis Bawang Merah",
-        image:"sel%20bawang%20merah.jpg",
+
+        subtitle:
+        "Preparat Tumbuhan • Epidermis Bawang Merah",
+
+        image:
+        "sel%20bawang%20merah.jpg",
+
         description:
         "Preparat epidermis bawang merah digunakan untuk mengamati bentuk sel tumbuhan dan struktur sel yang tampak melalui mikroskop.",
+
         focus:[
             "Dinding sel",
             "Membran sel",
@@ -910,14 +1218,23 @@ const specimens = {
             "Inti sel",
             "Vakuola"
         ]
+
     },
 
+
     elodea:{
+
         title:"Elodea",
-        subtitle:"Preparat Tumbuhan • Sel Daun Elodea",
-        image:"elodea.jpg",
+
+        subtitle:
+        "Preparat Tumbuhan • Sel Daun Elodea",
+
+        image:
+        "elodea.jpg",
+
         description:
-        "Preparat Elodea dapat digunakan untuk mengamati sel tumbuhan air, terutama susunan sel dan kloroplas.",
+        "Preparat Elodea digunakan untuk mengamati sel tumbuhan air, terutama susunan sel dan kloroplas.",
+
         focus:[
             "Dinding sel",
             "Kloroplas",
@@ -925,14 +1242,23 @@ const specimens = {
             "Vakuola",
             "Susunan sel"
         ]
+
     },
 
+
     hydrilla:{
+
         title:"Hydrilla",
-        subtitle:"Preparat Tumbuhan • Sel Hydrilla",
-        image:"hydrilla.jpg",
+
+        subtitle:
+        "Preparat Tumbuhan • Sel Hydrilla",
+
+        image:
+        "hydrilla.jpg",
+
         description:
         "Hydrilla merupakan tumbuhan air yang dapat digunakan untuk mengamati sel tumbuhan dan kloroplas.",
+
         focus:[
             "Dinding sel",
             "Kloroplas",
@@ -940,14 +1266,23 @@ const specimens = {
             "Vakuola",
             "Bentuk dan susunan sel"
         ]
+
     },
 
+
     kentang:{
+
         title:"Sel Kentang",
-        subtitle:"Preparat Tumbuhan • Jaringan Penyimpan Pati",
-        image:"kentang.jpg",
+
+        subtitle:
+        "Preparat Tumbuhan • Jaringan Penyimpan Pati",
+
+        image:
+        "kentang.jpg",
+
         description:
         "Preparat kentang digunakan untuk mengamati sel penyimpan makanan serta butir pati atau amilum.",
+
         focus:[
             "Dinding sel",
             "Amiloplas",
@@ -955,45 +1290,27 @@ const specimens = {
             "Sitoplasma",
             "Bentuk sel"
         ]
+
     },
 
-    tebu:{
-        title:"Batang Tebu",
-        subtitle:"Preparat Tumbuhan • Penampang Melintang Batang",
-        image:"batang%20tebu.jpg",
-        description:
-        "Penampang melintang batang tebu digunakan untuk mengamati susunan jaringan penyusun batang tumbuhan.",
-        focus:[
-            "Epidermis",
-            "Kolenkim",
-            "Parenkim",
-            "Floem",
-            "Xilem"
-        ]
-    },
 
-    dikotil:{
-        title:"Batang Dikotil",
-        subtitle:"Preparat Tumbuhan • Penampang Melintang Batang",
-        image:"batang%20dikotil.jpg",
-        description:
-        "Penampang melintang batang dikotil memperlihatkan susunan jaringan batang dan berkas pengangkut.",
-        focus:[
-            "Epidermis",
-            "Korteks",
-            "Floem",
-            "Kambium",
-            "Xilem",
-            "Empulur"
-        ]
-    },
+    /* ==========================
+       HEWAN
+    ========================== */
 
     epitel:{
+
         title:"Sel Epitel Pipi",
-        subtitle:"Preparat Hewan • Sel Epitel Manusia",
-        image:"sel%20epitel%20pipi.jpg",
+
+        subtitle:
+        "Preparat Hewan • Sel Epitel Manusia",
+
+        image:
+        "sel%20epitel%20pipi.jpg",
+
         description:
         "Sel epitel pipi merupakan sel hewan yang dapat diamati dari bagian dalam rongga mulut.",
+
         focus:[
             "Membran sel",
             "Sitoplasma",
@@ -1001,14 +1318,23 @@ const specimens = {
             "Bentuk sel",
             "Susunan sel"
         ]
+
     },
 
+
     darah:{
+
         title:"Sel Darah Merah",
-        subtitle:"Preparat Hewan • Eritrosit",
-        image:"sel%20darah%20merah.jpg",
+
+        subtitle:
+        "Preparat Hewan • Eritrosit",
+
+        image:
+        "sel%20darah%20merah.jpg",
+
         description:
         "Sel darah merah atau eritrosit merupakan sel yang berperan dalam mengangkut oksigen dalam tubuh.",
+
         focus:[
             "Bentuk eritrosit",
             "Ukuran sel",
@@ -1016,29 +1342,47 @@ const specimens = {
             "Warna preparat",
             "Perbedaan bentuk sel"
         ]
+
     },
 
+
     ototrangka:{
+
         title:"Sel Otot Rangka",
-        subtitle:"Preparat Hewan • Serabut Otot Rangka",
-        image:"sel%20otot%20rangka.jpg",
+
+        subtitle:
+        "Preparat Hewan • Serabut Otot Rangka",
+
+        image:
+        "sel%20otot%20rangka.jpg",
+
         description:
         "Preparat otot rangka memperlihatkan serabut otot yang memanjang dan memiliki pola lurik.",
+
         focus:[
             "Serabut otot",
-            "Garis/lurik otot",
+            "Garis atau lurik otot",
             "Inti sel",
             "Bentuk memanjang",
             "Susunan serabut"
         ]
+
     },
 
+
     ototjantung:{
+
         title:"Sel Otot Jantung",
-        subtitle:"Preparat Hewan • Serabut Otot Jantung",
-        image:"sel%20otot%20jantung.jpg",
+
+        subtitle:
+        "Preparat Hewan • Serabut Otot Jantung",
+
+        image:
+        "sel%20otot%20jantung.jpg",
+
         description:
         "Otot jantung merupakan jaringan otot khusus yang bekerja secara terus-menerus untuk memompa darah.",
+
         focus:[
             "Serabut otot",
             "Inti sel",
@@ -1046,14 +1390,23 @@ const specimens = {
             "Percabangan serabut",
             "Diskus interkalaris jika tampak"
         ]
+
     },
 
+
     tulangrawan:{
+
         title:"Sel Tulang Rawan",
-        subtitle:"Preparat Hewan • Kondrosit dan Lakuna",
-        image:"sel%20tulang%20rawan.jpg",
+
+        subtitle:
+        "Preparat Hewan • Kondrosit dan Lakuna",
+
+        image:
+        "sel%20tulang%20rawan.jpg",
+
         description:
         "Preparat tulang rawan dapat digunakan untuk mengamati kondrosit yang berada di dalam lakuna.",
+
         focus:[
             "Kondrosit",
             "Lakuna",
@@ -1061,6 +1414,7 @@ const specimens = {
             "Bentuk sel",
             "Susunan jaringan"
         ]
+
     }
 
 };
@@ -1075,55 +1429,72 @@ function showMain(section){
     document.getElementById("home").style.display =
         section === "home" ? "block" : "none";
 
-    document.getElementById("parts").classList.toggle(
-        "active",
-        section === "parts"
-    );
 
-    document.getElementById("specimen").classList.toggle(
-        "active",
-        section === "specimen"
-    );
+    document.getElementById("parts")
+        .classList.toggle(
+            "active",
+            section === "parts"
+        );
+
+
+    document.getElementById("specimen")
+        .classList.toggle(
+            "active",
+            section === "specimen"
+        );
+
 
     window.scrollTo({
         top:0,
         behavior:"smooth"
     });
+
 }
 
 
 /* =====================================================
-   PILIH PREPARAT TUMBUHAN / HEWAN
+   PILIH TUMBUHAN / HEWAN
 ===================================================== */
 
 function showSpecimenType(type){
 
-    document.getElementById("plant").classList.toggle(
-        "active",
-        type === "plant"
-    );
+    document.getElementById("plant")
+        .classList.toggle(
+            "active",
+            type === "plant"
+        );
 
-    document.getElementById("animal").classList.toggle(
-        "active",
-        type === "animal"
-    );
 
-    document.getElementById("plantButton").classList.toggle(
-        "active",
-        type === "plant"
-    );
+    document.getElementById("animal")
+        .classList.toggle(
+            "active",
+            type === "animal"
+        );
 
-    document.getElementById("animalButton").classList.toggle(
-        "active",
-        type === "animal"
-    );
 
-    document.getElementById("observation").style.display="none";
+    document.getElementById("plantButton")
+        .classList.toggle(
+            "active",
+            type === "plant"
+        );
+
+
+    document.getElementById("animalButton")
+        .classList.toggle(
+            "active",
+            type === "animal"
+        );
+
+
+    document.getElementById("observation")
+        .style.display="none";
+
 
     window.scrollTo({
         top:document.getElementById("specimen").offsetTop,
         behavior:"smooth"
     });
+
 }
 
 
@@ -1133,41 +1504,59 @@ function showSpecimenType(type){
 
 let currentSpecimen = null;
 
+
 function selectSpecimen(card,key){
 
     document
         .querySelectorAll(".specimen-card")
         .forEach(item=>{
+
             item.classList.remove("selected");
+
         });
+
 
     card.classList.add("selected");
 
+
     currentSpecimen = specimens[key];
 
-    document.getElementById("observation").style.display =
-        "block";
 
-    document.getElementById("specimenTitle").textContent =
+    document.getElementById("observation")
+        .style.display="block";
+
+
+    document.getElementById("specimenTitle")
+        .textContent =
         currentSpecimen.title;
 
-    document.getElementById("specimenSubtitle").textContent =
+
+    document.getElementById("specimenSubtitle")
+        .textContent =
         currentSpecimen.subtitle;
 
-    document.getElementById("mainSpecimenImage").src =
+
+    document.getElementById("mainSpecimenImage")
+        .src =
         currentSpecimen.image;
 
-    document.getElementById("specimenDescription").textContent =
+
+    document.getElementById("specimenDescription")
+        .textContent =
         currentSpecimen.description;
+
 
     const focus =
         document.getElementById("specimenFocus");
 
+
     focus.innerHTML="";
+
 
     currentSpecimen.focus.forEach(item=>{
 
-        const li=document.createElement("li");
+        const li =
+            document.createElement("li");
 
         li.textContent=item;
 
@@ -1175,12 +1564,16 @@ function selectSpecimen(card,key){
 
     });
 
-    /* default 100x */
+
+    /* DEFAULT 100X */
 
     setZoom(
         100,
-        document.querySelectorAll(".zoom-buttons button")[1]
+        document.querySelectorAll(
+            ".zoom-buttons button"
+        )[1]
     );
+
 
     setTimeout(()=>{
 
@@ -1196,44 +1589,53 @@ function selectSpecimen(card,key){
 
 
 /* =====================================================
-   PERBESARAN DIGITAL
+   PERBESARAN
 ===================================================== */
 
 function setZoom(level,button){
 
     const img =
-        document.getElementById("mainSpecimenImage");
+        document.getElementById(
+            "mainSpecimenImage"
+        );
+
 
     document
-        .querySelectorAll(".zoom-buttons button")
+        .querySelectorAll(
+            ".zoom-buttons button"
+        )
         .forEach(btn=>{
+
             btn.classList.remove("active");
+
         });
+
 
     button.classList.add("active");
 
-    /*
-       Skala tampilan dibuat berbeda untuk memberikan
-       pengalaman simulasi perbesaran.
-    */
 
     if(level===40){
 
         img.style.width="55%";
+
         img.style.maxWidth="none";
 
     }
+
 
     else if(level===100){
 
         img.style.width="100%";
+
         img.style.maxWidth="none";
 
     }
 
+
     else if(level===400){
 
         img.style.width="180%";
+
         img.style.maxWidth="none";
 
     }
