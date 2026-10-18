@@ -7,12 +7,18 @@
 <title>Materi Sel | Mikroskop Virtual QR Code</title>
 
 <style>
+
+/* =========================================================
+   DASAR
+========================================================= */
+
 :root{
     --hijau:#0f766e;
     --hijau2:#14b8a6;
     --hijau3:#ccfbf1;
+    --hijau-muda:#ecfdf5;
     --kuning:#facc15;
-    --kuning2:#fef3c7;
+    --kuning-muda:#fef3c7;
     --putih:#ffffff;
     --bg:#f0fdfa;
     --teks:#173f3b;
@@ -37,12 +43,15 @@ body{
     line-height:1.7;
 }
 
-/* ================= HEADER ================= */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
     background:linear-gradient(135deg,#0f766e,#14b8a6);
     color:white;
-    padding:20px 5%;
+    padding:16px 5%;
     position:sticky;
     top:0;
     z-index:1000;
@@ -75,6 +84,7 @@ header{
     justify-content:center;
     font-size:25px;
     font-weight:bold;
+    flex-shrink:0;
 }
 
 .brand h1{
@@ -90,7 +100,7 @@ header{
 
 nav{
     display:flex;
-    gap:7px;
+    gap:6px;
     flex-wrap:wrap;
     justify-content:flex-end;
 }
@@ -106,14 +116,17 @@ nav a{
 
 nav a:hover,
 nav a.active{
-    background:rgba(255,255,255,.2);
+    background:rgba(255,255,255,.20);
 }
 
-/* ================= HERO ================= */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
     max-width:1200px;
-    margin:35px auto 25px;
+    margin:32px auto 24px;
     padding:0 20px;
 }
 
@@ -128,9 +141,9 @@ nav a.active{
 
 .hero-badge{
     display:inline-block;
-    background:var(--kuning2);
+    background:var(--kuning-muda);
     color:#8a6200;
-    padding:7px 15px;
+    padding:7px 16px;
     border-radius:30px;
     font-size:13px;
     font-weight:bold;
@@ -144,20 +157,21 @@ nav a.active{
 }
 
 .hero p{
-    max-width:800px;
+    max-width:820px;
     margin:auto;
     color:var(--abu);
 }
 
-/* ================= CONTAINER ================= */
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container{
     max-width:1200px;
     margin:auto;
-    padding:0 20px 50px;
+    padding:0 20px 55px;
 }
-
-/* ================= MENU MATERI ================= */
 
 .section-title{
     text-align:center;
@@ -173,6 +187,11 @@ nav a.active{
     color:var(--abu);
     margin-top:0;
 }
+
+
+/* =========================================================
+   MENU 6 MATERI
+========================================================= */
 
 .material-menu{
     display:grid;
@@ -199,7 +218,7 @@ nav a.active{
 
 .material-card.active{
     border-color:var(--hijau);
-    background:#ecfdf5;
+    background:var(--hijau-muda);
 }
 
 .number{
@@ -217,6 +236,7 @@ nav a.active{
 
 .material-card h3{
     font-size:16px;
+    line-height:1.4;
     margin:0 0 7px;
     color:var(--hijau);
 }
@@ -227,7 +247,10 @@ nav a.active{
     font-size:13px;
 }
 
-/* ================= CONTENT ================= */
+
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .content-box{
     background:white;
@@ -251,6 +274,7 @@ nav a.active{
         opacity:0;
         transform:translateY(10px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -276,6 +300,7 @@ nav a.active{
     justify-content:center;
     align-items:center;
     font-weight:bold;
+    flex-shrink:0;
 }
 
 .content-title h2{
@@ -291,6 +316,15 @@ h3{
 h4{
     color:#155e75;
 }
+
+ul{
+    padding-left:23px;
+}
+
+
+/* =========================================================
+   BOX INFORMASI
+========================================================= */
 
 .info{
     background:#ecfdf5;
@@ -308,11 +342,10 @@ h4{
     margin:18px 0;
 }
 
-ul{
-    padding-left:23px;
-}
 
-/* ================= CARD GRID ================= */
+/* =========================================================
+   FEATURE CARD
+========================================================= */
 
 .feature-grid{
     display:grid;
@@ -332,52 +365,65 @@ ul{
     color:var(--hijau);
 }
 
-/* ================= CELL DIAGRAM ================= */
 
-.diagram-intro{
-    text-align:center;
+/* =========================================================
+   INFOGRAFIS
+========================================================= */
+
+.infografis-box{
     background:#f8fffe;
     border:1px solid var(--border);
-    border-radius:16px;
+    border-radius:20px;
     padding:15px;
-    margin:20px 0;
-}
-
-.diagram-wrapper{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
     margin:25px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+    overflow:auto;
 }
 
-.diagram-card{
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:18px;
-    background:#fcffff;
-}
-
-.diagram-card h3{
-    text-align:center;
-    margin-top:0;
-}
-
-.cell-svg{
-    width:100%;
-    height:auto;
+.infografis-box img{
     display:block;
-    background:#f8fffe;
+    width:100%;
+    max-width:1400px;
+    height:auto;
+    margin:auto;
     border-radius:15px;
+    transition:transform .25s ease;
+    transform-origin:center center;
 }
 
-.svg-label{
-    font-family:Arial, sans-serif;
+.infografis-caption{
+    text-align:center;
+    color:var(--abu);
     font-size:13px;
-    font-weight:bold;
-    fill:#ffffff;
+    margin:12px 5px 0;
 }
 
-/* ================= TABLE ================= */
+.zoom-buttons{
+    text-align:center;
+    margin-top:15px;
+}
+
+.zoom-btn{
+    border:none;
+    background:var(--hijau);
+    color:white;
+    padding:9px 15px;
+    border-radius:9px;
+    cursor:pointer;
+    margin:3px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.zoom-btn:hover{
+    background:#115e59;
+    transform:translateY(-1px);
+}
+
+
+/* =========================================================
+   TABEL
+========================================================= */
 
 .table-wrap{
     overflow-x:auto;
@@ -420,7 +466,10 @@ tr:nth-child(even){
     font-weight:bold;
 }
 
-/* ================= COMPARISON ================= */
+
+/* =========================================================
+   PERBANDINGAN SEL
+========================================================= */
 
 .compare-grid{
     display:grid;
@@ -447,33 +496,10 @@ tr:nth-child(even){
     margin-top:0;
 }
 
-/* ================= ORGANIZATION ================= */
 
-.organization{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
-    margin:25px 0;
-}
-
-.org-box{
-    width:min(600px,100%);
-    text-align:center;
-    padding:16px;
-    border-radius:14px;
-    background:#ecfdf5;
-    border:2px solid #99f6e4;
-    font-weight:bold;
-}
-
-.org-arrow{
-    color:var(--hijau);
-    font-size:24px;
-    font-weight:bold;
-}
-
-/* ================= STEM CELL ================= */
+/* =========================================================
+   SEL PUNCA
+========================================================= */
 
 .stem-grid{
     display:grid;
@@ -501,7 +527,39 @@ tr:nth-child(even){
     margin-bottom:10px;
 }
 
-/* ================= CTA ================= */
+
+/* =========================================================
+   ORGANISASI KEHIDUPAN
+========================================================= */
+
+.organization{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    margin:25px 0;
+}
+
+.org-box{
+    width:min(600px,100%);
+    text-align:center;
+    padding:16px;
+    border-radius:14px;
+    background:#ecfdf5;
+    border:2px solid #99f6e4;
+    font-weight:bold;
+}
+
+.org-arrow{
+    color:var(--hijau);
+    font-size:24px;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
 
 .cta{
     margin-top:30px;
@@ -540,7 +598,10 @@ tr:nth-child(even){
     color:#3f3500;
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
     background:#083f3b;
@@ -554,16 +615,15 @@ footer strong{
     color:#5eead4;
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:900px){
 
     .material-menu{
         grid-template-columns:repeat(2,1fr);
-    }
-
-    .diagram-wrapper{
-        grid-template-columns:1fr;
     }
 
     .feature-grid,
@@ -616,37 +676,76 @@ footer strong{
         font-size:12px;
         padding:7px 9px;
     }
+
+    .infografis-box{
+        padding:8px;
+    }
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================================================
      HEADER
 ========================================================= -->
 
 <header>
+
 <div class="header-inner">
 
     <div class="brand">
-        <div class="brand-icon">🔬</div>
-        <div>
-            <h1>Mikroskop Virtual QR Code</h1>
-            <p>Materi IPA Kelas VIII</p>
+
+        <div class="brand-icon">
+            🔬
         </div>
+
+        <div>
+
+            <h1>
+                Mikroskop Virtual QR Code
+            </h1>
+
+            <p>
+                Materi IPA Kelas VIII
+            </p>
+
+        </div>
+
     </div>
 
+
     <nav>
-        <a href="index.html">Beranda</a>
-        <a href="panduan.html">Panduan</a>
-        <a href="materi.html" class="active">Materi Sel</a>
-        <a href="mikroskop.html">Mikroskop Virtual</a>
-        <a href="aktivitas.html">Aktivitas</a>
+
+        <a href="index.html">
+            Beranda
+        </a>
+
+        <a href="panduan.html">
+            Panduan
+        </a>
+
+        <a href="materi.html" class="active">
+            Materi Sel
+        </a>
+
+        <a href="mikroskop.html">
+            Mikroskop Virtual
+        </a>
+
+        <a href="aktivitas.html">
+            Aktivitas
+        </a>
+
     </nav>
 
 </div>
+
 </header>
+
 
 
 <!-- =========================================================
@@ -661,17 +760,20 @@ footer strong{
         📚 MATERI PEMBELAJARAN IPA KELAS VIII
     </div>
 
-    <h2>MATERI SEL</h2>
+    <h2>
+        MATERI SEL
+    </h2>
 
     <p>
         Pelajari konsep sel secara bertahap melalui enam materi utama.
-        Klik salah satu pilihan materi di bawah untuk membuka penjelasan
-        dan informasi pembelajaran.
+        Klik salah satu pilihan materi di bawah untuk membuka
+        penjelasan lengkap.
     </p>
 
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -680,15 +782,19 @@ footer strong{
 
 <main class="container">
 
+
 <div class="section-title">
 
-    <h2>Pilih Materi yang Ingin Dipelajari</h2>
+    <h2>
+        Pilih Materi yang Ingin Dipelajari
+    </h2>
 
     <p>
-        Klik kartu materi untuk melihat penjelasan lengkap.
+        Klik kartu materi untuk melihat penjelasan.
     </p>
 
 </div>
+
 
 
 <!-- =========================================================
@@ -697,97 +803,130 @@ footer strong{
 
 <div class="material-menu">
 
-    <div class="material-card active"
-         onclick="showMaterial('materi1',this)">
 
-        <div class="number">1</div>
+<div class="material-card active"
+     onclick="showMaterial('materi1',this)">
 
-        <h3>PENGERTIAN SEL</h3>
-
-        <p>
-            Mengenal sel sebagai unit dasar kehidupan.
-        </p>
-
+    <div class="number">
+        1
     </div>
 
+    <h3>
+        PENGERTIAN SEL
+    </h3>
 
-    <div class="material-card"
-         onclick="showMaterial('materi2',this)">
-
-        <div class="number">2</div>
-
-        <h3>STRUKTUR DAN FUNGSI BAGIAN SEL</h3>
-
-        <p>
-            Mengenal bagian-bagian sel dan fungsinya.
-        </p>
-
-    </div>
-
-
-    <div class="material-card"
-         onclick="showMaterial('materi3',this)">
-
-        <div class="number">3</div>
-
-        <h3>PERBEDAAN SEL HEWAN DAN SEL TUMBUHAN</h3>
-
-        <p>
-            Membandingkan struktur sel hewan dan tumbuhan.
-        </p>
-
-    </div>
-
-
-    <div class="material-card"
-         onclick="showMaterial('materi4',this)">
-
-        <div class="number">4</div>
-
-        <h3>SEL PUNCA</h3>
-
-        <p>
-            Mengenal pengertian, karakteristik dan jenis sel punca.
-        </p>
-
-    </div>
-
-
-    <div class="material-card"
-         onclick="showMaterial('materi5',this)">
-
-        <div class="number">5</div>
-
-        <h3>DIFERENSIASI DAN SPESIALISASI SEL</h3>
-
-        <p>
-            Memahami proses perubahan dan pembagian fungsi sel.
-        </p>
-
-    </div>
-
-
-    <div class="material-card"
-         onclick="showMaterial('materi6',this)">
-
-        <div class="number">6</div>
-
-        <h3>SISTEM ORGANISASI KEHIDUPAN</h3>
-
-        <p>
-            Memahami tingkatan organisasi kehidupan.
-        </p>
-
-    </div>
+    <p>
+        Mengenal sel sebagai unit dasar kehidupan.
+    </p>
 
 </div>
 
 
+
+<div class="material-card"
+     onclick="showMaterial('materi2',this)">
+
+    <div class="number">
+        2
+    </div>
+
+    <h3>
+        STRUKTUR DAN FUNGSI BAGIAN SEL
+    </h3>
+
+    <p>
+        Mengenal bagian-bagian sel dan fungsinya.
+    </p>
+
+</div>
+
+
+
+<div class="material-card"
+     onclick="showMaterial('materi3',this)">
+
+    <div class="number">
+        3
+    </div>
+
+    <h3>
+        PERBEDAAN SEL HEWAN DAN SEL TUMBUHAN
+    </h3>
+
+    <p>
+        Membandingkan struktur sel hewan dan tumbuhan.
+    </p>
+
+</div>
+
+
+
+<div class="material-card"
+     onclick="showMaterial('materi4',this)">
+
+    <div class="number">
+        4
+    </div>
+
+    <h3>
+        SEL PUNCA
+    </h3>
+
+    <p>
+        Mengenal pengertian, karakteristik dan jenis sel punca.
+    </p>
+
+</div>
+
+
+
+<div class="material-card"
+     onclick="showMaterial('materi5',this)">
+
+    <div class="number">
+        5
+    </div>
+
+    <h3>
+        DIFERENSIASI DAN SPESIALISASI SEL
+    </h3>
+
+    <p>
+        Memahami perubahan dan pembagian fungsi sel.
+    </p>
+
+</div>
+
+
+
+<div class="material-card"
+     onclick="showMaterial('materi6',this)">
+
+    <div class="number">
+        6
+    </div>
+
+    <h3>
+        SISTEM ORGANISASI KEHIDUPAN
+    </h3>
+
+    <p>
+        Memahami tingkatan organisasi kehidupan.
+    </p>
+
+</div>
+
+
+</div>
+
+
+
 <!-- =========================================================
-     CONTENT BOX
+     CONTENT
 ========================================================= -->
 
 <div class="content-box">
+
 
 
 <!-- =========================================================
@@ -798,38 +937,59 @@ footer strong{
 
 <div class="content-title">
 
-    <div class="content-number">1</div>
+    <div class="content-number">
+        1
+    </div>
 
-    <h2>Pengertian Sel</h2>
+    <h2>
+        Pengertian Sel
+    </h2>
 
 </div>
 
-<h3>Apa Itu Sel?</h3>
+
+<h3>
+    Apa Itu Sel?
+</h3>
 
 <p>
-    Sel adalah unit struktural dan fungsional terkecil penyusun makhluk hidup.
-    Semua makhluk hidup tersusun atas sel. Sel menjadi tempat berlangsungnya
-    berbagai proses kehidupan, seperti memperoleh energi, tumbuh,
-    berkembang, dan melakukan berbagai aktivitas biologis.
+    Sel adalah unit struktural dan fungsional terkecil penyusun
+    makhluk hidup. Semua makhluk hidup tersusun atas sel.
+    Sel menjadi tempat berlangsungnya berbagai proses kehidupan,
+    seperti memperoleh energi, tumbuh, berkembang, dan melakukan
+    berbagai aktivitas biologis.
 </p>
+
 
 <div class="info">
 
-<strong>💡 Inti Materi</strong><br>
+<strong>
+💡 Inti Materi
+</strong>
 
-Sel dapat dianggap sebagai satuan dasar kehidupan karena struktur
-dan aktivitas kehidupan suatu organisme berlangsung pada tingkat sel.
-Makhluk hidup dapat tersusun atas satu sel atau banyak sel.
+<br>
+
+Sel dapat dianggap sebagai satuan dasar kehidupan karena
+struktur dan aktivitas kehidupan suatu organisme berlangsung
+pada tingkat sel. Makhluk hidup dapat tersusun atas satu sel
+atau banyak sel.
+
 </div>
 
 
-<h3>Organisme Berdasarkan Jumlah Sel</h3>
+<h3>
+    Organisme Berdasarkan Jumlah Sel
+</h3>
+
 
 <div class="feature-grid">
 
+
 <div class="feature">
 
-<strong>🦠 Uniseluler</strong>
+<strong>
+🦠 Uniseluler
+</strong>
 
 <p>
 Makhluk hidup yang tubuhnya tersusun atas satu sel.
@@ -841,7 +1001,9 @@ Contohnya bakteri dan beberapa organisme mikroskopis.
 
 <div class="feature">
 
-<strong>🌿 Multiseluler</strong>
+<strong>
+🌿 Multiseluler
+</strong>
 
 <p>
 Makhluk hidup yang tubuhnya tersusun atas banyak sel.
@@ -853,19 +1015,24 @@ Contohnya tumbuhan, hewan, dan manusia.
 
 <div class="feature">
 
-<strong>🔬 Mikroskopis</strong>
+<strong>
+🔬 Mikroskopis
+</strong>
 
 <p>
-Sebagian besar sel berukuran sangat kecil sehingga
-perlu diamati menggunakan mikroskop.
+Sebagian besar sel berukuran sangat kecil sehingga perlu
+diamati menggunakan mikroskop.
 </p>
 
 </div>
 
+
 </div>
 
 
-<h3>Teori Sel</h3>
+<h3>
+    Teori Sel
+</h3>
 
 <ul>
 
@@ -886,15 +1053,20 @@ Sel baru berasal dari sel yang telah ada sebelumnya.
 
 <div class="warning">
 
-<strong>🔎 Hubungkan dengan Mikroskop Virtual</strong><br>
+<strong>
+🔎 Hubungkan dengan Mikroskop Virtual
+</strong>
 
-Sel tidak dapat dilihat dengan mata telanjang. Oleh karena itu,
-mikroskop digunakan untuk membantu manusia mengamati struktur sel
-dan berbagai objek berukuran sangat kecil.
+<br>
+
+Sel tidak dapat dilihat dengan mata telanjang.
+Oleh karena itu, mikroskop digunakan untuk membantu manusia
+mengamati struktur sel dan berbagai objek berukuran sangat kecil.
 
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -905,582 +1077,567 @@ dan berbagai objek berukuran sangat kecil.
 
 <div class="content-title">
 
-    <div class="content-number">2</div>
+    <div class="content-number">
+        2
+    </div>
 
-    <h2>Struktur dan Fungsi Bagian Sel</h2>
+    <h2>
+        Struktur dan Fungsi Bagian Sel
+    </h2>
 
 </div>
+
 
 <p>
     Sel memiliki berbagai bagian yang bekerja secara terkoordinasi.
-    Setiap bagian mempunyai struktur dan fungsi tertentu untuk menjaga
-    kehidupan sel.
+    Setiap bagian mempunyai struktur dan fungsi tertentu untuk
+    menjaga kehidupan sel.
 </p>
-
-<div class="diagram-intro">
-
-<strong>📌 Perhatikan diagram berikut.</strong><br>
-
-Diagram merupakan ilustrasi/skema untuk membantu mengenali
-bagian-bagian sel. Nomor pada gambar sesuai dengan tabel
-nama bagian dan fungsi di bawahnya.
-
-</div>
-
-
-<!-- ================= SEL TUMBUHAN ================= -->
-
-<div class="diagram-wrapper">
-
-<div class="diagram-card">
-
-<h3>🌿 SEL TUMBUHAN</h3>
-
-<svg class="cell-svg"
-     viewBox="0 0 600 500"
-     xmlns="http://www.w3.org/2000/svg">
-
-<!-- Dinding sel -->
-<rect x="105" y="55"
-      width="390"
-      height="390"
-      rx="65"
-      fill="#d9f99d"
-      stroke="#166534"
-      stroke-width="14"/>
-
-<!-- Membran -->
-<rect x="118" y="68"
-      width="364"
-      height="364"
-      rx="55"
-      fill="#bbf7d0"
-      stroke="#16a34a"
-      stroke-width="4"/>
-
-<!-- Sitoplasma -->
-<rect x="130" y="80"
-      width="340"
-      height="340"
-      rx="48"
-      fill="#fef9c3"
-      stroke="#84cc16"
-      stroke-width="2"/>
-
-<!-- Vakuola -->
-<ellipse cx="350"
-         cy="245"
-         rx="105"
-         ry="145"
-         fill="#dbeafe"
-         stroke="#2563eb"
-         stroke-width="4"/>
-
-<!-- Nukleus -->
-<circle cx="215"
-        cy="245"
-        r="65"
-        fill="#ddd6fe"
-        stroke="#7c3aed"
-        stroke-width="5"/>
-
-<circle cx="215"
-        cy="245"
-        r="20"
-        fill="#6d28d9"/>
-
-<!-- Kloroplas -->
-<ellipse cx="395"
-         cy="130"
-         rx="35"
-         ry="18"
-         fill="#4ade80"
-         stroke="#166534"
-         stroke-width="4"/>
-
-<ellipse cx="395"
-         cy="355"
-         rx="35"
-         ry="18"
-         fill="#4ade80"
-         stroke="#166534"
-         stroke-width="4"/>
-
-<ellipse cx="155"
-         cy="345"
-         rx="30"
-         ry="16"
-         fill="#4ade80"
-         stroke="#166534"
-         stroke-width="4"/>
-
-<!-- Mitokondria -->
-<ellipse cx="280"
-         cy="120"
-         rx="32"
-         ry="17"
-         fill="#fb923c"
-         stroke="#c2410c"
-         stroke-width="4"/>
-
-<path d="M258 120
-         C270 105 280 135 292 120"
-      fill="none"
-      stroke="#7c2d12"
-      stroke-width="3"/>
-
-<!-- Golgi -->
-<path d="M275 350
-         Q315 330 350 350
-         Q315 365 275 350"
-      fill="none"
-      stroke="#ea580c"
-      stroke-width="7"/>
-
-<path d="M275 365
-         Q315 345 350 365"
-      fill="none"
-      stroke="#ea580c"
-      stroke-width="7"/>
-
-<!-- RE -->
-<path d="M145 170
-         Q175 150 205 175
-         Q175 195 145 175"
-      fill="none"
-      stroke="#0284c7"
-      stroke-width="6"/>
-
-<!-- Ribosom -->
-<circle cx="170" cy="200" r="5" fill="#075985"/>
-<circle cx="185" cy="185" r="5" fill="#075985"/>
-<circle cx="160" cy="215" r="5" fill="#075985"/>
-
-<!-- NUMBER LABELS -->
-
-<circle cx="65" cy="70" r="18" fill="#0f766e"/>
-<text x="65" y="76" text-anchor="middle" class="svg-label">1</text>
-
-<circle cx="90" cy="125" r="18" fill="#0f766e"/>
-<text x="90" y="131" text-anchor="middle" class="svg-label">2</text>
-
-<circle cx="80" cy="250" r="18" fill="#0f766e"/>
-<text x="80" y="256" text-anchor="middle" class="svg-label">3</text>
-
-<circle cx="215" cy="320" r="18" fill="#0f766e"/>
-<text x="215" y="326" text-anchor="middle" class="svg-label">4</text>
-
-<circle cx="470" cy="245" r="18" fill="#0f766e"/>
-<text x="470" y="251" text-anchor="middle" class="svg-label">5</text>
-
-<circle cx="450" cy="105" r="18" fill="#0f766e"/>
-<text x="450" y="111" text-anchor="middle" class="svg-label">6</text>
-
-<circle cx="315" cy="90" r="18" fill="#0f766e"/>
-<text x="315" y="96" text-anchor="middle" class="svg-label">7</text>
-
-<circle cx="375" cy="390" r="18" fill="#0f766e"/>
-<text x="375" y="396" text-anchor="middle" class="svg-label">8</text>
-
-<circle cx="115" cy="350" r="18" fill="#0f766e"/>
-<text x="115" y="356" text-anchor="middle" class="svg-label">9</text>
-
-<circle cx="125" cy="180" r="18" fill="#0f766e"/>
-<text x="125" y="186" text-anchor="middle" class="svg-label">10</text>
-
-</svg>
-
-</div>
-
-
-<!-- ================= SEL HEWAN ================= -->
-
-<div class="diagram-card">
-
-<h3>🐾 SEL HEWAN</h3>
-
-<svg class="cell-svg"
-     viewBox="0 0 600 500"
-     xmlns="http://www.w3.org/2000/svg">
-
-<!-- Membran -->
-<ellipse cx="300"
-         cy="250"
-         rx="205"
-         ry="180"
-         fill="#bfdbfe"
-         stroke="#2563eb"
-         stroke-width="8"/>
-
-<!-- Sitoplasma -->
-<ellipse cx="300"
-         cy="250"
-         rx="188"
-         ry="164"
-         fill="#fef9c3"
-         stroke="#60a5fa"
-         stroke-width="3"/>
-
-<!-- Nukleus -->
-<circle cx="260"
-        cy="250"
-        r="70"
-        fill="#ddd6fe"
-        stroke="#7c3aed"
-        stroke-width="5"/>
-
-<circle cx="260"
-        cy="250"
-        r="22"
-        fill="#6d28d9"/>
-
-<!-- Mitokondria -->
-<ellipse cx="380"
-         cy="150"
-         rx="42"
-         ry="20"
-         fill="#fb923c"
-         stroke="#c2410c"
-         stroke-width="4"/>
-
-<path d="M350 150
-         C365 130 380 170 395 150"
-      fill="none"
-      stroke="#7c2d12"
-      stroke-width="3"/>
-
-<ellipse cx="400"
-         cy="340"
-         rx="42"
-         ry="20"
-         fill="#fb923c"
-         stroke="#c2410c"
-         stroke-width="4"/>
-
-<path d="M370 340
-         C385 320 400 360 415 340"
-      fill="none"
-      stroke="#7c2d12"
-      stroke-width="3"/>
-
-<!-- RE -->
-<path d="M155 190
-         Q180 165 210 190
-         Q180 215 155 190"
-      fill="none"
-      stroke="#0284c7"
-      stroke-width="6"/>
-
-<path d="M150 210
-         Q180 185 210 210"
-      fill="none"
-      stroke="#0284c7"
-      stroke-width="6"/>
-
-<!-- Golgi -->
-<path d="M150 310
-         Q190 290 225 310"
-      fill="none"
-      stroke="#ea580c"
-      stroke-width="7"/>
-
-<path d="M150 325
-         Q190 305 225 325"
-      fill="none"
-      stroke="#ea580c"
-      stroke-width="7"/>
-
-<path d="M150 340
-         Q190 320 225 340"
-      fill="none"
-      stroke="#ea580c"
-      stroke-width="7"/>
-
-<!-- Lisosom -->
-<circle cx="430"
-        cy="245"
-        r="22"
-        fill="#f472b6"
-        stroke="#be185d"
-        stroke-width="4"/>
-
-<!-- Sentriol -->
-<rect x="325"
-      y="270"
-      width="42"
-      height="12"
-      rx="5"
-      fill="#64748b"
-      transform="rotate(35 346 276)"/>
-
-<rect x="325"
-      y="290"
-      width="42"
-      height="12"
-      rx="5"
-      fill="#64748b"
-      transform="rotate(-35 346 296)"/>
-
-<!-- Ribosom -->
-<circle cx="350" cy="210" r="5" fill="#075985"/>
-<circle cx="370" cy="225" r="5" fill="#075985"/>
-<circle cx="345" cy="235" r="5" fill="#075985"/>
-<circle cx="390" cy="275" r="5" fill="#075985"/>
-
-<!-- NUMBER LABELS -->
-
-<circle cx="75" cy="250" r="18" fill="#0f766e"/>
-<text x="75" y="256" text-anchor="middle" class="svg-label">1</text>
-
-<circle cx="110" cy="140" r="18" fill="#0f766e"/>
-<text x="110" y="146" text-anchor="middle" class="svg-label">2</text>
-
-<circle cx="260" cy="345" r="18" fill="#0f766e"/>
-<text x="260" y="351" text-anchor="middle" class="svg-label">3</text>
-
-<circle cx="260" cy="170" r="18" fill="#0f766e"/>
-<text x="260" y="176" text-anchor="middle" class="svg-label">4</text>
-
-<circle cx="445" cy="125" r="18" fill="#0f766e"/>
-<text x="445" y="131" text-anchor="middle" class="svg-label">5</text>
-
-<circle cx="130" cy="200" r="18" fill="#0f766e"/>
-<text x="130" y="206" text-anchor="middle" class="svg-label">6</text>
-
-<circle cx="120" cy="340" r="18" fill="#0f766e"/>
-<text x="120" y="346" text-anchor="middle" class="svg-label">7</text>
-
-<circle cx="390" cy="205" r="18" fill="#0f766e"/>
-<text x="390" y="211" text-anchor="middle" class="svg-label">8</text>
-
-<circle cx="475" cy="245" r="18" fill="#0f766e"/>
-<text x="475" y="251" text-anchor="middle" class="svg-label">9</text>
-
-<circle cx="355" cy="300" r="18" fill="#0f766e"/>
-<text x="355" y="306" text-anchor="middle" class="svg-label">10</text>
-
-</svg>
-
-</div>
-
-</div>
-
-
-<h3>🌿 Bagian-Bagian Sel Tumbuhan dan Fungsinya</h3>
-
-<div class="table-wrap">
-
-<table>
-
-<thead>
-<tr>
-<th>No.</th>
-<th>Bagian Sel</th>
-<th>Fungsi</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td><span class="part-number">1</span></td>
-<td><strong>Dinding Sel</strong></td>
-<td>
-Memberikan bentuk, kekuatan dan perlindungan pada sel tumbuhan.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">2</span></td>
-<td><strong>Membran Sel</strong></td>
-<td>
-Mengatur keluar masuknya zat dari dan ke dalam sel.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">3</span></td>
-<td><strong>Sitoplasma</strong></td>
-<td>
-Tempat berlangsungnya berbagai reaksi kimia dan aktivitas sel.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">4</span></td>
-<td><strong>Nukleus</strong></td>
-<td>
-Mengatur berbagai aktivitas sel dan menyimpan materi genetik.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">5</span></td>
-<td><strong>Vakuola</strong></td>
-<td>
-Menyimpan air, zat terlarut, pigmen dan berbagai zat lainnya serta membantu menjaga tekanan turgor.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">6</span></td>
-<td><strong>Kloroplas</strong></td>
-<td>
-Tempat berlangsungnya fotosintesis pada sel tumbuhan.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">7</span></td>
-<td><strong>Mitokondria</strong></td>
-<td>
-Tempat utama berlangsungnya respirasi sel untuk menghasilkan energi.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">8</span></td>
-<td><strong>Badan Golgi</strong></td>
-<td>
-Memproses, mengemas dan menyalurkan berbagai zat yang dihasilkan sel.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">9</span></td>
-<td><strong>Ribosom</strong></td>
-<td>
-Tempat sintesis protein.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">10</span></td>
-<td><strong>Retikulum Endoplasma</strong></td>
-<td>
-Berperan dalam sintesis dan transportasi berbagai molekul di dalam sel.
-</td>
-</tr>
-
-</tbody>
-</table>
-
-</div>
-
-
-<h3>🐾 Bagian-Bagian Sel Hewan dan Fungsinya</h3>
-
-<div class="table-wrap">
-
-<table>
-
-<thead>
-<tr>
-<th>No.</th>
-<th>Bagian Sel</th>
-<th>Fungsi</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td><span class="part-number">1</span></td>
-<td><strong>Membran Sel</strong></td>
-<td>
-Melindungi sel dan mengatur keluar masuknya zat.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">2</span></td>
-<td><strong>Sitoplasma</strong></td>
-<td>
-Tempat berlangsungnya berbagai reaksi metabolisme sel.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">3</span></td>
-<td><strong>Nukleus</strong></td>
-<td>
-Mengatur aktivitas sel dan menyimpan materi genetik.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">4</span></td>
-<td><strong>Nukleolus</strong></td>
-<td>
-Berperan dalam pembentukan komponen ribosom.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">5</span></td>
-<td><strong>Mitokondria</strong></td>
-<td>
-Menghasilkan energi melalui proses respirasi sel.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">6</span></td>
-<td><strong>Retikulum Endoplasma</strong></td>
-<td>
-Berperan dalam sintesis dan transportasi berbagai molekul.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">7</span></td>
-<td><strong>Badan Golgi</strong></td>
-<td>
-Memproses, mengemas dan menyalurkan molekul tertentu.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">8</span></td>
-<td><strong>Ribosom</strong></td>
-<td>
-Tempat sintesis protein.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">9</span></td>
-<td><strong>Lisosom</strong></td>
-<td>
-Mengandung enzim yang membantu mencerna atau menguraikan berbagai zat di dalam sel.
-</td>
-</tr>
-
-<tr>
-<td><span class="part-number">10</span></td>
-<td><strong>Sentriol</strong></td>
-<td>
-Berperan dalam proses pembelahan sel pada sel hewan.
-</td>
-</tr>
-
-</tbody>
-</table>
-
-</div>
 
 
 <div class="info">
 
-<strong>🔬 Ingat!</strong><br>
+<strong>
+🔬 Amati Infografis Berikut
+</strong>
 
-Tidak semua bagian sel dapat terlihat dengan jelas menggunakan
-mikroskop cahaya biasa. Beberapa struktur sel berukuran sangat kecil
-dan membutuhkan alat pengamatan dengan kemampuan lebih tinggi.
+<br>
+
+Perhatikan nomor yang menunjukkan bagian-bagian sel.
+Setelah mengamati gambar, baca tabel penjelasan untuk memahami
+nama dan fungsi setiap bagian sel.
+
+</div>
+
+
+
+<!-- =========================================================
+     INFOGRAFIS YANG SUDAH DIUPLOAD KE GITHUB
+========================================================= -->
+
+<div class="infografis-box">
+
+<img
+    src="Infografis%20Perbandingan%20Sel%20Tumbuhan%20dan%20Hewan.png"
+    alt="Infografis Perbandingan Sel Tumbuhan dan Sel Hewan"
+    id="gambarInfografis"
+>
+
+<p class="infografis-caption">
+
+🌿 Sel Tumbuhan dan 🐾 Sel Hewan —
+ilustrasi struktur sel, nomor bagian, dan fungsi organel.
+
+</p>
+
+
+<div class="zoom-buttons">
+
+<button class="zoom-btn" onclick="zoomIn()">
+    🔍 Perbesar
+</button>
+
+<button class="zoom-btn" onclick="zoomOut()">
+    🔎 Perkecil
+</button>
+
+<button class="zoom-btn" onclick="zoomReset()">
+    ↺ Ukuran Normal
+</button>
+
+</div>
+
+</div>
+
+
+
+<h3>
+🌿 Bagian-Bagian Sel Tumbuhan dan Fungsinya
+</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>No.</th>
+
+<th>Bagian Sel</th>
+
+<th>Fungsi</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<tr>
+
+<td>
+<span class="part-number">1</span>
+</td>
+
+<td>
+<strong>Dinding Sel</strong>
+</td>
+
+<td>
+Memberikan bentuk, kekuatan dan perlindungan
+pada sel tumbuhan.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">2</span>
+</td>
+
+<td>
+<strong>Membran Sel</strong>
+</td>
+
+<td>
+Mengatur keluar masuknya zat dari dan ke dalam sel.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">3</span>
+</td>
+
+<td>
+<strong>Sitoplasma</strong>
+</td>
+
+<td>
+Tempat berlangsungnya berbagai reaksi kimia
+dan aktivitas sel.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">4</span>
+</td>
+
+<td>
+<strong>Nukleus</strong>
+</td>
+
+<td>
+Mengatur berbagai aktivitas sel dan menyimpan
+materi genetik.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">5</span>
+</td>
+
+<td>
+<strong>Nukleolus</strong>
+</td>
+
+<td>
+Berperan dalam pembentukan komponen ribosom.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">6</span>
+</td>
+
+<td>
+<strong>Kloroplas</strong>
+</td>
+
+<td>
+Tempat berlangsungnya fotosintesis pada sel tumbuhan
+yang memiliki kloroplas.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">7</span>
+</td>
+
+<td>
+<strong>Mitokondria</strong>
+</td>
+
+<td>
+Tempat utama berlangsungnya respirasi sel
+untuk menghasilkan energi.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">8</span>
+</td>
+
+<td>
+<strong>Vakuola Sentral</strong>
+</td>
+
+<td>
+Menyimpan air, zat terlarut, pigmen dan berbagai
+zat lainnya serta membantu menjaga tekanan turgor.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">9</span>
+</td>
+
+<td>
+<strong>Badan Golgi</strong>
+</td>
+
+<td>
+Memproses, mengemas dan menyalurkan berbagai zat
+yang dihasilkan sel.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">10</span>
+</td>
+
+<td>
+<strong>Retikulum Endoplasma Kasar</strong>
+</td>
+
+<td>
+Berperan dalam sintesis dan transportasi protein.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">11</span>
+</td>
+
+<td>
+<strong>Retikulum Endoplasma Halus</strong>
+</td>
+
+<td>
+Berperan dalam sintesis lipid dan transportasi
+berbagai zat.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">12</span>
+</td>
+
+<td>
+<strong>Ribosom</strong>
+</td>
+
+<td>
+Tempat sintesis protein.
+</td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<h3>
+🐾 Bagian-Bagian Sel Hewan dan Fungsinya
+</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>No.</th>
+
+<th>Bagian Sel</th>
+
+<th>Fungsi</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<tr>
+
+<td>
+<span class="part-number">1</span>
+</td>
+
+<td>
+<strong>Membran Sel</strong>
+</td>
+
+<td>
+Melindungi sel dan mengatur keluar masuknya zat.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">2</span>
+</td>
+
+<td>
+<strong>Sitoplasma</strong>
+</td>
+
+<td>
+Tempat berlangsungnya berbagai reaksi metabolisme sel.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">3</span>
+</td>
+
+<td>
+<strong>Nukleus</strong>
+</td>
+
+<td>
+Mengatur aktivitas sel dan menyimpan materi genetik.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">4</span>
+</td>
+
+<td>
+<strong>Nukleolus</strong>
+</td>
+
+<td>
+Tempat pembentukan komponen ribosom.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">5</span>
+</td>
+
+<td>
+<strong>Retikulum Endoplasma Kasar</strong>
+</td>
+
+<td>
+Tempat sintesis dan transportasi protein.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">6</span>
+</td>
+
+<td>
+<strong>Retikulum Endoplasma Halus</strong>
+</td>
+
+<td>
+Berperan dalam sintesis lipid dan membantu
+transportasi zat.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">7</span>
+</td>
+
+<td>
+<strong>Mitokondria</strong>
+</td>
+
+<td>
+Tempat respirasi sel untuk menghasilkan energi.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">8</span>
+</td>
+
+<td>
+<strong>Ribosom</strong>
+</td>
+
+<td>
+Tempat sintesis protein.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">9</span>
+</td>
+
+<td>
+<strong>Badan Golgi</strong>
+</td>
+
+<td>
+Memproses, mengemas dan menyalurkan zat hasil sintesis.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">10</span>
+</td>
+
+<td>
+<strong>Lisosom</strong>
+</td>
+
+<td>
+Mengandung enzim yang membantu menguraikan berbagai zat.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<span class="part-number">11</span>
+</td>
+
+<td>
+<strong>Sentriol</strong>
+</td>
+
+<td>
+Berperan dalam proses pembelahan sel.
+</td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="info">
+
+<strong>
+🧠 Tantangan Pengamatan
+</strong>
+
+<br>
+
+Coba identifikasi bagian sel yang dapat kamu kenali
+pada gambar. Kemudian gunakan Mikroskop Virtual untuk
+mengamati preparat digital dan membandingkannya dengan
+ilustrasi struktur sel.
 
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -1491,66 +1648,101 @@ dan membutuhkan alat pengamatan dengan kemampuan lebih tinggi.
 
 <div class="content-title">
 
-<div class="content-number">3</div>
+<div class="content-number">
+3
+</div>
 
-<h2>Perbedaan Sel Hewan dan Sel Tumbuhan</h2>
+<h2>
+Perbedaan Sel Hewan dan Sel Tumbuhan
+</h2>
 
 </div>
 
+
 <p>
-    Sel hewan dan sel tumbuhan sama-sama merupakan sel eukariotik.
-    Keduanya memiliki beberapa bagian yang sama, tetapi juga memiliki
-    struktur khusus yang berkaitan dengan fungsi masing-masing.
+Sel hewan dan sel tumbuhan sama-sama merupakan sel eukariotik.
+Keduanya memiliki beberapa bagian yang sama, tetapi juga memiliki
+struktur khusus yang berkaitan dengan fungsi masing-masing.
 </p>
 
 
 <div class="compare-grid">
 
+
 <div class="compare-card plant">
 
-<h3>🌿 Sel Tumbuhan</h3>
+<h3>
+🌿 Sel Tumbuhan
+</h3>
 
 <ul>
 
-<li>Memiliki dinding sel.</li>
+<li>
+Memiliki dinding sel.
+</li>
 
-<li>Memiliki kloroplas pada sel fotosintetik.</li>
+<li>
+Memiliki kloroplas pada sel fotosintetik.
+</li>
 
-<li>Memiliki vakuola yang relatif besar.</li>
+<li>
+Memiliki vakuola yang relatif besar.
+</li>
 
-<li>Bentuk sel cenderung lebih tetap karena adanya dinding sel.</li>
+<li>
+Bentuk sel cenderung lebih tetap karena adanya dinding sel.
+</li>
 
-<li>Dapat melakukan fotosintesis pada sel yang memiliki kloroplas.</li>
+<li>
+Dapat melakukan fotosintesis pada sel yang memiliki kloroplas.
+</li>
 
 </ul>
 
 </div>
+
 
 
 <div class="compare-card animal">
 
-<h3>🐾 Sel Hewan</h3>
+<h3>
+🐾 Sel Hewan
+</h3>
 
 <ul>
 
-<li>Tidak memiliki dinding sel.</li>
+<li>
+Tidak memiliki dinding sel.
+</li>
 
-<li>Tidak memiliki kloroplas.</li>
+<li>
+Tidak memiliki kloroplas.
+</li>
 
-<li>Vakuola umumnya kecil atau tidak menonjol.</li>
+<li>
+Vakuola umumnya kecil atau tidak menonjol.
+</li>
 
-<li>Bentuk sel lebih fleksibel.</li>
+<li>
+Bentuk sel lebih fleksibel.
+</li>
 
-<li>Memiliki sentriol yang berperan dalam pembelahan sel.</li>
+<li>
+Memiliki sentriol yang berperan dalam pembelahan sel.
+</li>
 
 </ul>
 
 </div>
 
+
 </div>
 
 
-<h3>📊 Tabel Perbandingan</h3>
+<h3>
+📊 Tabel Perbandingan
+</h3>
+
 
 <div class="table-wrap">
 
@@ -1559,49 +1751,125 @@ dan membutuhkan alat pengamatan dengan kemampuan lebih tinggi.
 <thead>
 
 <tr>
-<th>Karakteristik</th>
-<th>Sel Tumbuhan</th>
-<th>Sel Hewan</th>
+
+<th>
+Karakteristik
+</th>
+
+<th>
+Sel Tumbuhan
+</th>
+
+<th>
+Sel Hewan
+</th>
+
 </tr>
 
 </thead>
 
+
 <tbody>
 
 <tr>
-<td>Dinding sel</td>
-<td>Ada</td>
-<td>Tidak ada</td>
+
+<td>
+Dinding sel
+</td>
+
+<td>
+Ada
+</td>
+
+<td>
+Tidak ada
+</td>
+
 </tr>
 
-<tr>
-<td>Membran sel</td>
-<td>Ada</td>
-<td>Ada</td>
-</tr>
 
 <tr>
-<td>Kloroplas</td>
-<td>Ada pada sel yang melakukan fotosintesis</td>
-<td>Tidak ada</td>
+
+<td>
+Membran sel
+</td>
+
+<td>
+Ada
+</td>
+
+<td>
+Ada
+</td>
+
 </tr>
 
-<tr>
-<td>Vakuola</td>
-<td>Umumnya besar</td>
-<td>Umumnya kecil/tidak menonjol</td>
-</tr>
 
 <tr>
-<td>Bentuk</td>
-<td>Cenderung lebih tetap</td>
-<td>Lebih fleksibel</td>
+
+<td>
+Kloroplas
+</td>
+
+<td>
+Ada pada sel yang melakukan fotosintesis
+</td>
+
+<td>
+Tidak ada
+</td>
+
 </tr>
 
+
 <tr>
-<td>Sentriol</td>
-<td>Tidak menjadi ciri umum sel tumbuhan tingkat tinggi</td>
-<td>Umumnya terdapat</td>
+
+<td>
+Vakuola
+</td>
+
+<td>
+Umumnya besar
+</td>
+
+<td>
+Umumnya kecil atau tidak menonjol
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Bentuk
+</td>
+
+<td>
+Cenderung lebih tetap
+</td>
+
+<td>
+Lebih fleksibel
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Sentriol
+</td>
+
+<td>
+Tidak menjadi ciri umum sel tumbuhan tingkat tinggi
+</td>
+
+<td>
+Umumnya terdapat
+</td>
+
 </tr>
 
 </tbody>
@@ -1613,7 +1881,11 @@ dan membutuhkan alat pengamatan dengan kemampuan lebih tinggi.
 
 <div class="info">
 
-<strong>🧠 Pertanyaan untuk Dipikirkan</strong><br>
+<strong>
+🧠 Pertanyaan untuk Dipikirkan
+</strong>
+
+<br>
 
 Mengapa sel tumbuhan memerlukan dinding sel dan kloroplas,
 sedangkan sel hewan tidak?
@@ -1621,6 +1893,7 @@ sedangkan sel hewan tidak?
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -1631,38 +1904,60 @@ sedangkan sel hewan tidak?
 
 <div class="content-title">
 
-<div class="content-number">4</div>
+<div class="content-number">
+4
+</div>
 
-<h2>Sel Punca</h2>
+<h2>
+Sel Punca
+</h2>
 
 </div>
 
-<h3>Apa Itu Sel Punca?</h3>
+
+<h3>
+Apa Itu Sel Punca?
+</h3>
 
 <p>
-    Sel punca atau <em>stem cell</em> adalah sel yang memiliki kemampuan
-    untuk memperbanyak diri dan dapat berkembang menjadi jenis sel
-    tertentu melalui proses diferensiasi.
+Sel punca atau <em>stem cell</em> adalah sel yang memiliki
+kemampuan untuk memperbanyak diri dan dapat berkembang menjadi
+jenis sel tertentu melalui proses diferensiasi.
 </p>
+
 
 <div class="info">
 
-<strong>💡 Sederhananya:</strong><br>
+<strong>
+💡 Sederhananya
+</strong>
+
+<br>
 
 Sel punca dapat diibaratkan sebagai sel yang memiliki potensi
-untuk berkembang menjadi beberapa jenis sel dengan fungsi yang berbeda.
+untuk berkembang menjadi beberapa jenis sel dengan fungsi
+yang berbeda.
+
 </div>
 
 
-<h3>Karakteristik Sel Punca</h3>
+<h3>
+Karakteristik Sel Punca
+</h3>
+
 
 <div class="stem-grid">
 
+
 <div class="stem-card">
 
-<div class="icon">🔄</div>
+<div class="icon">
+🔄
+</div>
 
-<strong>Memperbanyak Diri</strong>
+<strong>
+Memperbanyak Diri
+</strong>
 
 <p>
 Sel punca dapat melakukan pembelahan sehingga menghasilkan
@@ -1674,9 +1969,13 @@ sel baru.
 
 <div class="stem-card">
 
-<div class="icon">🧬</div>
+<div class="icon">
+🧬
+</div>
 
-<strong>Potensi Diferensiasi</strong>
+<strong>
+Potensi Diferensiasi
+</strong>
 
 <p>
 Sel punca dapat berkembang menjadi jenis sel tertentu
@@ -1688,9 +1987,13 @@ sesuai dengan kondisi dan jenisnya.
 
 <div class="stem-card">
 
-<div class="icon">🧩</div>
+<div class="icon">
+🧩
+</div>
 
-<strong>Berperan dalam Perkembangan</strong>
+<strong>
+Berperan dalam Perkembangan
+</strong>
 
 <p>
 Sel punca berperan dalam pertumbuhan dan pembentukan
@@ -1699,10 +2002,14 @@ berbagai jenis sel dalam organisme.
 
 </div>
 
+
 </div>
 
 
-<h3>Jenis Sel Punca</h3>
+<h3>
+Jenis Sel Punca
+</h3>
+
 
 <div class="table-wrap">
 
@@ -1711,16 +2018,29 @@ berbagai jenis sel dalam organisme.
 <thead>
 
 <tr>
-<th>Jenis</th>
-<th>Penjelasan Sederhana</th>
+
+<th>
+Jenis
+</th>
+
+<th>
+Penjelasan
+</th>
+
 </tr>
 
 </thead>
 
+
 <tbody>
 
 <tr>
-<td><strong>Sel Punca Embrionik</strong></td>
+
+<td>
+<strong>
+Sel Punca Embrionik
+</strong>
+</td>
 
 <td>
 Sel punca yang berasal dari tahap awal perkembangan embrio
@@ -1729,8 +2049,14 @@ dan memiliki kemampuan berdiferensiasi yang sangat luas.
 
 </tr>
 
+
 <tr>
-<td><strong>Sel Punca Dewasa</strong></td>
+
+<td>
+<strong>
+Sel Punca Dewasa
+</strong>
+</td>
 
 <td>
 Sel punca yang terdapat pada jaringan tertentu dalam tubuh
@@ -1739,8 +2065,14 @@ dan membantu pemeliharaan atau perbaikan jaringan.
 
 </tr>
 
+
 <tr>
-<td><strong>Sel Punca Pluripoten Terinduksi</strong></td>
+
+<td>
+<strong>
+Sel Punca Pluripoten Terinduksi
+</strong>
+</td>
 
 <td>
 Sel dewasa yang telah diprogram kembali sehingga memiliki
@@ -1756,7 +2088,9 @@ karakteristik menyerupai sel punca pluripoten.
 </div>
 
 
-<h3>Manfaat dan Potensi Penelitian Sel Punca</h3>
+<h3>
+Manfaat dan Potensi Penelitian Sel Punca
+</h3>
 
 <ul>
 
@@ -1782,15 +2116,19 @@ setelah melalui penelitian dan pengujian yang diperlukan.
 
 <div class="warning">
 
-<strong>⚠️ Catatan</strong><br>
+<strong>
+⚠️ Catatan
+</strong>
+
+<br>
 
 Penggunaan sel punca dalam bidang medis memiliki aspek ilmiah,
-keamanan, dan etika yang harus dipertimbangkan. Tidak semua
-penggunaan sel punca telah menjadi terapi rutin.
+keamanan, dan etika yang harus dipertimbangkan.
 
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -1801,46 +2139,61 @@ penggunaan sel punca telah menjadi terapi rutin.
 
 <div class="content-title">
 
-<div class="content-number">5</div>
+<div class="content-number">
+5
+</div>
 
-<h2>Diferensiasi dan Spesialisasi Sel</h2>
+<h2>
+Diferensiasi dan Spesialisasi Sel
+</h2>
 
 </div>
 
-<h3>Pengertian Diferensiasi Sel</h3>
+
+<h3>
+Pengertian Diferensiasi Sel
+</h3>
 
 <p>
-    Diferensiasi sel adalah proses ketika sel mengalami perubahan
-    struktur dan fungsi sehingga menjadi sel yang memiliki karakteristik
-    khusus.
+Diferensiasi sel adalah proses ketika sel mengalami perubahan
+struktur dan fungsi sehingga menjadi sel yang memiliki
+karakteristik khusus.
 </p>
 
 <p>
-    Melalui diferensiasi, sel yang pada awalnya belum memiliki fungsi
-    khusus dapat berkembang menjadi berbagai jenis sel dengan fungsi
-    tertentu.
+Melalui diferensiasi, sel yang pada awalnya belum memiliki
+fungsi khusus dapat berkembang menjadi berbagai jenis sel
+dengan fungsi tertentu.
 </p>
 
 
-<h3>Pengertian Spesialisasi Sel</h3>
+<h3>
+Pengertian Spesialisasi Sel
+</h3>
 
 <p>
-    Spesialisasi sel adalah keadaan ketika suatu sel memiliki struktur
-    dan fungsi tertentu yang sesuai dengan perannya dalam organisme.
+Spesialisasi sel adalah keadaan ketika suatu sel memiliki
+struktur dan fungsi tertentu yang sesuai dengan perannya
+dalam organisme.
 </p>
 
 
-<h3>Contoh Spesialisasi Sel</h3>
+<h3>
+Contoh Spesialisasi Sel
+</h3>
+
 
 <div class="feature-grid">
 
+
 <div class="feature">
 
-<strong>🩸 Sel Darah Merah</strong>
+<strong>
+🩸 Sel Darah Merah
+</strong>
 
 <p>
-Berfungsi mengangkut oksigen dan memiliki bentuk yang mendukung
-fungsinya dalam sistem peredaran darah.
+Berfungsi mengangkut oksigen dalam sistem peredaran darah.
 </p>
 
 </div>
@@ -1848,7 +2201,9 @@ fungsinya dalam sistem peredaran darah.
 
 <div class="feature">
 
-<strong>🧠 Sel Saraf</strong>
+<strong>
+🧠 Sel Saraf
+</strong>
 
 <p>
 Berfungsi menerima dan menghantarkan impuls atau informasi
@@ -1860,7 +2215,9 @@ dalam sistem saraf.
 
 <div class="feature">
 
-<strong>💪 Sel Otot</strong>
+<strong>
+💪 Sel Otot
+</strong>
 
 <p>
 Memiliki kemampuan berkontraksi sehingga membantu menghasilkan
@@ -1872,11 +2229,13 @@ gerakan.
 
 <div class="feature">
 
-<strong>🌿 Sel Rambut Akar</strong>
+<strong>
+🌿 Sel Rambut Akar
+</strong>
 
 <p>
-Membantu memperluas permukaan akar untuk menyerap air dan
-mineral dari tanah.
+Membantu memperluas permukaan akar untuk menyerap air
+dan mineral dari tanah.
 </p>
 
 </div>
@@ -1884,7 +2243,9 @@ mineral dari tanah.
 
 <div class="feature">
 
-<strong>🍃 Sel Penjaga</strong>
+<strong>
+🍃 Sel Penjaga
+</strong>
 
 <p>
 Mengatur pembukaan dan penutupan stomata pada permukaan daun.
@@ -1895,7 +2256,9 @@ Mengatur pembukaan dan penutupan stomata pada permukaan daun.
 
 <div class="feature">
 
-<strong>🧬 Sel Reproduksi</strong>
+<strong>
+🧬 Sel Reproduksi
+</strong>
 
 <p>
 Memiliki struktur dan fungsi khusus dalam proses reproduksi.
@@ -1903,10 +2266,14 @@ Memiliki struktur dan fungsi khusus dalam proses reproduksi.
 
 </div>
 
+
 </div>
 
 
-<h3>Bagaimana Prosesnya?</h3>
+<h3>
+Bagaimana Prosesnya?
+</h3>
+
 
 <div class="organization">
 
@@ -1914,19 +2281,25 @@ Memiliki struktur dan fungsi khusus dalam proses reproduksi.
 Sel Awal
 </div>
 
-<div class="org-arrow">↓</div>
+<div class="org-arrow">
+↓
+</div>
 
 <div class="org-box">
 Pembelahan dan Pertumbuhan
 </div>
 
-<div class="org-arrow">↓</div>
+<div class="org-arrow">
+↓
+</div>
 
 <div class="org-box">
 Diferensiasi
 </div>
 
-<div class="org-arrow">↓</div>
+<div class="org-arrow">
+↓
+</div>
 
 <div class="org-box">
 Sel dengan Struktur dan Fungsi Khusus
@@ -1937,7 +2310,11 @@ Sel dengan Struktur dan Fungsi Khusus
 
 <div class="info">
 
-<strong>🧠 Hubungan dengan Sel Punca</strong><br>
+<strong>
+🧠 Hubungan dengan Sel Punca
+</strong>
+
+<br>
 
 Sel punca memiliki kemampuan untuk berdiferensiasi menjadi
 jenis sel tertentu. Proses inilah yang memungkinkan terbentuknya
@@ -1948,6 +2325,7 @@ berbagai jenis sel dengan fungsi khusus.
 </section>
 
 
+
 <!-- =========================================================
      MATERI 6
 ========================================================= -->
@@ -1956,60 +2334,114 @@ berbagai jenis sel dengan fungsi khusus.
 
 <div class="content-title">
 
-<div class="content-number">6</div>
+<div class="content-number">
+6
+</div>
 
-<h2>Sistem Organisasi Kehidupan</h2>
+<h2>
+Sistem Organisasi Kehidupan
+</h2>
 
 </div>
 
+
 <p>
-    Pada organisme multiseluler, banyak sel bekerja sama dan membentuk
-    tingkatan organisasi kehidupan. Setiap tingkat memiliki struktur
-    dan fungsi yang saling berhubungan.
+Pada organisme multiseluler, banyak sel bekerja sama dan
+membentuk tingkatan organisasi kehidupan. Setiap tingkat
+memiliki struktur dan fungsi yang saling berhubungan.
 </p>
 
 
-<h3>Urutan Organisasi Kehidupan</h3>
+<h3>
+Urutan Organisasi Kehidupan
+</h3>
+
 
 <div class="organization">
 
+
 <div class="org-box">
-🔬 <strong>SEL</strong><br>
+
+🔬 <strong>SEL</strong>
+
+<br>
+
 Unit dasar kehidupan
+
 </div>
 
-<div class="org-arrow">↓</div>
+
+<div class="org-arrow">
+↓
+</div>
+
 
 <div class="org-box">
-🧩 <strong>JARINGAN</strong><br>
-Kumpulan sel yang memiliki struktur dan fungsi yang berkaitan
+
+🧩 <strong>JARINGAN</strong>
+
+<br>
+
+Kumpulan sel yang memiliki struktur dan fungsi yang berkaitan.
+
 </div>
 
-<div class="org-arrow">↓</div>
+
+<div class="org-arrow">
+↓
+</div>
+
 
 <div class="org-box">
-🫀 <strong>ORGAN</strong><br>
-Kumpulan beberapa jaringan yang bekerja sama
+
+🫀 <strong>ORGAN</strong>
+
+<br>
+
+Kumpulan beberapa jaringan yang bekerja sama.
+
 </div>
 
-<div class="org-arrow">↓</div>
+
+<div class="org-arrow">
+↓
+</div>
+
 
 <div class="org-box">
-⚙️ <strong>SISTEM ORGAN</strong><br>
-Kumpulan organ yang bekerja sama menjalankan fungsi tertentu
+
+⚙️ <strong>SISTEM ORGAN</strong>
+
+<br>
+
+Kumpulan organ yang bekerja sama menjalankan fungsi tertentu.
+
 </div>
 
-<div class="org-arrow">↓</div>
+
+<div class="org-arrow">
+↓
+</div>
+
 
 <div class="org-box">
-👤 <strong>ORGANISME</strong><br>
-Makhluk hidup secara keseluruhan
-</div>
+
+👤 <strong>ORGANISME</strong>
+
+<br>
+
+Makhluk hidup secara keseluruhan.
 
 </div>
 
 
-<h3>Contoh pada Manusia</h3>
+</div>
+
+
+<h3>
+Contoh pada Manusia
+</h3>
+
 
 <div class="table-wrap">
 
@@ -2018,54 +2450,122 @@ Makhluk hidup secara keseluruhan
 <thead>
 
 <tr>
-<th>Tingkat</th>
-<th>Contoh</th>
-<th>Penjelasan</th>
+
+<th>
+Tingkat
+</th>
+
+<th>
+Contoh
+</th>
+
+<th>
+Penjelasan
+</th>
+
 </tr>
 
 </thead>
 
+
 <tbody>
 
+
 <tr>
-<td><strong>Sel</strong></td>
-<td>Sel otot</td>
+
+<td>
+<strong>
+Sel
+</strong>
+</td>
+
+<td>
+Sel otot
+</td>
+
 <td>
 Sel yang memiliki kemampuan berkontraksi.
 </td>
+
 </tr>
 
+
 <tr>
-<td><strong>Jaringan</strong></td>
-<td>Jaringan otot</td>
+
+<td>
+<strong>
+Jaringan
+</strong>
+</td>
+
+<td>
+Jaringan otot
+</td>
+
 <td>
 Tersusun atas banyak sel otot yang bekerja sama.
 </td>
+
 </tr>
 
+
 <tr>
-<td><strong>Organ</strong></td>
-<td>Jantung</td>
+
+<td>
+<strong>
+Organ
+</strong>
+</td>
+
+<td>
+Jantung
+</td>
+
 <td>
 Tersusun atas beberapa jaringan yang bekerja sama.
 </td>
+
 </tr>
 
+
 <tr>
-<td><strong>Sistem Organ</strong></td>
-<td>Sistem peredaran darah</td>
+
 <td>
-Melibatkan jantung dan pembuluh darah untuk mengedarkan darah.
+<strong>
+Sistem Organ
+</strong>
 </td>
+
+<td>
+Sistem peredaran darah
+</td>
+
+<td>
+Melibatkan jantung dan pembuluh darah untuk
+mengedarkan darah.
+</td>
+
 </tr>
 
+
 <tr>
-<td><strong>Organisme</strong></td>
-<td>Manusia</td>
+
+<td>
+<strong>
+Organisme
+</strong>
+</td>
+
+<td>
+Manusia
+</td>
+
 <td>
 Keseluruhan sistem organ bekerja sama membentuk organisme.
 </td>
+
 </tr>
+
 
 </tbody>
 
@@ -2074,7 +2574,9 @@ Keseluruhan sistem organ bekerja sama membentuk organisme.
 </div>
 
 
-<h3>Contoh pada Tumbuhan</h3>
+<h3>
+Contoh pada Tumbuhan
+</h3>
 
 <ul>
 
@@ -2095,7 +2597,11 @@ Organ-organ tumbuhan bekerja sama menjalankan fungsi kehidupan.
 
 <div class="info">
 
-<strong>🌱 Kesimpulan</strong><br>
+<strong>
+🌱 Kesimpulan
+</strong>
+
+<br>
 
 Semakin tinggi tingkat organisasi kehidupan, semakin kompleks
 kerja sama antarbagian. Namun, setiap tingkat tetap saling
@@ -2106,23 +2612,28 @@ berhubungan dan bergantung pada tingkat lainnya.
 </section>
 
 
+
 <!-- =========================================================
-     CTA
+     TOMBOL AKHIR
 ========================================================= -->
 
 <div class="cta">
 
-<h3>🔬 Siap Mengamati Sel?</h3>
+<h3>
+🔬 Siap Mengamati Sel?
+</h3>
 
 <p>
-Setelah mempelajari materi, gunakan Mikroskop Virtual
-untuk mengamati preparat digital dan menghubungkannya
-dengan konsep yang telah dipelajari.
+Setelah mempelajari materi, gunakan Mikroskop Virtual untuk
+mengamati preparat digital dan menghubungkannya dengan
+konsep yang telah dipelajari.
 </p>
+
 
 <a href="mikroskop.html" class="btn btn-yellow">
 🔬 Buka Mikroskop Virtual
 </a>
+
 
 <a href="aktivitas.html" class="btn">
 📝 Buka Aktivitas Pembelajaran
@@ -2130,9 +2641,11 @@ dengan konsep yang telah dipelajari.
 
 </div>
 
+
 </div>
 
 </main>
+
 
 
 <!-- =========================================================
@@ -2141,13 +2654,20 @@ dengan konsep yang telah dipelajari.
 
 <footer>
 
-<strong>Mikroskop Virtual QR Code</strong><br>
+<strong>
+Mikroskop Virtual QR Code
+</strong>
 
-Media Pembelajaran IPA Kelas VIII<br>
+<br>
+
+Media Pembelajaran IPA Kelas VIII
+
+<br>
 
 UPTD SMPN 3 Barru
 
 </footer>
+
 
 
 <!-- =========================================================
@@ -2156,9 +2676,12 @@ UPTD SMPN 3 Barru
 
 <script>
 
+/* =========================================================
+   MEMBUKA MATERI
+========================================================= */
+
 function showMaterial(id, card){
 
-    // Sembunyikan semua materi
     const contents =
         document.querySelectorAll('.material-content');
 
@@ -2169,7 +2692,6 @@ function showMaterial(id, card){
     });
 
 
-    // Hilangkan active dari semua kartu
     const cards =
         document.querySelectorAll('.material-card');
 
@@ -2180,7 +2702,6 @@ function showMaterial(id, card){
     });
 
 
-    // Tampilkan materi yang dipilih
     const selected =
         document.getElementById(id);
 
@@ -2191,7 +2712,6 @@ function showMaterial(id, card){
     }
 
 
-    // Aktifkan kartu yang dipilih
     if(card){
 
         card.classList.add('active');
@@ -2199,7 +2719,6 @@ function showMaterial(id, card){
     }
 
 
-    // Scroll ke area materi
     const box =
         document.querySelector('.content-box');
 
@@ -2218,7 +2737,136 @@ function showMaterial(id, card){
 
 }
 
+
+/* =========================================================
+   ZOOM INFOGRAFIS
+========================================================= */
+
+let zoomLevel = 1;
+
+
+function zoomIn(){
+
+    zoomLevel += 0.1;
+
+    if(zoomLevel > 2){
+
+        zoomLevel = 2;
+
+    }
+
+    applyZoom();
+
+}
+
+
+function zoomOut(){
+
+    zoomLevel -= 0.1;
+
+    if(zoomLevel < 0.5){
+
+        zoomLevel = 0.5;
+
+    }
+
+    applyZoom();
+
+}
+
+
+function zoomReset(){
+
+    zoomLevel = 1;
+
+    applyZoom();
+
+}
+
+
+function applyZoom(){
+
+    const gambar =
+        document.getElementById('gambarInfografis');
+
+    if(gambar){
+
+        gambar.style.transform =
+            'scale(' + zoomLevel + ')';
+
+        gambar.style.transformOrigin =
+            'center center';
+
+    }
+
+}
+
+
+/* =========================================================
+   CEK GAMBAR INFOGRAFIS
+========================================================= */
+
+document.addEventListener(
+    'DOMContentLoaded',
+    function(){
+
+        const gambar =
+            document.getElementById(
+                'gambarInfografis'
+            );
+
+        if(!gambar){
+            return;
+        }
+
+
+        gambar.addEventListener(
+            'error',
+            function(){
+
+                this.style.display = 'none';
+
+
+                const pesan =
+                    document.createElement('div');
+
+
+                pesan.style.padding = '30px';
+
+                pesan.style.textAlign = 'center';
+
+                pesan.style.background = '#fff7ed';
+
+                pesan.style.borderRadius = '15px';
+
+                pesan.style.color = '#9a3412';
+
+                pesan.innerHTML =
+
+                    '<strong>Gambar infografis belum dapat ditampilkan.</strong>' +
+
+                    '<br><br>' +
+
+                    'Pastikan nama file gambar di GitHub adalah:' +
+
+                    '<br>' +
+
+                    '<strong>Infografis Perbandingan Sel Tumbuhan dan Hewan.png</strong>';
+
+
+                this.parentElement.insertBefore(
+                    pesan,
+                    this
+                );
+
+            }
+        );
+
+    }
+);
+
 </script>
+
 
 </body>
 </html>
