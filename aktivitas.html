@@ -1,141 +1,250 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aktivitas Pengamatan Sel - UPTD SMPN 3 Barru</title>
+<title>Aktivitas Sel - UPTD SMPN 3 Barru</title>
 
 <style>
 
 *{
     box-sizing:border-box;
-    margin:0;
-    padding:0;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f4f8f7;
-    color:#455a64;
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#eef8f5;
+    color:#17483e;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:#07845f;
+    color:white;
+    padding:28px 20px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:34px;
+    font-weight:800;
+}
+
+header p{
+    margin:10px 0 0;
+    font-size:17px;
+}
+
+/* ================= NAVIGASI ================= */
+
+.navbar{
+    background:white;
+    padding:14px 20px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:#087d5b;
+    font-weight:bold;
+    padding:10px 18px;
+    border-radius:25px;
+    transition:.2s;
+}
+
+.navbar a:hover{
+    background:#e0f5ee;
+}
+
+.navbar a.active{
+    background:#07845f;
+    color:white;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:1200px;
+    margin:30px auto;
+    padding:0 20px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+    border-left:6px solid #07845f;
+}
+
+.card h2{
+    color:#087d5b;
+    margin-top:0;
+    font-size:25px;
+}
+
+.card h3{
+    color:#087d5b;
+}
+
+.card p{
     line-height:1.7;
 }
 
-header{
-    background:#5f9f9a;
-    color:white;
-    padding:18px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.card li{
+    margin:8px 0;
+    line-height:1.5;
 }
 
-header h2{
-    font-size:21px;
-}
+/* ================= IDENTITAS ================= */
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    font-weight:bold;
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:35px 20px;
-}
-
-.hero{
-    background:white;
-    padding:40px 25px;
-    text-align:center;
-    border-radius:20px;
-    margin-bottom:25px;
-    box-shadow:0 5px 18px rgba(0,0,0,.07);
-}
-
-.hero h1{
-    color:#5d7478;
-    margin-bottom:10px;
-    font-size:30px;
-}
-
-.hero p{
-    margin:5px 0;
-}
-
-.info{
-    background:#fff6d8;
-    border-left:6px solid #f5c400;
-    padding:18px;
-    border-radius:10px;
-    margin-top:20px;
-    text-align:left;
-}
-
-.section{
-    background:white;
-    padding:28px;
-    border-radius:18px;
-    margin-bottom:25px;
-    box-shadow:0 5px 18px rgba(0,0,0,.06);
-}
-
-.section h2{
-    color:#587477;
-    margin-bottom:16px;
-    font-size:24px;
-}
-
-.section h3{
-    color:#5f9f9a;
-    margin:18px 0 10px;
-}
-
-.instructions{
-    padding-left:25px;
-}
-
-.instructions li{
-    margin-bottom:8px;
-}
-
-.form-grid{
+.identity-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(3,1fr);
     gap:18px;
 }
 
-.field{
+.form-group{
     display:flex;
     flex-direction:column;
 }
 
-.field label{
+.form-group label{
     font-weight:bold;
     margin-bottom:7px;
-    color:#587477;
+    color:#21665a;
 }
 
-input,
-textarea,
-select{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccdeda;
-    border-radius:10px;
-    font-family:Arial,sans-serif;
-    font-size:14px;
-    background:#fbfdfc;
-}
-
+.form-group input,
+.form-group select,
 textarea{
-    min-height:100px;
-    resize:vertical;
+    padding:12px;
+    border:1px solid #b8ded3;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
 }
+
+.form-group input:focus,
+.form-group select:focus,
+textarea:focus{
+    border-color:#07845f;
+}
+
+/* ================= TOMBOL ================= */
+
+.button-area{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:20px;
+}
+
+.btn{
+    border:none;
+    border-radius:12px;
+    padding:13px 20px;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-green{
+    background:#07845f;
+    color:white;
+}
+
+.btn-light{
+    background:#dff4ed;
+    color:#087d5b;
+}
+
+.btn-yellow{
+    background:#f5c542;
+    color:#3d3200;
+}
+
+.btn-red{
+    background:#e85d5d;
+    color:white;
+}
+
+.btn-blue{
+    background:#3979c9;
+    color:white;
+}
+
+/* ================= TUJUAN ================= */
+
+.objective-box{
+    background:#edf9f5;
+    border-radius:15px;
+    padding:20px;
+}
+
+.objective-box ul{
+    margin-bottom:0;
+}
+
+/* ================= PETUNJUK ================= */
+
+.instruction{
+    background:#fff9df;
+    border-left:5px solid #f1c232;
+    border-radius:12px;
+    padding:18px;
+}
+
+/* ================= PENGAMATAN ================= */
+
+.observation-box{
+    background:#f4fbf8;
+    padding:20px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.step{
+    display:flex;
+    gap:12px;
+    margin-bottom:13px;
+    align-items:flex-start;
+}
+
+.number{
+    min-width:32px;
+    height:32px;
+    background:#07845f;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+/* ================= TABEL ================= */
 
 .table-wrapper{
     overflow-x:auto;
@@ -145,780 +254,1373 @@ table{
     width:100%;
     border-collapse:collapse;
     margin-top:15px;
-    min-width:700px;
+    min-width:850px;
 }
 
-th,
+th{
+    background:#07845f;
+    color:white;
+    padding:13px;
+    border:1px solid #d0e7e0;
+}
+
 td{
-    border:1px solid #d5e2df;
+    border:1px solid #cfe4de;
     padding:12px;
     vertical-align:top;
 }
 
-th{
-    background:#5f9f9a;
-    color:white;
-    text-align:center;
+tr:nth-child(even){
+    background:#f5fbf9;
 }
 
-td input,
-td textarea{
-    border:none;
-    background:white;
-    min-width:120px;
+.table-input{
+    width:100%;
+    min-height:75px;
+    border:1px solid #c5dfd8;
+    border-radius:8px;
+    padding:8px;
+    resize:vertical;
 }
 
-.literasi{
+/* ================= MENGGAMBAR ================= */
+
+.drawing-box{
+    background:#f7fbfa;
+    border:2px dashed #07845f;
+    border-radius:18px;
+    padding:22px;
+    margin-top:20px;
+}
+
+.drawing-title{
+    font-size:22px;
+    font-weight:bold;
+    color:#087d5b;
+    margin-bottom:10px;
+}
+
+.drawing-warning{
+    background:#fff4d6;
+    border-left:5px solid #f0bd2e;
+    padding:15px;
+    border-radius:10px;
+    margin:15px 0;
+    line-height:1.6;
+}
+
+.drawing-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-    margin-top:18px;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:20px;
 }
 
-.literasi-card{
-    background:#eef7f5;
-    padding:18px;
-    border-radius:14px;
-    border:1px solid #dcece9;
+.drawing-card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    border:1px solid #cce5dd;
 }
 
-.literasi-card strong{
-    color:#587477;
+.drawing-card h3{
+    margin-top:0;
+    color:#087d5b;
 }
+
+.paper-area{
+    height:320px;
+    border:2px dashed #a7cfc3;
+    border-radius:12px;
+    background:
+        linear-gradient(#f8fcfb,#f8fcfb);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#75978f;
+    padding:20px;
+    margin-top:15px;
+}
+
+.manual-note{
+    background:#e8f7f2;
+    border-radius:10px;
+    padding:13px;
+    margin-top:15px;
+    font-size:14px;
+}
+
+/* ================= BAGIAN SEL ================= */
+
+.parts-table{
+    margin-top:15px;
+}
+
+.parts-table table{
+    min-width:650px;
+}
+
+.parts-table th{
+    background:#15936f;
+}
+
+/* ================= LITERASI ================= */
 
 .question{
-    margin-bottom:25px;
+    background:#f6fbf9;
+    border-radius:14px;
+    padding:18px;
+    margin-bottom:15px;
 }
 
 .question-number{
-    display:inline-block;
-    background:#5f9f9a;
-    color:white;
-    width:32px;
-    height:32px;
-    line-height:32px;
-    text-align:center;
-    border-radius:50%;
-    margin-right:8px;
     font-weight:bold;
+    color:#07845f;
+    margin-bottom:8px;
 }
 
-.option{
-    margin:8px 0;
+.question textarea{
+    width:100%;
+    min-height:100px;
 }
 
-.option label{
-    margin-left:6px;
+/* ================= KESIMPULAN ================= */
+
+.conclusion textarea{
+    width:100%;
+    min-height:150px;
 }
 
-.conclusion{
-    background:#eef7f5;
-    border-radius:15px;
-    padding:22px;
+/* ================= REFLEKSI ================= */
+
+.reflection{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
-.button-area{
-    text-align:center;
-    margin-top:25px;
+.reflection textarea{
+    width:100%;
+    min-height:110px;
 }
 
-.btn{
-    border:none;
-    display:inline-block;
-    padding:14px 25px;
-    border-radius:28px;
-    text-decoration:none;
-    font-weight:bold;
-    margin:5px;
-    cursor:pointer;
-    font-size:15px;
-}
-
-.btn-yellow{
-    background:#f5c400;
-    color:#4f4f4f;
-}
-
-.btn-green{
-    background:#5f9f9a;
-    color:white;
-}
-
-.btn-gray{
-    background:#e6eceb;
-    color:#455a64;
-}
-
-.note{
-    font-size:13px;
-    color:#718083;
-    margin-top:10px;
-}
+/* ================= FOOTER ================= */
 
 footer{
-    background:#5f9f9a;
+    background:#087d5b;
     color:white;
     text-align:center;
-    padding:25px;
-    margin-top:25px;
+    padding:25px 15px;
+    margin-top:40px;
 }
 
-@media(max-width:700px){
+footer p{
+    margin:5px;
+}
 
-    header{
-        flex-direction:column;
-        gap:15px;
-        text-align:center;
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:800px){
+
+    .identity-grid{
+        grid-template-columns:1fr;
     }
 
-    nav a{
-        margin:0 6px;
-        font-size:13px;
+    .drawing-grid{
+        grid-template-columns:1fr;
     }
 
-    .hero h1{
-        font-size:25px;
+    .reflection{
+        grid-template-columns:1fr;
     }
 
-    .section{
-        padding:20px;
+    header h1{
+        font-size:27px;
+    }
+
+    .container{
+        padding:0 12px;
+    }
+
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    .navbar,
+    .button-area,
+    footer{
+        display:none !important;
+    }
+
+    body{
+        background:white;
+    }
+
+    .card{
+        box-shadow:none;
+        border:1px solid #ccc;
+        break-inside:avoid;
+    }
+
+    .paper-area{
+        height:350px;
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 
 <header>
 
-<h2>🔬 Mikroskop Virtual</h2>
+    <h1>🔬 AKTIVITAS SEL</h1>
 
-<nav>
-
-<a href="index.html">Beranda</a>
-
-<a href="materi.html">Materi</a>
-
-<a href="aktivitas.html">Aktivitas</a>
-
-<a href="mikroskop.html">Mikroskop</a>
-
-</nav>
+    <p>
+        Media Pembelajaran IPA Kelas VIII • UPTD SMPN 3 Barru
+    </p>
 
 </header>
+
+
+<!-- ================= NAVIGASI ================= -->
+
+<nav class="navbar">
+
+    <a href="index.html">🏠 Beranda</a>
+
+    <a href="panduan.html">📖 Panduan</a>
+
+    <a href="materi.html">🧬 Materi Sel</a>
+
+    <a href="mikroskop.html">🔬 Mikroskop Virtual</a>
+
+    <a href="aktivitas.html" class="active">📝 Aktivitas</a>
+
+</nav>
 
 
 <div class="container">
 
 
-<!-- JUDUL -->
+<!-- ================= IDENTITAS ================= -->
 
-<section class="hero">
+<section class="card">
 
-<h1>📝 Aktivitas Pengamatan Sel</h1>
+    <h2>👩‍🎓 Identitas Peserta Didik</h2>
 
-<p><strong>Literasi Visual dan Literasi Sains</strong></p>
+    <div class="identity-grid">
 
-<p>IPA Kelas VIII | UPTD SMPN 3 Barru</p>
+        <div class="form-group">
 
-<div class="info">
+            <label>Nama Lengkap</label>
 
-<strong>Tujuan Aktivitas:</strong>
+            <input
+                type="text"
+                id="nama"
+                placeholder="Masukkan nama lengkap"
+            >
 
-<p>
-Melalui kegiatan pengamatan menggunakan Mikroskop Virtual,
-peserta didik dapat mengidentifikasi struktur sel, mencatat hasil pengamatan,
-membandingkan sel tumbuhan dan sel hewan, serta menarik kesimpulan berdasarkan
-bukti hasil pengamatan.
-</p>
-
-</div>
-
-</section>
+        </div>
 
 
-<!-- IDENTITAS -->
+        <div class="form-group">
 
-<section class="section">
+            <label>Kelas</label>
 
-<h2>👤 A. Identitas Peserta Didik</h2>
+            <select id="kelas">
 
-<div class="form-grid">
+                <option value="">-- Pilih Kelas --</option>
 
-<div class="field">
+                <option>VIII-1</option>
 
-<label>Nama Lengkap</label>
+                <option>VIII-2</option>
 
-<input type="text" id="nama" placeholder="Masukkan nama">
+                <option>VIII-3</option>
 
-</div>
+            </select>
 
-
-<div class="field">
-
-<label>Kelas</label>
-
-<select id="kelas">
-
-<option value="">Pilih kelas</option>
-
-<option>VIII-1</option>
-
-<option>VIII-2</option>
-
-<option>VIII-3</option>
-
-</select>
-
-</div>
+        </div>
 
 
-<div class="field">
+        <div class="form-group">
 
-<label>Tanggal Pengamatan</label>
+            <label>Tanggal Pengamatan</label>
 
-<input type="date" id="tanggal">
+            <input
+                type="date"
+                id="tanggal"
+            >
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- TUJUAN -->
+<!-- ================= TUJUAN ================= -->
 
-<section class="section">
+<section class="card">
 
-<h2>🎯 B. Tujuan Pembelajaran</h2>
+    <h2>🎯 Tujuan Kegiatan</h2>
 
-<ol class="instructions">
+    <div class="objective-box">
 
-<li>Mengidentifikasi bagian-bagian sel berdasarkan hasil pengamatan visual.</li>
+        <ul>
 
-<li>Menjelaskan fungsi beberapa struktur sel.</li>
+            <li>
+                Mengamati struktur sel tumbuhan dan sel hewan melalui preparat digital.
+            </li>
 
-<li>Membandingkan struktur sel tumbuhan dan sel hewan.</li>
+            <li>
+                Mengidentifikasi bagian-bagian sel berdasarkan hasil pengamatan.
+            </li>
 
-<li>Menggunakan informasi visual sebagai bukti untuk menjawab pertanyaan ilmiah.</li>
+            <li>
+                Menggambar hasil pengamatan secara manual pada LKPD atau buku gambar.
+            </li>
 
-<li>Menyusun kesimpulan berdasarkan hasil pengamatan.</li>
+            <li>
+                Menuliskan nama bagian sel dan menjelaskan fungsinya.
+            </li>
 
-</ol>
+            <li>
+                Membandingkan struktur sel tumbuhan dan sel hewan.
+            </li>
 
-</section>
+            <li>
+                Mengembangkan literasi visual dan literasi sains melalui kegiatan pengamatan.
+            </li>
 
+        </ul>
 
-<!-- PETUNJUK -->
-
-<section class="section">
-
-<h2>📋 C. Petunjuk Pengamatan</h2>
-
-<ol class="instructions">
-
-<li>Baca materi tentang sel sebelum melakukan pengamatan.</li>
-
-<li>Buka halaman <strong>Mikroskop Virtual</strong>.</li>
-
-<li>Pilih objek <strong>Sel Tumbuhan</strong> atau <strong>Sel Hewan</strong>.</li>
-
-<li>Gunakan pembesaran yang tersedia.</li>
-
-<li>Atur fokus agar objek dapat diamati dengan jelas.</li>
-
-<li>Perhatikan struktur yang tampak pada objek.</li>
-
-<li>Catat hasil pengamatan pada tabel.</li>
-
-<li>Gunakan hasil pengamatan sebagai bukti untuk menjawab pertanyaan.</li>
-
-</ol>
-
-
-<div class="button-area">
-
-<a href="mikroskop.html" class="btn btn-yellow">
-🔬 BUKA MIKROSKOP VIRTUAL
-</a>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- LITERASI VISUAL -->
+<!-- ================= PETUNJUK ================= -->
 
-<section class="section">
+<section class="card">
 
-<h2>👁️ D. Fokus Literasi Visual</h2>
+    <h2>📌 Petunjuk Kegiatan</h2>
 
-<p>
-Saat mengamati objek pada Mikroskop Virtual, gunakan kemampuan berikut:
-</p>
+    <div class="instruction">
 
-<div class="literasi">
+        <div class="step">
 
-<div class="literasi-card">
+            <div class="number">1</div>
 
-<strong>1. Mengidentifikasi</strong>
+            <div>
+                Buka menu <strong>Mikroskop Virtual</strong>, kemudian pilih
+                <strong>Preparat Digital</strong>.
+            </div>
 
-<p>
-Mengenali struktur atau bagian sel yang terlihat.
-</p>
-
-</div>
+        </div>
 
 
-<div class="literasi-card">
+        <div class="step">
 
-<strong>2. Menginterpretasi</strong>
+            <div class="number">2</div>
 
-<p>
-Menjelaskan makna informasi visual yang diamati.
-</p>
+            <div>
+                Pilih <strong>1 preparat sel tumbuhan</strong> dan
+                <strong>1 preparat sel hewan</strong>.
+            </div>
 
-</div>
-
-
-<div class="literasi-card">
-
-<strong>3. Menganalisis</strong>
-
-<p>
-Menghubungkan struktur sel dengan fungsi dan karakteristiknya.
-</p>
-
-</div>
+        </div>
 
 
-<div class="literasi-card">
+        <div class="step">
 
-<strong>4. Mengevaluasi</strong>
+            <div class="number">3</div>
 
-<p>
-Menilai informasi berdasarkan hasil pengamatan dan bukti.
-</p>
+            <div>
+                Amati preparat menggunakan perbesaran
+                <strong>40×, 100×, dan 400×</strong>.
+            </div>
 
-</div>
+        </div>
 
 
-<div class="literasi-card">
+        <div class="step">
 
-<strong>5. Menggunakan Informasi Visual</strong>
+            <div class="number">4</div>
 
-<p>
-Menggunakan hasil pengamatan untuk menjawab pertanyaan dan membuat kesimpulan.
-</p>
+            <div>
+                Tentukan perbesaran yang memberikan gambaran struktur sel
+                paling jelas.
+            </div>
 
-</div>
+        </div>
 
-</div>
+
+        <div class="step">
+
+            <div class="number">5</div>
+
+            <div>
+                Catat hasil pengamatan pada tabel yang tersedia.
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="number">6</div>
+
+            <div>
+                <strong>Gambarlah kedua preparat secara manual pada lembar LKPD
+                atau buku gambar masing-masing.</strong>
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="number">7</div>
+
+            <div>
+                Berikan tanda dan nama bagian-bagian sel yang dapat
+                diidentifikasi dari gambar.
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="number">8</div>
+
+            <div>
+                Tuliskan fungsi dari bagian sel yang telah diidentifikasi.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="button-area">
+
+        <a
+            href="mikroskop.html"
+            class="btn btn-green"
+        >
+            🔬 Buka Mikroskop Virtual
+        </a>
+
+    </div>
 
 </section>
 
 
-<!-- TABEL PENGAMATAN -->
+<!-- ================= HASIL PENGAMATAN ================= -->
 
-<section class="section">
+<section class="card">
 
-<h2>🔎 E. Tabel Hasil Pengamatan</h2>
+    <h2>🔍 A. Hasil Pengamatan Preparat</h2>
 
-<p>
-Isi tabel berdasarkan hasil pengamatan menggunakan Mikroskop Virtual.
-</p>
-
-<div class="table-wrapper">
-
-<table>
-
-<tr>
-
-<th>No.</th>
-
-<th>Objek yang Diamati</th>
-
-<th>Pembesaran</th>
-
-<th>Struktur yang Terlihat</th>
-
-<th>Ciri Visual</th>
-
-<th>Fungsi/Keterangan</th>
-
-</tr>
+    <p>
+        Pilih dua preparat yang diamati dari menu Preparat Digital:
+        satu preparat tumbuhan dan satu preparat hewan.
+    </p>
 
 
-<tr>
+    <div class="table-wrapper">
 
-<td>1</td>
+        <table>
 
-<td>Sel Tumbuhan</td>
+            <thead>
 
-<td>
-<input type="text" placeholder="40× / 100× / 400×">
-</td>
+                <tr>
 
-<td>
-<textarea placeholder="Tuliskan struktur yang terlihat"></textarea>
-</td>
+                    <th>No.</th>
 
-<td>
-<textarea placeholder="Tuliskan ciri visual"></textarea>
-</td>
+                    <th>Jenis Sel</th>
 
-<td>
-<textarea placeholder="Tuliskan fungsi"></textarea>
-</td>
+                    <th>Nama Preparat</th>
 
-</tr>
+                    <th>Perbesaran</th>
 
+                    <th>Bentuk Sel yang Terlihat</th>
 
-<tr>
+                    <th>Struktur yang Terlihat</th>
 
-<td>2</td>
+                </tr>
 
-<td>Sel Hewan</td>
-
-<td>
-<input type="text" placeholder="40× / 100× / 400×">
-</td>
-
-<td>
-<textarea placeholder="Tuliskan struktur yang terlihat"></textarea>
-</td>
-
-<td>
-<textarea placeholder="Tuliskan ciri visual"></textarea>
-</td>
-
-<td>
-<textarea placeholder="Tuliskan fungsi"></textarea>
-</td>
-
-</tr>
+            </thead>
 
 
-</table>
+            <tbody>
 
-</div>
+                <tr>
+
+                    <td>1</td>
+
+                    <td>
+                        Sel Tumbuhan
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Contoh: Bawang Merah / Elodea / Hydrilla / Kentang"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="40× / 100× / 400×"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Tuliskan hasil pengamatan"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Tuliskan struktur yang terlihat"
+                        ></textarea>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>2</td>
+
+                    <td>
+                        Sel Hewan
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Contoh: Epitel Pipi / Darah / Otot Rangka / Otot Jantung / Tulang Rawan"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="40× / 100× / 400×"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Tuliskan hasil pengamatan"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Tuliskan struktur yang terlihat"
+                        ></textarea>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </section>
 
 
-<!-- PERBANDINGAN -->
+<!-- ================= KEGIATAN MENGGAMBAR ================= -->
 
-<section class="section">
+<section class="card">
 
-<h2>⚖️ F. Membandingkan Hasil Pengamatan</h2>
+    <h2>✏️ B. Menggambar Hasil Pengamatan</h2>
 
-<p>
-Berdasarkan pengamatan, tuliskan persamaan dan perbedaan sel tumbuhan
-dan sel hewan.
-</p>
+    <div class="drawing-box">
 
-
-<div class="form-grid">
-
-<div class="field">
-
-<label>Persamaan yang ditemukan</label>
-
-<textarea id="persamaan"
-placeholder="Tuliskan persamaan sel tumbuhan dan sel hewan..."></textarea>
-
-</div>
+        <div class="drawing-title">
+            🎨 Tugas Menggambar Preparat
+        </div>
 
 
-<div class="field">
+        <p>
+            Setelah mengamati preparat melalui <strong>Mikroskop Virtual</strong>,
+            gambarlah hasil pengamatan secara manual.
+        </p>
 
-<label>Perbedaan yang ditemukan</label>
 
-<textarea id="perbedaan"
-placeholder="Tuliskan perbedaan yang ditemukan..."></textarea>
+        <div class="drawing-warning">
 
-</div>
+            <strong>⚠️ Penting:</strong>
 
-</div>
+            <br><br>
+
+            Gambar <strong>tidak dibuat pada perangkat digital</strong>.
+            Gambar harus dibuat menggunakan pensil/pulpen pada
+            <strong>lembar LKPD atau buku gambar masing-masing</strong>.
+
+        </div>
+
+
+        <div class="drawing-grid">
+
+
+            <!-- TUMBUHAN -->
+
+            <div class="drawing-card">
+
+                <h3>
+                    🌱 1. Preparat Sel Tumbuhan
+                </h3>
+
+                <p>
+                    Pilih salah satu preparat tumbuhan yang tersedia:
+                </p>
+
+                <ul>
+
+                    <li>Sel Bawang Merah</li>
+
+                    <li>Elodea</li>
+
+                    <li>Hydrilla</li>
+
+                    <li>Kentang</li>
+
+                </ul>
+
+
+                <p>
+                    Gambarlah hasil pengamatan pada
+                    <strong>LKPD atau buku gambar</strong>.
+                </p>
+
+
+                <div class="paper-area">
+
+                    ✏️
+                    <br><br>
+                    AREA GAMBAR MANUAL<br>
+                    <strong>Gambarkan pada LKPD / Buku Gambar</strong>
+
+                </div>
+
+
+                <div class="manual-note">
+
+                    <strong>Yang harus dicantumkan:</strong>
+
+                    <br>
+
+                    • Nama preparat<br>
+                    • Perbesaran<br>
+                    • Gambar hasil pengamatan<br>
+                    • Tanda/label bagian sel<br>
+                    • Fungsi bagian sel
+
+                </div>
+
+            </div>
+
+
+            <!-- HEWAN -->
+
+            <div class="drawing-card">
+
+                <h3>
+                    🐾 2. Preparat Sel Hewan
+                </h3>
+
+                <p>
+                    Pilih salah satu preparat hewan yang tersedia:
+                </p>
+
+                <ul>
+
+                    <li>Sel Epitel Pipi</li>
+
+                    <li>Sel Darah Merah</li>
+
+                    <li>Otot Rangka</li>
+
+                    <li>Otot Jantung</li>
+
+                    <li>Tulang Rawan</li>
+
+                </ul>
+
+
+                <p>
+                    Gambarlah hasil pengamatan pada
+                    <strong>LKPD atau buku gambar</strong>.
+                </p>
+
+
+                <div class="paper-area">
+
+                    ✏️
+                    <br><br>
+                    AREA GAMBAR MANUAL<br>
+                    <strong>Gambarkan pada LKPD / Buku Gambar</strong>
+
+                </div>
+
+
+                <div class="manual-note">
+
+                    <strong>Yang harus dicantumkan:</strong>
+
+                    <br>
+
+                    • Nama preparat<br>
+                    • Perbesaran<br>
+                    • Gambar hasil pengamatan<br>
+                    • Tanda/label bagian sel<br>
+                    • Fungsi bagian sel
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- LITERASI SAINS -->
+<!-- ================= BAGIAN DAN FUNGSI ================= -->
 
-<section class="section">
+<section class="card">
 
-<h2>🧪 G. Analisis Literasi Sains</h2>
+    <h2>🔬 C. Bagian Sel dan Fungsinya</h2>
 
-
-<div class="question">
-
-<p>
-
-<span class="question-number">1</span>
-
-<strong>
-Mengapa sel tumbuhan memiliki struktur yang tidak ditemukan pada sel hewan?
-</strong>
-
-</p>
-
-<textarea
-id="jawaban1"
-placeholder="Tuliskan jawaban berdasarkan hasil pengamatan dan materi..."
-></textarea>
-
-</div>
+    <p>
+        Setelah membuat gambar, identifikasi bagian-bagian sel yang
+        dapat kamu amati. Tuliskan nama bagian dan fungsinya.
+    </p>
 
 
-<div class="question">
+    <div class="table-wrapper parts-table">
 
-<p>
+        <table>
 
-<span class="question-number">2</span>
+            <thead>
 
-<strong>
-Apa hubungan antara struktur suatu organel dengan fungsinya?
-Berikan contoh.
-</strong>
+                <tr>
 
-</p>
+                    <th>No.</th>
 
-<textarea
-id="jawaban2"
-placeholder="Tuliskan penjelasanmu..."
-></textarea>
+                    <th>Nama Preparat</th>
 
-</div>
+                    <th>Bagian Sel</th>
 
+                    <th>Fungsi</th>
 
-<div class="question">
+                </tr>
 
-<p>
-
-<span class="question-number">3</span>
-
-<strong>
-Jika suatu struktur sel tidak berfungsi dengan baik,
-apa yang mungkin terjadi terhadap aktivitas sel?
-</strong>
-
-</p>
-
-<textarea
-id="jawaban3"
-placeholder="Tuliskan alasan dan penjelasan..."
-></textarea>
-
-</div>
+            </thead>
 
 
-<div class="question">
+            <tbody>
 
-<p>
+                <tr>
 
-<span class="question-number">4</span>
+                    <td>1</td>
 
-<strong>
-Bukti visual apa yang kamu gunakan untuk membedakan sel tumbuhan
-dan sel hewan?
-</strong>
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Nama preparat"
+                        ></textarea>
+                    </td>
 
-</p>
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Contoh: Dinding sel"
+                        ></textarea>
+                    </td>
 
-<textarea
-id="jawaban4"
-placeholder="Tuliskan bukti berdasarkan hasil pengamatan..."
-></textarea>
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Tuliskan fungsi"
+                        ></textarea>
+                    </td>
 
-</div>
+                </tr>
 
 
-<div class="question">
+                <tr>
 
-<p>
+                    <td>2</td>
 
-<span class="question-number">5</span>
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Nama preparat"
+                        ></textarea>
+                    </td>
 
-<strong>
-Bagaimana hasil pengamatanmu dapat membantu menjelaskan
-fungsi struktur sel?
-</strong>
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Nama bagian sel"
+                        ></textarea>
+                    </td>
 
-</p>
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Tuliskan fungsi"
+                        ></textarea>
+                    </td>
 
-<textarea
-id="jawaban5"
-placeholder="Tuliskan jawabanmu..."
-></textarea>
+                </tr>
 
-</div>
+
+                <tr>
+
+                    <td>3</td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Nama preparat"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Nama bagian sel"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Tuliskan fungsi"
+                        ></textarea>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>4</td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Nama preparat"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Nama bagian sel"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Tuliskan fungsi"
+                        ></textarea>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>5</td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Nama preparat"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Nama bagian sel"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Tuliskan fungsi"
+                        ></textarea>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </section>
 
 
-<!-- KESIMPULAN -->
+<!-- ================= PERBANDINGAN ================= -->
 
-<section class="section">
+<section class="card">
 
-<h2>💡 H. Kesimpulan</h2>
+    <h2>🌱🐾 D. Membandingkan Sel Tumbuhan dan Sel Hewan</h2>
 
-<div class="conclusion">
+    <div class="table-wrapper">
 
-<p>
-Berdasarkan hasil pengamatan yang telah dilakukan, tuliskan kesimpulanmu
-tentang struktur dan fungsi sel serta perbedaan sel tumbuhan dan sel hewan.
-</p>
+        <table>
 
-<textarea
-id="kesimpulan"
-placeholder="Tuliskan kesimpulan berdasarkan bukti hasil pengamatan..."
-></textarea>
+            <thead>
 
-</div>
+                <tr>
+
+                    <th>Aspek</th>
+
+                    <th>Sel Tumbuhan</th>
+
+                    <th>Sel Hewan</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        Bentuk sel
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Hasil pengamatan"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Hasil pengamatan"
+                        ></textarea>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Dinding sel
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Ada / tidak ada"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Ada / tidak ada"
+                        ></textarea>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Kloroplas
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Ada / tidak terlihat"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Ada / tidak ada"
+                        ></textarea>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Vakuola
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Hasil pengamatan"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Hasil pengamatan"
+                        ></textarea>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Bentuk inti sel
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Hasil pengamatan"
+                        ></textarea>
+                    </td>
+
+                    <td>
+                        <textarea
+                            class="table-input"
+                            placeholder="Hasil pengamatan"
+                        ></textarea>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </section>
 
 
-<!-- REFLEKSI -->
+<!-- ================= LITERASI SAINS ================= -->
 
-<section class="section">
+<section class="card">
 
-<h2>🌟 I. Refleksi</h2>
-
-<p>
-Apa hal baru yang kamu pahami setelah menggunakan Mikroskop Virtual?
-</p>
-
-<textarea
-id="refleksi"
-placeholder="Tuliskan pengalaman dan pemahamanmu..."
-></textarea>
+    <h2>🧠 E. Pertanyaan Literasi Sains</h2>
 
 
-<h3>Seberapa yakin kamu memahami materi sel?</h3>
+    <div class="question">
 
-<div class="option">
+        <div class="question-number">
+            1. Menjelaskan Fenomena Secara Ilmiah
+        </div>
 
-<input type="radio" name="keyakinan" value="Sangat yakin">
+        <p>
+            Mengapa sel tumbuhan dan sel hewan memiliki beberapa
+            struktur yang berbeda?
+        </p>
 
-<label>Sangat yakin</label>
+        <textarea
+            placeholder="Tuliskan jawabanmu..."
+        ></textarea>
 
-</div>
-
-<div class="option">
-
-<input type="radio" name="keyakinan" value="Yakin">
-
-<label>Yakin</label>
-
-</div>
-
-<div class="option">
-
-<input type="radio" name="keyakinan" value="Cukup yakin">
-
-<label>Cukup yakin</label>
-
-</div>
-
-<div class="option">
-
-<input type="radio" name="keyakinan" value="Belum yakin">
-
-<label>Belum yakin</label>
-
-</div>
-
-</section>
+    </div>
 
 
-<!-- SIMPAN -->
+    <div class="question">
 
-<section class="section">
+        <div class="question-number">
+            2. Menginterpretasikan Data dan Bukti
+        </div>
 
-<h2>📄 J. Simpan Hasil Aktivitas</h2>
+        <p>
+            Berdasarkan hasil pengamatan preparat digital,
+            struktur apa yang paling mudah kamu identifikasi?
+            Jelaskan alasanmu.
+        </p>
 
-<p>
-Setelah semua bagian selesai diisi, kamu dapat mencetak atau menyimpan
-hasil aktivitas sebagai PDF.
-</p>
+        <textarea
+            placeholder="Tuliskan jawabanmu..."
+        ></textarea>
 
-<p class="note">
-Tips: pilih menu <strong>Print/Cetak → Save as PDF</strong>
-pada browser.
-</p>
+    </div>
 
 
-<div class="button-area">
+    <div class="question">
 
-<button onclick="window.print()" class="btn btn-yellow">
-🖨️ CETAK / SIMPAN PDF
-</button>
+        <div class="question-number">
+            3. Menganalisis Informasi
+        </div>
 
-<button onclick="resetForm()" class="btn btn-gray">
-🔄 RESET JAWABAN
-</button>
+        <p>
+            Apa perbedaan utama yang kamu temukan antara preparat
+            sel tumbuhan dan sel hewan?
+        </p>
 
-<a href="mikroskop.html" class="btn btn-green">
-🔬 KEMBALI KE MIKROSKOP
-</a>
+        <textarea
+            placeholder="Tuliskan jawabanmu..."
+        ></textarea>
 
-</div>
+    </div>
+
+
+    <div class="question">
+
+        <div class="question-number">
+            4. Menggunakan Informasi Ilmiah
+        </div>
+
+        <p>
+            Mengapa pengamatan menggunakan mikroskop penting dalam
+            mempelajari struktur sel?
+        </p>
+
+        <textarea
+            placeholder="Tuliskan jawabanmu..."
+        ></textarea>
+
+    </div>
 
 </section>
 
 
+<!-- ================= KESIMPULAN ================= -->
+
+<section class="card conclusion">
+
+    <h2>📝 F. Kesimpulan</h2>
+
+    <p>
+        Tuliskan kesimpulan berdasarkan hasil pengamatan,
+        gambar yang telah dibuat, dan perbandingan sel tumbuhan
+        dengan sel hewan.
+    </p>
+
+    <textarea
+        placeholder="Tuliskan kesimpulanmu di sini..."
+    ></textarea>
+
+</section>
+
+
+<!-- ================= REFLEKSI ================= -->
+
+<section class="card">
+
+    <h2>💭 G. Refleksi</h2>
+
+
+    <div class="reflection">
+
+        <div>
+
+            <label>
+                <strong>
+                    Hal baru yang saya pelajari:
+                </strong>
+            </label>
+
+            <textarea
+                placeholder="Tuliskan refleksimu..."
+            ></textarea>
+
+        </div>
+
+
+        <div>
+
+            <label>
+                <strong>
+                    Kesulitan yang saya alami:
+                </strong>
+            </label>
+
+            <textarea
+                placeholder="Tuliskan kesulitanmu..."
+            ></textarea>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TOMBOL AKHIR ================= -->
+
+<section class="card">
+
+    <h2>📤 Penyelesaian Aktivitas</h2>
+
+    <p>
+        Periksa kembali jawabanmu sebelum mengumpulkan LKPD.
+        Pastikan gambar preparat telah dibuat dengan jelas dan
+        diberi label bagian serta fungsi yang sesuai.
+    </p>
+
+
+    <div class="button-area">
+
+        <button
+            class="btn btn-green"
+            onclick="window.print()"
+        >
+            🖨️ Cetak / Simpan PDF
+        </button>
+
+
+        <button
+            class="btn btn-yellow"
+            onclick="resetForm()"
+        >
+            🔄 Reset Aktivitas
+        </button>
+
+
+        <a
+            href="mikroskop.html"
+            class="btn btn-light"
+        >
+            🔬 Kembali ke Mikroskop
+        </a>
+
+
+        <a
+            href="index.html"
+            class="btn btn-blue"
+        >
+            🏠 Kembali ke Beranda
+        </a>
+
+    </div>
+
+</section>
+
 </div>
 
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<p>
-Media Pembelajaran IPA – Mikroskop Virtual Berbasis QR Code
-</p>
+    <p>
+        <strong>UPTD SMPN 3 Barru</strong>
+    </p>
 
-<p>
-Aktivitas Pengamatan Sel | Kelas VIII | UPTD SMPN 3 Barru
-</p>
+    <p>
+        Media Pembelajaran IPA Kelas VIII
+    </p>
+
+    <p>
+        Aktivitas Pengamatan Sel • Mikroskop Virtual
+    </p>
 
 </footer>
 
 
 <script>
 
+/* ================= TANGGAL OTOMATIS ================= */
+
+const tanggalInput = document.getElementById("tanggal");
+
+if(tanggalInput){
+
+    const today = new Date();
+
+    const yyyy = today.getFullYear();
+
+    const mm = String(today.getMonth()+1).padStart(2,"0");
+
+    const dd = String(today.getDate()).padStart(2,"0");
+
+    tanggalInput.value = yyyy + "-" + mm + "-" + dd;
+
+}
+
+
+/* ================= RESET ================= */
+
 function resetForm(){
 
-    if(confirm("Apakah kamu yakin ingin menghapus semua jawaban?")){
+    const confirmReset =
+        confirm(
+            "Apakah Anda yakin ingin menghapus seluruh isian aktivitas?"
+        );
+
+    if(confirmReset){
 
         document.querySelectorAll(
-            'input[type="text"], input[type="date"], textarea'
-        ).forEach(function(element){
-            element.value="";
-        });
+            "input, textarea, select"
+        ).forEach(function(el){
 
-        document.querySelectorAll('select').forEach(function(element){
-            element.selectedIndex=0;
-        });
+            if(el.type === "date"){
 
-        document.querySelectorAll(
-            'input[type="radio"]'
-        ).forEach(function(element){
-            element.checked=false;
-        });
+                const today = new Date();
 
-        alert("Jawaban berhasil direset.");
+                const yyyy = today.getFullYear();
+
+                const mm = String(today.getMonth()+1).padStart(2,"0");
+
+                const dd = String(today.getDate()).padStart(2,"0");
+
+                el.value =
+                    yyyy + "-" + mm + "-" + dd;
+
+            }
+
+            else{
+
+                el.value = "";
+
+            }
+
+        });
 
     }
 
 }
 
 </script>
-
 
 </body>
 </html>
